@@ -27,18 +27,23 @@ namespace _Scripts.Character
         #endregion
 
         #region Unity Methods
+        
+        private Vector3 lookPos;
+        private Camera _camera;
 
         private void Start()
         {
             _movementModule = GetComponent<IMovementModule>();
             _inputController = GetComponent<InputController>();
+            _camera = Camera.main;
         }
 
         private void Update()
         {
             Move();
+            LookMousePosition();
         }
-
+        
         #endregion
         
         #region Public Methods
@@ -48,6 +53,24 @@ namespace _Scripts.Character
         #endregion
 
         #region Private Methods
+        
+        
+        private void LookMousePosition()
+        {
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out var hit, 100))
+            {
+                lookPos = hit.point;
+            }
+
+            var playerTransform = transform.position;
+            
+            Vector3 lookDir = lookPos - playerTransform;
+            lookDir.y = 0;
+
+            transform.LookAt(playerTransform + lookDir, Vector3.up);
+        }
 
         private void Move()
         {

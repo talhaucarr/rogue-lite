@@ -8,6 +8,7 @@ namespace _Scripts.InputSystem
         #region Properties
 
         public Vector2 MovementValue { get; private set; }
+        public Vector3 LookValue { get; private set; }
 
         #endregion
 
@@ -19,7 +20,7 @@ namespace _Scripts.InputSystem
 
         #region Unity Methods
 
-        private void Start()
+        private void Awake()
         {
             _controls = new CharacterInput();
             _controls.Player.SetCallbacks(this);
@@ -42,7 +43,7 @@ namespace _Scripts.InputSystem
 
         public void OnLook(InputAction.CallbackContext context)
         {
-            
+            LookValue = context.ReadValue<Vector2>();
         }
 
         #endregion

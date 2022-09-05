@@ -105,7 +105,7 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ba38723e-96c2-4372-8978-fc90c987cb56"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
