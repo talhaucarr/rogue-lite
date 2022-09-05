@@ -1,21 +1,21 @@
-using System;
 using _Scripts.InputSystem;
+using _Scripts.StatSystem;
 using UnityEngine;
 
-namespace _Scripts.Character
+namespace _Scripts.Player
 {
     [RequireComponent(typeof(MovementModule))]
     public class PlayerController : MonoBehaviour
     {
         #region Serialized Fields
 
-        [SerializeField] private CharacterSettings _characterSettings;
+        [SerializeField] private StatSettings _statSettings;
 
         #endregion
 
         #region Properties
 
-        public CharacterSettings CharacterSettings => _characterSettings;
+        public StatSettings StatSettings => _statSettings;
 
         #endregion
 
@@ -74,7 +74,7 @@ namespace _Scripts.Character
 
         private void Move()
         {
-            _movementModule.Move(_inputController.MovementValue, _characterSettings.MovementSpeed);
+            _movementModule.Move(_inputController.MovementValue, _statSettings.MovementSpeed);
         }
 
         #endregion

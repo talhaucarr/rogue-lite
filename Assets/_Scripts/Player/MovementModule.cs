@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace _Scripts.Character
+namespace _Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
     public class MovementModule : MonoBehaviour, IMovementModule

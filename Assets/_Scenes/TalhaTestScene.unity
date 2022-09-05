@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a9358a32eb9e341b87351e0993a90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterSettings: {fileID: 11400000, guid: 123c783555a0713488a03cebdf9b0359, type: 2}
+  _statSettings: {fileID: 11400000, guid: 32e74fa17f6c0154bbc3df19d5f4a7a9, type: 2}
 --- !u!114 &847795020
 MonoBehaviour:
   m_ObjectHideFlags: 0

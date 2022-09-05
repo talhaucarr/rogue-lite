@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Scripts.Character
+namespace _Scripts.Player
 {
     public interface IMovementModule
     {
