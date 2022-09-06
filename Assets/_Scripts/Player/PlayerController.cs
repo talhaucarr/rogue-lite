@@ -1,4 +1,6 @@
+using _Scripts.HealthSystem;
 using _Scripts.InputSystem;
+using _Scripts.MovementSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
 
@@ -23,6 +25,7 @@ namespace _Scripts.Player
 
         private IMovementModule _movementModule;
         private InputController _inputController;
+        private HealthController _healthController;
 
         #endregion
 
@@ -35,6 +38,9 @@ namespace _Scripts.Player
         {
             _movementModule = GetComponent<IMovementModule>();
             _inputController = GetComponent<InputController>();
+            _healthController = GetComponent<HealthController>();
+            _healthController.Setup(_statSettings.Health);
+            
             _camera = Camera.main;
         }
 
