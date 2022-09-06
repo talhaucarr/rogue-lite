@@ -1,4 +1,5 @@
 using _Scripts.StatSystem;
+using _Scripts.WeaponSystem;
 using UnityEngine;
 
 namespace _Scripts.AttackSystem
@@ -8,7 +9,9 @@ namespace _Scripts.AttackSystem
         #region Serialized Fields
 
         [Header("Attack Settings")]
+        
         [SerializeField] private AttackBase _attackBase;
+        [SerializeField] private Weapon _weapon;
 
         #endregion
         
@@ -34,12 +37,11 @@ namespace _Scripts.AttackSystem
         public void Setup(StatSettings statSettings)
         {
             _statSettings = statSettings;
-            
         }
 
         public void Attack()
         {
-            _attackBase.Attack(_statSettings, transform);
+            _attackBase.Attack(new AttackData(_weapon.Damage, _weapon.Range, transform));
         }
 
         #endregion

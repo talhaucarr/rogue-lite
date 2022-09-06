@@ -12,9 +12,9 @@ namespace _Scripts.AttackSystem
         #endregion
         
         #region Protected Variables
-
-        protected Transform _playerTransform;
-        protected StatSettings _statSettings;
+        
+        protected AttackData _attackData;
+        
         
         #endregion
 
@@ -25,15 +25,14 @@ namespace _Scripts.AttackSystem
 
         #region Virtual Methods
         
-        public virtual void Attack(StatSettings settings, Transform target)
+        public virtual void Attack(AttackData attackData)
         {
-            _playerTransform = target;
-            _statSettings = settings;
+            _attackData = attackData;
 
             switch (attackType)
             {
                 case AttackType.Ranged:
-                    RangedAttack(_statSettings, _playerTransform.position);
+                    RangedAttack();
                     break;
                 case AttackType.Melee:
                     break;
@@ -42,11 +41,25 @@ namespace _Scripts.AttackSystem
             }
         }
 
-        protected virtual void RangedAttack(StatSettings settings, Vector3 target)
+        protected virtual void RangedAttack()
         {
             
         }
 
         #endregion
+    }
+    
+    public struct AttackData
+    {
+        public float damage;
+        public float range;
+        public Transform target;
+        
+        public AttackData(float damage, float range, Transform target)
+        {
+            this.damage = damage;
+            this.range = range;
+            this.target = target;
+        }
     }
 }
