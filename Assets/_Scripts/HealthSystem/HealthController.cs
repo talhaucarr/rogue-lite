@@ -17,14 +17,19 @@ namespace _Scripts.HealthSystem
         
         [Space(10)]
         [Header("Game Events")]
-        [SerializeField] public UnityEvent onEnemyDeath;
+        [SerializeField] private UnityEvent onEnemyDeath;
         [SerializeField] private UnityEvent onEnemyHit;
 
         #endregion
 
-        #region Variables
+        #region Public Variables
 
         public float CurrentHealth { get; private set; }
+
+        #endregion
+
+        #region Private Variables
+
         private float _maxHealth;
         private HpSlider hpSlider;
 
@@ -69,7 +74,7 @@ namespace _Scripts.HealthSystem
         {
             ResetHealth();
             onEnemyDeath?.Invoke();
-            Destroy(gameObject);//Refactor here
+            Destroy(gameObject);//TODO Refactor here
         }
         
         #endregion
