@@ -8,7 +8,8 @@ namespace _Scripts.InputSystem
         #region Properties
 
         public Vector2 MovementValue { get; private set; }
-        public Vector3 LookValue { get; private set; }
+
+        public bool IsAttacking { get; private set; }
 
         #endregion
 
@@ -41,9 +42,21 @@ namespace _Scripts.InputSystem
             MovementValue = context.ReadValue<Vector2>();
         }
 
+        public void OnShoot(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsAttacking = true;
+            }
+            else if (context.canceled)
+            {
+                IsAttacking = false;
+            }
+        }
+
         public void OnLook(InputAction.CallbackContext context)
         {
-            LookValue = context.ReadValue<Vector2>();
+            throw new System.NotImplementedException();
         }
 
         #endregion

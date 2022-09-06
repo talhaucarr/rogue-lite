@@ -15,13 +15,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "88c9350c-2aad-489c-b814-f02d692004e4",
-                    "expectedControlType": "Vector2",
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "76d388b9-32be-4e0b-9b00-8c7a9be570fb",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -82,12 +82,12 @@
                 },
                 {
                     "name": "",
-                    "id": "ba38723e-96c2-4372-8978-fc90c987cb56",
-                    "path": "<Mouse>/position",
+                    "id": "63f3af4d-23c9-45af-b9cb-d853ffad982e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Look",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

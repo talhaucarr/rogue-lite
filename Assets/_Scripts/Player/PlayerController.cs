@@ -1,3 +1,4 @@
+using _Scripts.AttackSystem;
 using _Scripts.HealthSystem;
 using _Scripts.InputSystem;
 using _Scripts.MovementSystem;
@@ -26,6 +27,7 @@ namespace _Scripts.Player
         private IMovementModule _movementModule;
         private InputController _inputController;
         private HealthController _healthController;
+        private AttackController _attackController;
 
         #endregion
 
@@ -38,8 +40,12 @@ namespace _Scripts.Player
         {
             _movementModule = GetComponent<IMovementModule>();
             _inputController = GetComponent<InputController>();
+            
             _healthController = GetComponent<HealthController>();
             _healthController.Setup(_statSettings.Health);
+
+            _attackController = GetComponent<AttackController>();
+            _attackController.Setup(_statSettings);
             
             _camera = Camera.main;
         }
@@ -48,6 +54,7 @@ namespace _Scripts.Player
         {
             Move();
             LookMousePosition();
+            if(_inputController.IsAttacking) _attackController.Attack();
         }
         
         #endregion

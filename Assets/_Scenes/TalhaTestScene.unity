@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 847795019}
   - component: {fileID: 847795022}
   - component: {fileID: 847795023}
+  - component: {fileID: 847795024}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -673,13 +674,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 136239207}
-  spawnOnDeath: {fileID: 0}
   onEnemyDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3ed3782166b3905488fa48ad85c115fb, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnemyHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 58f0dd3d77c23064f8d8313bcc63a7ce, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &847795024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847795013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74a60bacfb2d21439035ee528fbf278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
 --- !u!1 &878808139
 GameObject:
   m_ObjectHideFlags: 0
