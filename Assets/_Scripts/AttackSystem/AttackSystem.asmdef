@@ -2,7 +2,8 @@
     "name": "AttackSystem",
     "rootNamespace": "",
     "references": [
-        "GUID:384de315d46b8a04fa32299c8e1bba59"
+        "GUID:384de315d46b8a04fa32299c8e1bba59",
+        "GUID:d0b8675db7eeb834db0d36db36d7c39d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -39,7 +39,7 @@ namespace _Scripts.AttackSystem
 
         public void Attack()
         {
-            _attackBase.Attack(_statSettings.Damage);
+            _attackBase.Attack(_statSettings, transform);
         }
 
         #endregion

@@ -11,6 +11,7 @@ namespace _Scripts.StatSystem
         [Header("General Stats")]
         [SerializeField] private float damage;
         [SerializeField] private float health;
+        [SerializeField] private float attackRange;
         [SerializeField] private float attackSpeed;
         [SerializeField] private float movementSpeed;
         
@@ -23,6 +24,7 @@ namespace _Scripts.StatSystem
 
         public float Damage => damage;
         public float Health => health;
+        public float AttackRange => attackRange;
         public float AttackSpeed => attackSpeed;
         public float MovementSpeed => movementSpeed;
         public List<StatDefinition> StatDefinitions => statDefinitions;

@@ -4,6 +4,6 @@
     {
         Ranged = 1,
         Melee = 2,
-        Magic = 3
+        Kamikaze = 3
     }
 }
