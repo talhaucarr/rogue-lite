@@ -733,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
+  _weapon: {fileID: 11400000, guid: c08c1242a4b2ddc41aff1527c064e53a, type: 2}
 --- !u!1 &878808139
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &890834416
 BoxCollider:
   m_ObjectHideFlags: 0

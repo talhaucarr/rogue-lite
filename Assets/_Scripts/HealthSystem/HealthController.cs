@@ -37,7 +37,7 @@ namespace _Scripts.HealthSystem
         #endregion
         
         #region Public Methods
-        
+
         public void Setup(float health)
         {
             hpSlider = new HpSlider(hpBar);
