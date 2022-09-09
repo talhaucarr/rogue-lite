@@ -7,7 +7,6 @@ namespace _Scripts.AttackSystem
     {
         #region Serialized Fields
         
-        [SerializeField] protected AttackType attackType = AttackType.Ranged;
 
         #endregion
         
@@ -24,27 +23,8 @@ namespace _Scripts.AttackSystem
         #endregion
 
         #region Virtual Methods
-        
-        public virtual void Attack(AttackData attackData)
-        {
-            _attackData = attackData;
 
-            switch (attackType)
-            {
-                case AttackType.Ranged:
-                    RangedAttack();
-                    break;
-                case AttackType.Melee:
-                    break;
-                case AttackType.Kamikaze:
-                    break;
-            }
-        }
-
-        protected virtual void RangedAttack()
-        {
-            
-        }
+        public abstract void Attack(AttackData attackData);
 
         #endregion
     }
