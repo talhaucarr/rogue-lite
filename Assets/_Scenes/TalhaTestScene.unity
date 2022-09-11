@@ -890,6 +890,14 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 3258682581922158978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: movementSpeedMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681256892413623152, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 45fd028980475dd41ae8855b75273271, type: 2}
     - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_Name
       value: Minion
@@ -904,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6832040344724344136, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.088961
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6832040344724344136, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_LocalPosition.z

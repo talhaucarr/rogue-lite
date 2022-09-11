@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   health: 100
+  attackRange: 0
   attackSpeed: 10
-  movementSpeed: 10
+  movementSpeed: 0.2
   statDefinitions:
   - {fileID: 11400000, guid: ffd24a4f8898ebe4e8ca4009398536d2, type: 2}
