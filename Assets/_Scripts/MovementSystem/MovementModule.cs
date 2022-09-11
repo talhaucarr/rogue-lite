@@ -2,12 +2,10 @@ using UnityEngine;
 
 namespace _Scripts.MovementSystem
 {
-    [RequireComponent(typeof(CharacterController))]
     public class MovementModule : MonoBehaviour, IMovementModule
     {
         #region Private Variables
-
-        private CharacterController _characterController;
+        
         private AnimationController _animationController;
 
         #endregion
@@ -16,7 +14,7 @@ namespace _Scripts.MovementSystem
 
         private void Start()
         {
-            _characterController = GetComponent<CharacterController>();
+            
         }
 
         #endregion
@@ -39,7 +37,7 @@ namespace _Scripts.MovementSystem
             _animationController.SetWalking(true, movementSpeed);
             var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
             
-            _characterController.Move(moveDirection * Time.deltaTime);
+            transform.position += moveDirection * Time.deltaTime;
         }
 
         public void MovePosition(Vector3 position, float movementSpeed)
