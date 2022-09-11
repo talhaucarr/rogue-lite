@@ -88,7 +88,7 @@ namespace _Scripts.Player
 
         private void Move()
         {
-            _movementModule.Move(_inputController.MovementValue, _statSettings.MovementSpeed);
+            _movementModule.MoveDirection(_inputController.MovementValue, _statSettings.MovementSpeed);
         }
 
         #endregion

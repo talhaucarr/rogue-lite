@@ -28,7 +28,7 @@ namespace _Scripts.MovementSystem
             _animationController = animationController;
         }
 
-        public void Move(Vector3 direction, float movementSpeed)
+        public void MoveDirection(Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
@@ -42,7 +42,7 @@ namespace _Scripts.MovementSystem
             _characterController.Move(moveDirection * Time.deltaTime);
         }
 
-        public void MoveDoTween(Vector3 direction, float movementSpeed)
+        public void MovePosition(Vector3 position, float movementSpeed)
         {
             //TODO implement do tween
         }

@@ -6,8 +6,7 @@ using UnityEngine;
 public class MinionMovementModule : MonoBehaviour, IMovementModule
 {
     #region Private Variables
-
-    private CharacterController _characterController;
+    
     private AnimationController _animationController;
 
     #endregion
@@ -16,7 +15,6 @@ public class MinionMovementModule : MonoBehaviour, IMovementModule
 
     private void Start()
     {
-        _characterController = GetComponent<CharacterController>();
     }
 
     #endregion
@@ -28,7 +26,7 @@ public class MinionMovementModule : MonoBehaviour, IMovementModule
         _animationController = animationController;
     }
 
-    public void Move(Vector3 direction, float movementSpeed)
+    public void MoveDirection(Vector3 direction, float movementSpeed)
     {
         if (direction == Vector3.zero)
         {
@@ -39,10 +37,10 @@ public class MinionMovementModule : MonoBehaviour, IMovementModule
         _animationController.SetWalking(true, movementSpeed);
         var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
             
-        _characterController.Move(moveDirection * Time.deltaTime);
+        transform.position += (moveDirection * Time.deltaTime);
     }
 
-    public void MoveDoTween(Vector3 direction, float movementSpeed)
+    public void MovePosition(Vector3 position, float movementSpeed)
     {
         //
     }

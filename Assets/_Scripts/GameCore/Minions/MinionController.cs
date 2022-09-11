@@ -86,7 +86,7 @@ public class MinionController : MonoBehaviour, IEntityController
             speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
             moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
         }
-        _movementModule.Move(moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
+        _movementModule.MoveDirection(moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
     }
 
     #endregion

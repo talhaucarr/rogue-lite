@@ -80,7 +80,7 @@ public class EnemyController : MonoBehaviour, IEntityController
     {
         Vector3 distanceDif = PlayerManager.Instance.transform.position - transform.position;
         Vector3 moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;
-        _movementModule.Move(moveDir, _statSettings.MovementSpeed);
+        _movementModule.MoveDirection(moveDir, _statSettings.MovementSpeed);
     }
 
     #endregion

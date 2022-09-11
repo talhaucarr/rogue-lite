@@ -26,7 +26,6 @@ public class AutoAttackController : MonoBehaviour, IAttackController
     private void FixedUpdate()
     {
         _attackTimer += Time.fixedDeltaTime;
-        Debug.Log(_attackTimer+" / "+ (20f / (3 + _attackSpeed)));
         if (_attackTimer >= (20f / (1 + _attackSpeed)))
         {
             Attack();
