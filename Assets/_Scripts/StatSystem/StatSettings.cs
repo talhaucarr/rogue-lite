@@ -16,7 +16,7 @@ namespace _Scripts.StatSystem
         [SerializeField] private float movementSpeed;
         
         [Header("Stat Definitions")]
-        [SerializeField] private List<StatDefinition> statDefinitions;
+        [SerializeField] private List<Stat> extraStats;
 
         #endregion
 
@@ -27,23 +27,23 @@ namespace _Scripts.StatSystem
         public float AttackRange => attackRange;
         public float AttackSpeed => attackSpeed;
         public float MovementSpeed => movementSpeed;
-        public List<StatDefinition> StatDefinitions => statDefinitions;
+        public List<Stat> ExtraStats => extraStats;
 
         #endregion
 
         #region Private Methods
 
-        public float GetStatValue(string statName)
+        public Stat GetStat(StatKey key)
         {
-            foreach (var statDefinition in statDefinitions)
+            foreach (var stat in extraStats)
             {
-                if (statDefinition.StatName == statName)
+                if (stat.StatKey == key)
                 {
-                    return statDefinition.StatValue;
+                    return stat;
                 }
             }
             Debug.LogError("Cant find stat!");
-            return 0;
+            return null;
         }
 
         #endregion

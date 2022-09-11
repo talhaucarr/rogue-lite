@@ -8,7 +8,7 @@ namespace _Scripts.HealthSystem
     public class HealthController : MonoBehaviour, IDamagable
     {
         #region SerializeFields
-        
+
         [Header("General")]
         [SerializeField] private Image hpBar;
         
@@ -18,8 +18,8 @@ namespace _Scripts.HealthSystem
         
         [Space(10)]
         [Header("Game Events")]
-        [SerializeField] private UnityEvent onEnemyDeath;
-        [SerializeField] private UnityEvent onEnemyHit;
+        public UnityEvent onDeath = new();
+        public UnityEvent onHit = new();
 
         #endregion
 
@@ -57,7 +57,7 @@ namespace _Scripts.HealthSystem
             }
             else
             {
-                onEnemyHit?.Invoke();
+                onHit.Invoke();
             }
         }
 
@@ -74,7 +74,7 @@ namespace _Scripts.HealthSystem
         private void Die()
         {
             ResetHealth();
-            onEnemyDeath?.Invoke();
+            onDeath.Invoke();
             Destroy(gameObject);//TODO Refactor here
         }
         

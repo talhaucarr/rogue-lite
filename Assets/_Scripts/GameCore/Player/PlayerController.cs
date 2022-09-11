@@ -8,7 +8,7 @@ using UnityEngine;
 namespace _Scripts.Player
 {
     [RequireComponent(typeof(MovementModule))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         #region Serialized Fields
 
@@ -17,7 +17,7 @@ namespace _Scripts.Player
         #endregion
 
         #region Properties
-
+        public Transform Transform => transform;
         public StatSettings StatSettings => _statSettings;
 
         #endregion
@@ -27,7 +27,7 @@ namespace _Scripts.Player
         private IMovementModule _movementModule;
         private InputController _inputController;
         private HealthController _healthController;
-        private AttackController _attackController;
+        private IAttackController _attackController;
         private AnimationController _animationController;
 
         #endregion
@@ -56,7 +56,6 @@ namespace _Scripts.Player
         {
             Move();
             LookMousePosition();
-            if(_inputController.IsAttacking) _attackController.Attack();
         }
         
         #endregion

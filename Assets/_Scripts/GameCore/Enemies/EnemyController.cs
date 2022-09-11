@@ -1,20 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using _Scripts.AttackSystem;
 using _Scripts.HealthSystem;
 using _Scripts.MovementSystem;
-using _Scripts.Player;
 using _Scripts.StatSystem;
 using UnityEngine;
 
-public class MinionController : MonoBehaviour, IEntityController
+public class EnemyController : MonoBehaviour, IEntityController
 {
 
     #region Serialized Fields
-
-    [SerializeField] private PlayerController minionMaster;
+    
     [SerializeField] private StatSettings _statSettings;
-    [SerializeField] private float masterStandRadius;
     #endregion
 
     #region Properties
@@ -28,6 +24,7 @@ public class MinionController : MonoBehaviour, IEntityController
 
     private IMovementModule _movementModule;
     private IAttackController _attackController;
+    private HealthController _healthController;
     private AnimationController _animationController;
 
     #endregion
@@ -39,10 +36,14 @@ public class MinionController : MonoBehaviour, IEntityController
 
     private void Start()
     {
+        EnemyManager.Instance.RegisterEnemy(this);
         _movementModule = GetComponent<IMovementModule>();
         _attackController = GetComponent<IAttackController>();
         _animationController = GetComponent<AnimationController>();
+        _healthController = GetComponent<HealthController>();
         
+        _healthController.Setup(_statSettings.Health);
+        _healthController.onDeath.AddListener(OnDeath);
         _movementModule.Setup(_animationController);
         _attackController.Setup(_statSettings);
 
@@ -51,8 +52,8 @@ public class MinionController : MonoBehaviour, IEntityController
 
     private void Update()
     {
-        MoveToMaster();
-        LookAtMaster();
+        MoveToPlayer();
+        LookAtPlayer();
     }
     
     #endregion
@@ -64,29 +65,22 @@ public class MinionController : MonoBehaviour, IEntityController
     #endregion
 
     #region Private Methods
-    
-    
-    private void LookAtMaster()
+
+    private void OnDeath()
     {
-        transform.LookAt(minionMaster.transform, Vector3.up);
+        EnemyManager.Instance.UnRegisterEnemy(this);
+    }
+    
+    private void LookAtPlayer()
+    {
+        transform.LookAt(PlayerManager.Instance.transform, Vector3.up);
     }
 
-    private void MoveToMaster()
+    private void MoveToPlayer()
     {
-        Vector3 distanceDif = minionMaster.transform.position - transform.position;
-        Vector3 moveDir;
-        float speedMultiplierForDistance;
-        if(distanceDif.magnitude < masterStandRadius)
-        {
-            moveDir = Vector3.zero;
-            speedMultiplierForDistance = 1;
-        }
-        else
-        {
-            speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
-            moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
-        }
-        _movementModule.Move(moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
+        Vector3 distanceDif = PlayerManager.Instance.transform.position - transform.position;
+        Vector3 moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;
+        _movementModule.Move(moveDir, _statSettings.MovementSpeed);
     }
 
     #endregion

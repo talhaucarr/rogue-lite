@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Scripts.AttackSystem
 {
-    public class AttackController : MonoBehaviour
+    public class AttackController : MonoBehaviour, IAttackController
     {
         #region Serialized Fields
 
@@ -37,12 +37,13 @@ namespace _Scripts.AttackSystem
         public void Setup(StatSettings statSettings)
         {
             _statSettings = statSettings;
-            _attackData = new AttackData(_statSettings.Damage, _statSettings.AttackRange, transform);
+            _attackData = new AttackData(transform);
+            _attackBase.SetupOrUpdate(statSettings);
         }
 
         public void Attack()
         {
-            _attackBase.Attack(_attackData);
+            if(!_attackBase.Attack(_attackData)) return;
         }
 
         #endregion

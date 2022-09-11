@@ -313,7 +313,7 @@ Animator:
   m_GameObject: {fileID: 3681256892422998192}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ced62f7b743f30b409dbe6ac5eabc4e1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 57979c26e85677b47a7ab0b5699e20a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 45fd028980475dd41ae8855b75273271, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1451,9 +1451,9 @@ GameObject:
   - component: {fileID: 6832040344724344136}
   - component: {fileID: 1445717769363657295}
   - component: {fileID: 1489319857617238933}
-  - component: {fileID: 4470105574545140817}
   - component: {fileID: 3258682581922158978}
   - component: {fileID: 1813649658203713538}
+  - component: {fileID: 1620284322}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -1491,6 +1491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionMaster: {fileID: 0}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
+  masterStandRadius: 2.2
 --- !u!143 &1489319857617238933
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1509,19 +1510,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4470105574545140817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351293800625723627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b74a60bacfb2d21439035ee528fbf278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
 --- !u!114 &3258682581922158978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,7 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3681256892413623152}
-  movementSpeedMultiplier: 0.1
+  movementSpeedMultiplier: 0.2
   idleSpeedMultiplier: 1
 --- !u!114 &1813649658203713538
 MonoBehaviour:
@@ -1549,3 +1537,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1620284322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6121edc4e56f5b41936cd5e04884ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}

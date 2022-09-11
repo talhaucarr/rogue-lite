@@ -1,3 +1,4 @@
+using System;
 using _Scripts.StatSystem;
 using UnityEngine;
 
@@ -11,35 +12,34 @@ namespace _Scripts.AttackSystem
         #endregion
         
         #region Protected Variables
-        
-        protected AttackData _attackData;
-        
-        
-        #endregion
+        [NonSerialized]
+        protected StatSettings _stats;
+
+            #endregion
 
         #region Abstract Methods
+        public virtual void SetupOrUpdate(StatSettings stats)
+        {
+            _stats = stats;
+        }
         
+        public abstract bool Attack(AttackData attackData);
+
         
         #endregion
 
         #region Virtual Methods
-
-        public abstract void Attack(AttackData attackData);
-
+        
         #endregion
     }
     
     public struct AttackData
     {
-        public float damage;
-        public float range;
-        public Transform target;
+        public Transform myTransform;
         
-        public AttackData(float damage, float range, Transform target)
+        public AttackData(Transform myTransform)
         {
-            this.damage = damage;
-            this.range = range;
-            this.target = target;
+            this.myTransform = myTransform;
         }
     }
 }
