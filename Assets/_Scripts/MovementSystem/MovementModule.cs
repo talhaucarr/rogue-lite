@@ -8,6 +8,7 @@ namespace _Scripts.MovementSystem
         #region Private Variables
 
         private CharacterController _characterController;
+        private AnimationController _animationController;
 
         #endregion
 
@@ -22,11 +23,20 @@ namespace _Scripts.MovementSystem
         
         #region Public Methods
 
+        public void Setup(AnimationController animationController)
+        {
+            _animationController = animationController;
+        }
+
         public void Move(Vector3 direction, float movementSpeed)
         {
-            if(direction == Vector3.zero)
+            if (direction == Vector3.zero)
+            {
+                _animationController.SetWalking(false, 1);
                 return;
+            }
 
+            _animationController.SetWalking(true, movementSpeed);
             var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
             
             _characterController.Move(moveDirection * Time.deltaTime);

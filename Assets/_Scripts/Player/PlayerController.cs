@@ -28,6 +28,7 @@ namespace _Scripts.Player
         private InputController _inputController;
         private HealthController _healthController;
         private AttackController _attackController;
+        private AnimationController _animationController;
 
         #endregion
 
@@ -40,14 +41,15 @@ namespace _Scripts.Player
         {
             _movementModule = GetComponent<IMovementModule>();
             _inputController = GetComponent<InputController>();
-            
-            _healthController = GetComponent<HealthController>();
-            _healthController.Setup(_statSettings.Health);
-
             _attackController = GetComponent<AttackController>();
-            _attackController.Setup(_statSettings);
+            _healthController = GetComponent<HealthController>();
+            _animationController = GetComponent<AnimationController>();
             
-            _camera = Camera.main;
+            _movementModule.Setup(_animationController);
+            _healthController.Setup(_statSettings.Health);
+            _attackController.Setup(_statSettings);
+
+            _camera = CameraManager.Instance.Camera;
         }
 
         private void Update()
