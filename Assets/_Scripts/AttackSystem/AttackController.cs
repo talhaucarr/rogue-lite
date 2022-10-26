@@ -7,10 +7,9 @@ namespace _Scripts.AttackSystem
     {
         #region Serialized Fields
 
-        [Header("Attack Settings")]
+        [BHeader("Attack Settings")]
         
         [SerializeField] private AttackBase _attackBase;
-
 
         #endregion
         

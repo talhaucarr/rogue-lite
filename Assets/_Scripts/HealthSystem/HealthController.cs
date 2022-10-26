@@ -9,7 +9,7 @@ namespace _Scripts.HealthSystem
     {
         #region SerializeFields
 
-        [Header("General")]
+        [BHeader("General")]
         [SerializeField] private Image hpBar;
         
         #endregion

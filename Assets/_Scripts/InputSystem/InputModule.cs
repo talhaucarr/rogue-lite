@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace _Scripts.InputSystem
 {
-    public class InputController : MonoBehaviour, CharacterInput.IPlayerActions
+    public class InputModule : MonoBehaviour, CharacterInput.IPlayerActions
     {
         #region Properties
 

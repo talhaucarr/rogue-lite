@@ -5,14 +5,17 @@ using _Scripts.MovementSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
 
-namespace _Scripts.Player
+namespace _Scripts.GameCore.Player
 {
-    [RequireComponent(typeof(MovementModule))]
     public class PlayerController : MonoBehaviour, IEntityController
     {
         #region Serialized Fields
-
+        
+        [BHeader("Stats")]
         [SerializeField] private StatSettings _statSettings;
+
+        [BHeader("Modules")]
+        [SerializeField] private MovementModule _movementModule;
 
         #endregion
 
@@ -23,9 +26,8 @@ namespace _Scripts.Player
         #endregion
 
         #region Private Fields
-
-        private IMovementModule _movementModule;
-        private InputController _inputController;
+        
+        private InputModule _inputModule;
         private HealthController _healthController;
         private IAttackController _attackController;
         private AnimationController _animationController;
@@ -39,8 +41,7 @@ namespace _Scripts.Player
 
         private void Start()
         {
-            _movementModule = GetComponent<IMovementModule>();
-            _inputController = GetComponent<InputController>();
+            _inputModule = GetComponent<InputModule>();
             _attackController = GetComponent<AttackController>();
             _healthController = GetComponent<HealthController>();
             _animationController = GetComponent<AnimationController>();
@@ -90,14 +91,14 @@ namespace _Scripts.Player
         {
             var forward = transform.forward;
             var right = transform.right;
-            var movementDirection = _inputController.MovementValue;
+            var movementDirection = _inputModule.MovementValue;
 
             var forwardMovement = forward * movementDirection.y;
             var rightMovement = right * movementDirection.x;
 
             var movement = forwardMovement + rightMovement;
             movement.Normalize();
-            _movementModule.MoveDirection(new Vector2(movement.x, movement.z), _statSettings.MovementSpeed);
+            _movementModule.MoveDirection(transform, new Vector2(movement.x, movement.z), _statSettings.MovementSpeed);
         }
 
         #endregion

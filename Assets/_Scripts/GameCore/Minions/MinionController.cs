@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.AttackSystem;
+using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
 using _Scripts.InventorySystem;
 using _Scripts.ItemSystem;
 using _Scripts.MovementSystem;
-using _Scripts.Player;
 using _Scripts.StatSystem;
 using UnityEngine;
 
@@ -92,7 +92,7 @@ public class MinionController : MonoBehaviour, IEntityController
             speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
             moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
         }
-        _movementModule.MoveDirection(moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
+        _movementModule.MoveDirection(transform, moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
     }
 
     #endregion

@@ -26,7 +26,7 @@ public class MinionMovementModule : MonoBehaviour, IMovementModule
         _animationController = animationController;
     }
 
-    public void MoveDirection(Vector3 direction, float movementSpeed)
+    public void MoveDirection(Transform transform, Vector3 direction, float movementSpeed)
     {
         if (direction == Vector3.zero)
         {
@@ -40,7 +40,7 @@ public class MinionMovementModule : MonoBehaviour, IMovementModule
         transform.position += (moveDirection * Time.deltaTime);
     }
 
-    public void MovePosition(Vector3 position, float movementSpeed)
+    public void MovePosition(Transform transform, Vector3 position, float movementSpeed)
     {
         //
     }

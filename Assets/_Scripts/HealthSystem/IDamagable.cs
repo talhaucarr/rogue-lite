@@ -1,4 +1,6 @@
-﻿namespace _Scripts.HealthSystem
+﻿using UnityEngine;
+
+namespace _Scripts.HealthSystem
 {
     public interface IDamagable
     {

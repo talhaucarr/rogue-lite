@@ -1,3 +1,16 @@
 {
-	"name": "HealthSystem"
+    "name": "HealthSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b42c53b2c7e84aa4781ed4c859ba9a01"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

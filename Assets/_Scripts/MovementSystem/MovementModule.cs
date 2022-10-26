@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace _Scripts.MovementSystem
 {
-    public class MovementModule : MonoBehaviour, IMovementModule
+    [CreateAssetMenu(fileName = "MovementModule", menuName = "ScriptableObjects/Modules/Movement")]
+    public class MovementModule : ScriptableObject, IMovementModule
     {
         #region Private Variables
         
@@ -26,7 +27,7 @@ namespace _Scripts.MovementSystem
             _animationController = animationController;
         }
 
-        public void MoveDirection(Vector3 direction, float movementSpeed)
+        public void MoveDirection(Transform transform, Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
@@ -40,7 +41,7 @@ namespace _Scripts.MovementSystem
             transform.position += moveDirection * Time.deltaTime;
         }
 
-        public void MovePosition(Vector3 position, float movementSpeed)
+        public void MovePosition(Transform transform, Vector3 position, float movementSpeed)
         {
             //TODO implement do tween
         }
@@ -48,12 +49,8 @@ namespace _Scripts.MovementSystem
         #endregion
 
         #region Private Methods
-
-        private void FaceMovementDirection(Vector3 movement)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * 10); 
-        }
-
+        
+        
         #endregion
         
     }

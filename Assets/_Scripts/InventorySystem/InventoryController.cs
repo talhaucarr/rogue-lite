@@ -8,14 +8,17 @@ namespace _Scripts.InventorySystem
     public class InventoryController : MonoBehaviour
     {
         #region Serialized Fields
+        [BHeader("Inventory Settings")]
+        [SerializeField] private InventorySettings inventorySettings;
         
-        [SerializeField] private InventorySettings _inventorySettings;
-
+        [BHeader("Inventory Slots")]
+        [SerializeField] private List<ItemSlot> itemSlots;
+        
         #endregion
 
         #region Private Fields
         
-        private List<ItemSlot> _itemSlots;
+        
 
         #endregion
 
@@ -33,7 +36,7 @@ namespace _Scripts.InventorySystem
 
         public void AddItem(MinionItem item)
         {
-            if(_itemSlots.Count >= _inventorySettings.InventorySize)
+            if(itemSlots.Count >= inventorySettings.InventorySize)
                 return;
             
             var itemSlot = GetItemSlotByItem(item);
@@ -43,7 +46,7 @@ namespace _Scripts.InventorySystem
             }
             else
             {
-                _itemSlots.Add(new ItemSlot(item, 1));
+                itemSlots.Add(new ItemSlot(item, 1));
             }
         }
 
@@ -55,7 +58,7 @@ namespace _Scripts.InventorySystem
             itemSlot.Amount--;
             if (itemSlot.Amount <= 0)
             {
-                _itemSlots.Remove(itemSlot);
+                itemSlots.Remove(itemSlot);
             }
         }
 
@@ -65,7 +68,7 @@ namespace _Scripts.InventorySystem
         
         private ItemSlot GetItemSlotByItem(Item item)
         {
-            return _itemSlots.Find(x => x.Item == item);
+            return itemSlots.Find(x => x.Item == item);
         }
 
         #endregion

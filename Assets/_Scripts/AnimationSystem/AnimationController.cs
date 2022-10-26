@@ -10,7 +10,7 @@ public class AnimationController : MonoBehaviour
     private const string IDLE_SPEED_KEY = "idleSpeed";
     
     [SerializeField] private Animator animator;
-    [Header("Settings")] 
+    [BHeader("Settings")] 
     [SerializeField] private float movementSpeedMultiplier;
 
     [SerializeField] private float idleSpeedMultiplier;
