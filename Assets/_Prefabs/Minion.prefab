@@ -1490,6 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionMaster: {fileID: 0}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
+  _minionItem: {fileID: 11400000, guid: 0ce01937dc17a3242ac9afa538f81006, type: 2}
   masterStandRadius: 2.2
 --- !u!114 &3258682581922158978
 MonoBehaviour:
