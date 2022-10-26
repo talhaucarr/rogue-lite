@@ -3,15 +3,15 @@ using System;
 namespace _Scripts.ItemSystem
 {
     [Serializable]
-    public struct ItemSlot
+    public class ItemSlot
     {
-        public Item item;
-        public int amount;
+        public MinionItem Item;
+        public int Amount;
         
-        public ItemSlot(Item item, int amount)
+        public ItemSlot(MinionItem item, int amount)
         {
-            this.item = item;
-            this.amount = amount;
+            this.Item = item;
+            this.Amount = amount;
         }
     }
 }

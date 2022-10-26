@@ -1052,6 +1052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3749795058522606016, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7795069816858804873, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using _Scripts.AttackSystem;
 using _Scripts.HealthSystem;
+using _Scripts.InventorySystem;
+using _Scripts.ItemSystem;
 using _Scripts.MovementSystem;
 using _Scripts.Player;
 using _Scripts.StatSystem;
@@ -14,6 +16,7 @@ public class MinionController : MonoBehaviour, IEntityController
 
     [SerializeField] private PlayerController minionMaster;
     [SerializeField] private StatSettings _statSettings;
+    [SerializeField] private MinionItem _minionItem;
     [SerializeField] private float masterStandRadius;
     #endregion
 
@@ -21,6 +24,7 @@ public class MinionController : MonoBehaviour, IEntityController
 
     public Transform Transform => transform;
     public StatSettings StatSettings => _statSettings;
+    public MinionItem MinionItem => _minionItem;
 
     #endregion
 
@@ -47,6 +51,8 @@ public class MinionController : MonoBehaviour, IEntityController
         _attackController.Setup(_statSettings);
 
         _camera = CameraManager.Instance.Camera;
+        
+        //PlayerManager.Instance.GetComponent<InventoryController>().AddMinionToInventory(_minionItem);
     }
 
     private void Update()

@@ -88,7 +88,16 @@ namespace _Scripts.Player
 
         private void Move()
         {
-            _movementModule.MoveDirection(_inputController.MovementValue, _statSettings.MovementSpeed);
+            var forward = transform.forward;
+            var right = transform.right;
+            var movementDirection = _inputController.MovementValue;
+
+            var forwardMovement = forward * movementDirection.y;
+            var rightMovement = right * movementDirection.x;
+
+            var movement = forwardMovement + rightMovement;
+            movement.Normalize();
+            _movementModule.MoveDirection(new Vector2(movement.x, movement.z), _statSettings.MovementSpeed);
         }
 
         #endregion

@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee147f2447756449b49ca001bb229ed, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: 3a1297ef47e424e4eb5bee25349e30bf, type: 3}
+  m_Name: SeedItem
   m_EditorClassIdentifier: 
-  damage: 10
-  health: 100
-  attackRange: 0
-  attackSpeed: 0
-  movementSpeed: 10
-  extraStats:
-  - {fileID: 11400000, guid: ffd24a4f8898ebe4e8ca4009398536d2, type: 2}
+  itemName: Seed Minion
+  itemDescription: SeedMinionSeedMinion
+  itemIcon: {fileID: 0}
+  maxStack: 0
+  levelUpCosts: 
