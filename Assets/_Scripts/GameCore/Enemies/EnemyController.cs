@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
 using _Scripts.MovementSystem;
 using _Scripts.StatSystem;

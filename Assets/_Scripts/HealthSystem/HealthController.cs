@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace _Scripts.HealthSystem
 {
-    public class HealthController : MonoBehaviour, IDamagable
+    public abstract class HealthController : MonoBehaviour, IDamagable
     {
         #region SerializeFields
 
@@ -17,7 +17,7 @@ namespace _Scripts.HealthSystem
         #region Game Events
         
         [Space(10)]
-        [Header("Game Events")]
+        [BHeader("Game Events")]
         public UnityEvent onDeath = new();
         public UnityEvent onHit = new();
 
@@ -33,6 +33,17 @@ namespace _Scripts.HealthSystem
 
         private float _maxHealth;
         private HpSlider hpSlider;
+
+        #endregion
+
+        #region Protected Methods
+        
+
+        #endregion
+
+        #region Abstract Methods
+
+        protected abstract void Die();
 
         #endregion
         
@@ -70,14 +81,8 @@ namespace _Scripts.HealthSystem
         #endregion
 
         #region Private Methods
-
-        private void Die()
-        {
-            ResetHealth();
-            onDeath.Invoke();
-            Destroy(gameObject);//TODO Refactor here
-        }
         
+
         #endregion
     }
 }

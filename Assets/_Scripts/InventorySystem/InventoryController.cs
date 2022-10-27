@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _Scripts.ItemSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Scripts.InventorySystem
 {
@@ -10,56 +11,78 @@ namespace _Scripts.InventorySystem
         #region Serialized Fields
         [BHeader("Inventory Settings")]
         [SerializeField] private InventorySettings inventorySettings;
-        
-        [BHeader("Inventory Slots")]
+
+        [BHeader("Inventory Slots")] 
+        [SerializeField] private int Currency;
         [SerializeField] private List<ItemSlot> itemSlots;
+        
+        [BHeader("Game Events")]
+        [SerializeField] private UnityEvent onAddItem;
+        [SerializeField] private UnityEvent onRemoveItem;
         
         #endregion
 
         #region Private Fields
-        
-        
+
+        [SerializeField] private MinionItem item;
 
         #endregion
 
         #region Public Fields
         
-
+        
         #endregion
 
         #region Unity Methods
+
+        private void Start()
+        {
+            AddItem(item);
+            AddItem(item);
+        }
 
         #endregion
 
         #region Public Methods
         
 
-        public void AddItem(MinionItem item)
+        public void AddItem(MinionItem minionItem)
         {
             if(itemSlots.Count >= inventorySettings.InventorySize)
                 return;
             
-            var itemSlot = GetItemSlotByItem(item);
-            if (itemSlot != null)
-            {
-                itemSlot.Amount++;
-            }
-            else
-            {
-                itemSlots.Add(new ItemSlot(item, 1));
-            }
+            if(IsItemInInventory(minionItem)) return;
+            
+            itemSlots.Add(new ItemSlot(minionItem, 1));
+            onAddItem?.Invoke();
         }
 
-        public void RemoveItem(MinionItem item)
+        public void RemoveItem(MinionItem minionItem)
         {
-            var itemSlot = GetItemSlotByItem(item);
+            var itemSlot = GetItemSlotByItem(minionItem);
             if (itemSlot == null) return;
             
             itemSlot.Amount--;
-            if (itemSlot.Amount <= 0)
-            {
-                itemSlots.Remove(itemSlot);
-            }
+            itemSlots.Remove(itemSlot);
+            onRemoveItem?.Invoke();
+        }
+        
+        public int GetCurrency()
+        {
+            return Currency;
+        }
+        
+        public void AddCurrency(int amount)
+        {
+            Currency += amount;
+        }
+        
+        public void RemoveCurrency(int amount)
+        {
+            if(Currency - amount < 0)
+                Currency = 0;
+            else
+                Currency -= amount;
         }
 
         #endregion
@@ -69,6 +92,11 @@ namespace _Scripts.InventorySystem
         private ItemSlot GetItemSlotByItem(Item item)
         {
             return itemSlots.Find(x => x.Item == item);
+        }
+        
+        private bool IsItemInInventory(Item item)
+        {
+            return itemSlots.Exists(x => x.Item == item);
         }
 
         #endregion
