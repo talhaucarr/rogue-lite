@@ -6,6 +6,7 @@ namespace _Scripts.GameCore.Player
 {
     public class PlayerManager : AutoSingleton<PlayerManager>//TODO Gokayla konuş.
     {
+        [BHeader("Controllers")]
         [SerializeField] private PlayerController playerController;
         [SerializeField] private InventoryController inventoryController;
         

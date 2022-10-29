@@ -1,11 +1,8 @@
-using System;
-using System.Diagnostics;
+using _Scripts.AttackSystem;
 using _Scripts.HealthSystem;
-using _Scripts.StatSystem;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
-namespace _Scripts.AttackSystem
+namespace _Scripts.GameCore.AttackControllers
 {
     [CreateAssetMenu(fileName = "New Attack", menuName = "ScriptableObjects/AttackSystem/Attack")]
     public class InstantAttack : AttackBase

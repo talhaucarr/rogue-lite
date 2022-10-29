@@ -1,3 +1,4 @@
+using _Scripts.AnimationSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
 
@@ -5,8 +6,15 @@ namespace _Scripts.AttackSystem
 {
     public class AutoAttackController : MonoBehaviour, IAttackController
     {
+        [BHeader("Attack Type")]
+        [SerializeField] private string attackName;
+        [SerializeField] private AttackType attackType;
+        
         [BHeader("Attack SO")]
         [SerializeField] private AttackBase _attackBase;
+        
+        [BHeader("References")]
+        [SerializeField] private AnimationController _animationController;
         
         private AttackData _attackData;
         private StatSettings _statSettings;
@@ -34,8 +42,8 @@ namespace _Scripts.AttackSystem
         private void Attack()
         {
             if(!_attackBase.Attack(_attackData)) return;
+            _animationController.CastSpell();
             _attackTimer = 0;
-            Debug.Log("Attacked");
         }
     }
 }
