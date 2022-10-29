@@ -1488,8 +1488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minionMaster: {fileID: 0}
+  _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
-  _minionItem: {fileID: 11400000, guid: 0ce01937dc17a3242ac9afa538f81006, type: 2}
+  _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
   masterStandRadius: 2.2
 --- !u!114 &3258682581922158978
 MonoBehaviour:
@@ -1504,7 +1505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3681256892413623152}
-  movementSpeedMultiplier: 0.2
+  forwardMovementSpeedMultiplier: 10
+  backwardMovementSpeedMultiplier: 0
   idleSpeedMultiplier: 1
 --- !u!114 &1620284322
 MonoBehaviour:

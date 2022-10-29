@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2719082369968160396}
-  movementSpeedMultiplier: 0.1
+  forwardMovementSpeedMultiplier: 10
+  backwardMovementSpeedMultiplier: 5
   idleSpeedMultiplier: 1
 --- !u!114 &4160437119467853301
 MonoBehaviour:
