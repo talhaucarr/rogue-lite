@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1799719447694279239}
   - component: {fileID: 1799719447694279242}
+  - component: {fileID: 7190757304139185549}
   - component: {fileID: 1799719447694279238}
   - component: {fileID: 1799719447694279261}
   - component: {fileID: 6065874415435617094}
-  - component: {fileID: 7190757304139185549}
   - component: {fileID: 4160437119467853301}
   - component: {fileID: 1910738181}
   - component: {fileID: 737976734162174752}
@@ -38,6 +38,7 @@ Transform:
   m_Children:
   - {fileID: 1799719447821625207}
   - {fileID: 818091743636262595}
+  - {fileID: 5546447576796543828}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55,6 +56,20 @@ CapsuleCollider:
   m_Height: 1.2
   m_Direction: 1
   m_Center: {x: 0, y: -0.16, z: 0}
+--- !u!114 &7190757304139185549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799719447694279240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eddea82210cf949bd3c0e0db2153ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1799719447694279238}
+  inventoryController: {fileID: 4160437119467853301}
 --- !u!114 &1799719447694279238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,18 +112,6 @@ MonoBehaviour:
   animator: {fileID: 722461383051317709}
   movementSpeedMultiplier: 0.1
   idleSpeedMultiplier: 1
---- !u!114 &7190757304139185549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799719447694279240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2eddea82210cf949bd3c0e0db2153ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4160437119467853301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +157,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  item: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
 --- !u!114 &1910738181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +208,66 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &6354263065118684214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5546447576796543828}
+  - component: {fileID: 4576712249350461491}
+  m_Layer: 0
+  m_Name: EventListeners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5546447576796543828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354263065118684214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1799719447694279239}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4576712249350461491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354263065118684214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fca72ec19a40e41ab8a6b69ca43159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a31bf539c69a82a4b90f77c58055d98f, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4160437119467853301}
+        m_TargetAssemblyTypeName: _Scripts.InventorySystem.InventoryController, InventorySystem
+        m_MethodName: AddCurrency
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

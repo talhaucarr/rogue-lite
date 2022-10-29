@@ -23,8 +23,7 @@ namespace _Scripts.InventorySystem
         #endregion
 
         #region Private Fields
-
-        [SerializeField] private MinionItem item;
+        
 
         #endregion
 
@@ -37,8 +36,7 @@ namespace _Scripts.InventorySystem
 
         private void Start()
         {
-            AddItem(item);
-            AddItem(item);
+           
         }
 
         #endregion
