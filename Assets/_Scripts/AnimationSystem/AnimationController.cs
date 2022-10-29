@@ -16,8 +16,11 @@ namespace _Scripts.AnimationSystem
         [SerializeField] private Animator animator;
         
         [BHeader("Settings")] 
-        [SerializeField] private float movementSpeedMultiplier;
+        [SerializeField] private float forwardMovementSpeedMultiplier;
+        [SerializeField] private float backwardMovementSpeedMultiplier;
         [SerializeField] private float idleSpeedMultiplier;
+
+        private float _value;
 
         private void Awake()
         {
@@ -27,7 +30,7 @@ namespace _Scripts.AnimationSystem
         public void SetWalking(bool isWalking, float moveSpeed, Vector3 direction = default)
         {
             animator.SetBool(Walking, isWalking);
-            animator.SetFloat(WalkingSpeed, movementSpeedMultiplier * moveSpeed);
+            animator.SetFloat(WalkingSpeed, moveSpeed * forwardMovementSpeedMultiplier);
         }
     }
 }
