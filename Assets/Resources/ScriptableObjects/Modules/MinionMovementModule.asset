@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04afb3dc271ac364a84e9f2edb57efb0, type: 3}
-  m_Name: InputModule
+  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
+  m_Name: MinionMovementModule
   m_EditorClassIdentifier: 

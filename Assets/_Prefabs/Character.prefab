@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1799719447694279239}
   - component: {fileID: 1799719447694279242}
   - component: {fileID: 1799719447694279238}
-  - component: {fileID: 1799719447694279234}
   - component: {fileID: 1799719447694279261}
   - component: {fileID: 6065874415435617094}
   - component: {fileID: 7190757304139185549}
   - component: {fileID: 4160437119467853301}
   - component: {fileID: 1910738181}
+  - component: {fileID: 737976734162174752}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -69,25 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statSettings: {fileID: 11400000, guid: 32e74fa17f6c0154bbc3df19d5f4a7a9, type: 2}
   _movementModule: {fileID: 11400000, guid: 79f11721d08943840b3ada670d40078b, type: 2}
---- !u!114 &1799719447694279234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799719447694279240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98f07af1decf19488886f6c6f83fee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpBar: {fileID: 1799719447535585642}
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1799719447694279261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +121,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a408b5c2da47c6a4992a3b978d8368fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySettings: {fileID: 0}
+  inventorySettings: {fileID: 11400000, guid: 1f4e7fe857bde9443aa6949b67a96e6b, type: 2}
+  Currency: 0
   itemSlots: []
+  onAddItem:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8fc6cdbdeca9dcf498412de4d064b2e7, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRemoveItem:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4a774194a169c38458f0a1278a50acd9, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  item: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
 --- !u!114 &1910738181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +167,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d639074b347364459a366906e753fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &737976734162174752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799719447694279240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edcb5f3f62847f4b8893ab7a6c9edbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBar: {fileID: 1799719447535585642}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3ed3782166b3905488fa48ad85c115fb, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 58f0dd3d77c23064f8d8313bcc63a7ce, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &816722786152639005
 PrefabInstance:
   m_ObjectHideFlags: 0

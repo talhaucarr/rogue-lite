@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7834638993253435125}
   - component: {fileID: 8684776505023883966}
   - component: {fileID: 4689527291302611113}
-  - component: {fileID: 8432645553305887017}
   - component: {fileID: 7795069816858804873}
+  - component: {fileID: 4105982798667962945}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -84,18 +84,6 @@ MonoBehaviour:
   animator: {fileID: 6052440244995875233}
   movementSpeedMultiplier: 0.2
   idleSpeedMultiplier: 1
---- !u!114 &8432645553305887017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3749795058522606016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7795069816858804873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,12 +91,55 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3749795058522606016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6121edc4e56f5b41936cd5e04884ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
+--- !u!114 &4105982798667962945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749795058522606016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425615daa172aa74895246c79ece3380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBar: {fileID: 8350722998085078133}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a31bf539c69a82a4b90f77c58055d98f, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 440d8f24df90a164e984294fffa0544b, type: 2}
+        m_TargetAssemblyTypeName: GameEvents.Events.GameEvent, GameEvents
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6052440245005226497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1448,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388fafee16e03164392a908e664ef866, type: 3}
+--- !u!114 &8350722998085078133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5925831046820438909, guid: 388fafee16e03164392a908e664ef866, type: 3}
+  m_PrefabInstance: {fileID: 2440807659108921096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8350722998343721576 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5925831047140543840, guid: 388fafee16e03164392a908e664ef866, type: 3}
