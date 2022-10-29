@@ -1,3 +1,4 @@
+using _Scripts.AnimationSystem;
 using UnityEngine;
 
 namespace _Scripts.MovementSystem

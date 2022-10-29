@@ -1,3 +1,4 @@
+using _Scripts.AnimationSystem;
 using _Scripts.AttackSystem;
 using _Scripts.HealthSystem;
 using _Scripts.InputSystem;
@@ -89,8 +90,10 @@ namespace _Scripts.GameCore.Player
 
         private void Move()
         {
-            var forward = transform.forward;
-            var right = transform.right;
+            var transform1 = transform;
+            
+            var forward = transform1.forward;
+            var right = transform1.right;
             var movementDirection = _inputModule.MovementValue;
 
             var forwardMovement = forward * movementDirection.y;
