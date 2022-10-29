@@ -1,9 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using _Scripts.InventorySystem;
 using UnityEngine;
 using Utilities;
 
-public class PlayerManager : AutoSingleton<PlayerManager>
+namespace _Scripts.GameCore.Player
 {
-    
+    public class PlayerManager : AutoSingleton<PlayerManager>//TODO Gokayla konuş.
+    {
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private InventoryController inventoryController;
+        
+        public PlayerController PlayerController => playerController;
+        public InventoryController InventoryController => inventoryController;
+    }
 }

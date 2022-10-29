@@ -1451,7 +1451,6 @@ GameObject:
   - component: {fileID: 6832040344724344136}
   - component: {fileID: 1445717769363657295}
   - component: {fileID: 3258682581922158978}
-  - component: {fileID: 1813649658203713538}
   - component: {fileID: 1620284322}
   m_Layer: 0
   m_Name: Minion
@@ -1507,18 +1506,6 @@ MonoBehaviour:
   animator: {fileID: 3681256892413623152}
   movementSpeedMultiplier: 0.2
   idleSpeedMultiplier: 1
---- !u!114 &1813649658203713538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351293800625723627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1620284322
 MonoBehaviour:
   m_ObjectHideFlags: 0

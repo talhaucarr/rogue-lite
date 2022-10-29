@@ -5,8 +5,9 @@ namespace _Scripts.AttackSystem
 {
     public class AutoAttackController : MonoBehaviour, IAttackController
     {
-        [SerializeField]
-        private AttackBase _attackBase;
+        [BHeader("Attack SO")]
+        [SerializeField] private AttackBase _attackBase;
+        
         private AttackData _attackData;
         private StatSettings _statSettings;
         private float _attackTimer = 0;

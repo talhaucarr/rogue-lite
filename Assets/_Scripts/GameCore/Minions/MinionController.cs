@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.AnimationSystem;
 using _Scripts.AttackSystem;
+using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
 using _Scripts.InventorySystem;
@@ -13,11 +15,18 @@ public class MinionController : MonoBehaviour, IEntityController
 {
 
     #region Serialized Fields
-
+    
+    [BHeader("Master")]
     [SerializeField] private PlayerController minionMaster;
+    
+    [BHeader("Modules")]
+    [SerializeField] private MinionMovementModule _movementModule;
+    
+    [BHeader("General")]
     [SerializeField] private StatSettings _statSettings;
     [SerializeField] private MinionItem _minionItem;
     [SerializeField] private float masterStandRadius;
+    
     #endregion
 
     #region Properties
@@ -29,8 +38,7 @@ public class MinionController : MonoBehaviour, IEntityController
     #endregion
 
     #region Private Fields
-
-    private IMovementModule _movementModule;
+    
     private IAttackController _attackController;
     private AnimationController _animationController;
 
@@ -43,7 +51,6 @@ public class MinionController : MonoBehaviour, IEntityController
 
     private void Start()
     {
-        _movementModule = GetComponent<IMovementModule>();
         _attackController = GetComponent<IAttackController>();
         _animationController = GetComponent<AnimationController>();
         

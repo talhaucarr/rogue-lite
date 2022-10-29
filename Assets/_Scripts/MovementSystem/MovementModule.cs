@@ -1,3 +1,4 @@
+using _Scripts.AnimationSystem;
 using UnityEngine;
 
 namespace _Scripts.MovementSystem
@@ -35,7 +36,7 @@ namespace _Scripts.MovementSystem
                 return;
             }
 
-            _animationController.SetWalking(true, movementSpeed);
+            _animationController.SetWalking(true, movementSpeed, direction);
             var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
             
             transform.position += moveDirection * Time.deltaTime;
