@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74a60bacfb2d21439035ee528fbf278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
+  _attackBase: {fileID: 11400000, guid: f5ca05389251c054f8f0600e9b858dd3, type: 2}
+  _animationController: {fileID: 6065874415435617094}
 --- !u!114 &6065874415435617094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2719082369968160396}
-  forwardMovementSpeedMultiplier: 10
+  forwardMovementSpeedMultiplier: 0.2
   backwardMovementSpeedMultiplier: 5
   idleSpeedMultiplier: 1
 --- !u!114 &4160437119467853301

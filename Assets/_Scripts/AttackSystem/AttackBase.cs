@@ -12,10 +12,10 @@ namespace _Scripts.AttackSystem
         #endregion
         
         #region Protected Variables
-        [NonSerialized]
-        protected StatSettings _stats;
+        
+        [NonSerialized] protected StatSettings _stats;
 
-            #endregion
+        #endregion
 
         #region Abstract Methods
         public virtual void SetupOrUpdate(StatSettings stats)

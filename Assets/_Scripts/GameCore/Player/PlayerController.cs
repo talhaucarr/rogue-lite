@@ -30,7 +30,7 @@ namespace _Scripts.GameCore.Player
         
         private InputModule _inputModule;
         private HealthController _healthController;
-        private IAttackController _attackController;
+        private AttackController _attackController;
         private AnimationController _animationController;
 
         #endregion
@@ -58,6 +58,10 @@ namespace _Scripts.GameCore.Player
         {
             Move();
             LookMousePosition();
+            if (_inputModule.IsAttacking)
+            {
+                _attackController.Attack();
+            }
         }
         
         #endregion

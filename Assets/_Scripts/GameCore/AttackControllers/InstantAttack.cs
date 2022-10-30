@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Scripts.GameCore.AttackControllers
 {
-    [CreateAssetMenu(fileName = "New Attack", menuName = "ScriptableObjects/AttackSystem/Attack")]
+    [CreateAssetMenu(fileName = "New Instant Attack", menuName = "ScriptableObjects/AttackSystem/InstantAttack")]
     public class InstantAttack : AttackBase
     {
         public override bool Attack(AttackData attackData)

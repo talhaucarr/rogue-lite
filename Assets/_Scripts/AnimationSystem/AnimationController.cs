@@ -9,11 +9,13 @@ namespace _Scripts.AnimationSystem
         private const string WALKING_SPEED_KEY = "walkingSpeed";
         private const string IDLE_SPEED_KEY = "idleSpeed";
         private const string CAST_SPELL_KEY = "castSpell";
+        private const string ATTACK_KEY = "attack";
         
         private static readonly int Walking = Animator.StringToHash(WALKING_KEY);
         private static readonly int WalkingSpeed = Animator.StringToHash(WALKING_SPEED_KEY);
         private static readonly int IdleSpeed = Animator.StringToHash(IDLE_SPEED_KEY);
         private static readonly int Spell = Animator.StringToHash(CAST_SPELL_KEY);
+        private static readonly int Attack = Animator.StringToHash(ATTACK_KEY);
     
         [BHeader("Animator")]
         [SerializeField] private Animator animator;
@@ -40,6 +42,11 @@ namespace _Scripts.AnimationSystem
         public void CastSpell()
         {
             animator.SetTrigger(Spell);
+        }
+        
+        public void AttackAnim()
+        {
+            animator.SetTrigger(Attack);
         }
     }
 }

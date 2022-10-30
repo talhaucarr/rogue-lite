@@ -1,3 +1,5 @@
+using System;
+using _Scripts.AnimationSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
 
@@ -10,6 +12,9 @@ namespace _Scripts.AttackSystem
         [BHeader("Attack Settings")]
         
         [SerializeField] private AttackBase _attackBase;
+        
+        [BHeader("References")]
+        [SerializeField] private AnimationController _animationController;
 
         #endregion
         
@@ -23,11 +28,23 @@ namespace _Scripts.AttackSystem
         private StatSettings _statSettings;
         private AttackData _attackData;
 
+        private bool _canAttack = true;
+        
+        private float _attackTimer = 0;
+        private float _attackSpeed;
+
         #endregion
 
         #region Unity Methods
-
         
+        private void FixedUpdate()
+        {
+            _attackTimer += Time.fixedDeltaTime;
+            if (_attackTimer >= (20f / (1 + _attackSpeed)))
+            {
+                _canAttack = true;
+            }
+        }
 
         #endregion
 
@@ -37,12 +54,19 @@ namespace _Scripts.AttackSystem
         {
             _statSettings = statSettings;
             _attackData = new AttackData(transform);
+            _attackSpeed = statSettings.AttackSpeed;
+            _attackBase = Instantiate(_attackBase);
             _attackBase.SetupOrUpdate(statSettings);
         }
 
         public void Attack()
         {
             if(!_attackBase.Attack(_attackData)) return;
+            if(!_canAttack) return;
+
+            _canAttack = false;
+            _attackTimer = 0;
+            _animationController.AttackAnim();
         }
 
         #endregion
