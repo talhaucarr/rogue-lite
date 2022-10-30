@@ -1493,6 +1493,7 @@ MonoBehaviour:
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
   _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
   masterStandRadius: 2.2
+  _trailVFX: {fileID: 5243512661824881033}
 --- !u!114 &3258682581922158978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,5 +1594,10 @@ PrefabInstance:
 --- !u!4 &5243512661824589663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400826, guid: 3cb178e3f3f3da5449b0378f2f5772ef, type: 3}
+  m_PrefabInstance: {fileID: 5243512661824983781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5243512661824881033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 168812, guid: 3cb178e3f3f3da5449b0378f2f5772ef, type: 3}
   m_PrefabInstance: {fileID: 5243512661824983781}
   m_PrefabAsset: {fileID: 0}

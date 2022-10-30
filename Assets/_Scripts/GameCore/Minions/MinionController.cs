@@ -27,6 +27,9 @@ public class MinionController : MonoBehaviour, IEntityController
     [SerializeField] private MinionItem _minionItem;
     [SerializeField] private float masterStandRadius;
     
+    [BHeader("VFX")]
+    [SerializeField] private GameObject _trailVFX;
+    
     #endregion
 
     #region Properties
@@ -93,11 +96,13 @@ public class MinionController : MonoBehaviour, IEntityController
         {
             moveDir = Vector3.zero;
             speedMultiplierForDistance = 1;
+            _trailVFX.SetActive(false);
         }
         else
         {
             speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
             moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
+            _trailVFX.SetActive(true);
         }
         _movementModule.MoveDirection(transform, moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
     }

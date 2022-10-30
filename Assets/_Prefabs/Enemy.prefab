@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3674355432148704355
 Transform:
   m_ObjectHideFlags: 0
@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6121edc4e56f5b41936cd5e04884ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackName: 
+  attackType: 0
   _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
+  _animationController: {fileID: 4689527291302611113}
 --- !u!114 &4105982798667962945
 MonoBehaviour:
   m_ObjectHideFlags: 0
