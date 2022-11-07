@@ -1,11 +1,13 @@
 using System;
 using _Scripts.AnimationSystem;
+using _Scripts.AttackSystem.Attack;
+using _Scripts.AttackSystem.Interfaceses;
 using _Scripts.StatSystem;
 using UnityEngine;
 
 namespace _Scripts.AttackSystem
 {
-    public class AttackController : MonoBehaviour, IAttackController
+    public class PlayerAttackController : MonoBehaviour, IAttackController
     {
         #region Serialized Fields
 

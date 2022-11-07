@@ -868,6 +868,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1620284322, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: minionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620284322, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 189946, guid: 08fba7ace305c404da9c77c309850d22, type: 3}
     - target: {fileID: 1445717769363657295, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: minionMaster
       value: 

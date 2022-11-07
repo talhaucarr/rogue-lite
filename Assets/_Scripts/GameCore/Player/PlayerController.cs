@@ -30,7 +30,7 @@ namespace _Scripts.GameCore.Player
         
         private InputModule _inputModule;
         private HealthController _healthController;
-        private AttackController _attackController;
+        private PlayerAttackController _playerAttackController;
         private AnimationController _animationController;
 
         #endregion
@@ -43,13 +43,13 @@ namespace _Scripts.GameCore.Player
         private void Start()
         {
             _inputModule = GetComponent<InputModule>();
-            _attackController = GetComponent<AttackController>();
+            _playerAttackController = GetComponent<PlayerAttackController>();
             _healthController = GetComponent<HealthController>();
             _animationController = GetComponent<AnimationController>();
             
             _movementModule.Setup(_animationController);
             _healthController.Setup(_statSettings.Health);
-            _attackController.Setup(_statSettings);
+            _playerAttackController.Setup(_statSettings);
 
             _camera = CameraManager.Instance.Camera;
         }
@@ -60,7 +60,7 @@ namespace _Scripts.GameCore.Player
             LookMousePosition();
             if (_inputModule.IsAttacking)
             {
-                _attackController.Attack();
+                _playerAttackController.Attack();
             }
         }
         

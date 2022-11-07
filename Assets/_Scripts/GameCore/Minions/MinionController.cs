@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Scripts.AnimationSystem;
 using _Scripts.AttackSystem;
+using _Scripts.AttackSystem.Interfaceses;
 using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
@@ -26,7 +27,7 @@ public class MinionController : MonoBehaviour, IEntityController
     [SerializeField] private StatSettings _statSettings;
     [SerializeField] private MinionItem _minionItem;
     [SerializeField] private float masterStandRadius;
-    
+
     [BHeader("VFX")]
     [SerializeField] private GameObject _trailVFX;
     

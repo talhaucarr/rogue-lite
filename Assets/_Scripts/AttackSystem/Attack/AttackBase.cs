@@ -2,7 +2,7 @@ using System;
 using _Scripts.StatSystem;
 using UnityEngine;
 
-namespace _Scripts.AttackSystem
+namespace _Scripts.AttackSystem.Attack
 {
     public abstract class AttackBase : ScriptableObject
     {
@@ -35,7 +35,7 @@ namespace _Scripts.AttackSystem
     
     public struct AttackData
     {
-        public Transform myTransform;
+        public readonly Transform myTransform;
         
         public AttackData(Transform myTransform)
         {
