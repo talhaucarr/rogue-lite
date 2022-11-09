@@ -1449,9 +1449,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6832040344724344136}
-  - component: {fileID: 1445717769363657295}
   - component: {fileID: 3258682581922158978}
   - component: {fileID: 1620284322}
+  - component: {fileID: 1594283337}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -1476,24 +1476,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1445717769363657295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351293800625723627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minionMaster: {fileID: 0}
-  _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
-  _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
-  _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
-  masterStandRadius: 2.2
-  _trailVFX: {fileID: 5243512661824881033}
 --- !u!114 &3258682581922158978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,9 +1505,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackName: Root Attack
-  attackType: 1
   _attackBase: {fileID: 11400000, guid: 2bfaf14e5e743d8409eb926166598cae, type: 2}
   _animationController: {fileID: 3258682581922158978}
+--- !u!114 &1594283337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f088dfe85a6d234aaba98e1225c4ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionMaster: {fileID: 0}
+  minionType: 1
+  _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
+  _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
+  _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
+  masterStandRadius: 2
+  _trailVFX: {fileID: 5243512661824881033}
 --- !u!1001 &5243512661824983781
 PrefabInstance:
   m_ObjectHideFlags: 0

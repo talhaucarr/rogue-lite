@@ -1,20 +1,14 @@
-using System;
 using _Scripts.AnimationSystem;
-using _Scripts.AttackSystem.Attack;
-using _Scripts.AttackSystem.Interfaceses;
+using _Scripts.GameCore.AttackSystem.Interfaceses;
 using _Scripts.StatSystem;
 using UnityEngine;
 
-namespace _Scripts.AttackSystem
+namespace _Scripts.GameCore.AttackSystem
 {
-    public class PlayerAttackController : MonoBehaviour, IAttackController
+    public class PlayerAttackController : MonoBehaviour, IAttack
     {
         #region Serialized Fields
 
-        [BHeader("Attack Settings")]
-        
-        [SerializeField] private AttackBase _attackBase;
-        
         [BHeader("References")]
         [SerializeField] private AnimationController _animationController;
 
@@ -28,7 +22,6 @@ namespace _Scripts.AttackSystem
         #region Private Fields
 
         private StatSettings _statSettings;
-        private AttackData _attackData;
 
         private bool _canAttack = true;
         
@@ -55,20 +48,18 @@ namespace _Scripts.AttackSystem
         public void Setup(StatSettings statSettings)
         {
             _statSettings = statSettings;
-            _attackData = new AttackData(transform);
             _attackSpeed = statSettings.AttackSpeed;
-            _attackBase = Instantiate(_attackBase);
-            _attackBase.SetupOrUpdate(statSettings);
         }
 
-        public void Attack()
+        public bool Attack()
         {
-            if(!_attackBase.Attack(_attackData)) return;
-            if(!_canAttack) return;
+            //if(!_attackBase.Attack(_attackData)) return;
+            if(!_canAttack) return false;
 
             _canAttack = false;
             _attackTimer = 0;
             _animationController.AttackAnim();
+            return true;
         }
 
         #endregion

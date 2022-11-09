@@ -1,4 +1,4 @@
-﻿namespace _Scripts.AttackSystem.Attack
+﻿namespace _Scripts.AttackSystem.Enums
 {
     public enum MinionType
     {
