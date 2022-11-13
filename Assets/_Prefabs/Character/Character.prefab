@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4160437119467853301}
   - component: {fileID: 1910738181}
   - component: {fileID: 737976734162174752}
+  - component: {fileID: 7442648380208434438}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -70,6 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1799719447694279238}
   inventoryController: {fileID: 4160437119467853301}
+  playerBuffController: {fileID: 7442648380208434438}
 --- !u!114 &1799719447694279238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74a60bacfb2d21439035ee528fbf278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackBase: {fileID: 11400000, guid: f5ca05389251c054f8f0600e9b858dd3, type: 2}
   _animationController: {fileID: 6065874415435617094}
 --- !u!114 &6065874415435617094
 MonoBehaviour:
@@ -214,6 +215,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7442648380208434438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799719447694279240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4187ec651daff24595f6668e3824a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6354263065118684214
 GameObject:
   m_ObjectHideFlags: 0

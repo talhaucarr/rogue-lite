@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.AnimationSystem;
-using _Scripts.AttackSystem;
-using _Scripts.AttackSystem.Enums;
+using _Scripts.GameCore.AttackSystem.Enums;
 using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
@@ -80,7 +79,10 @@ public abstract class MinionController : MonoBehaviour, IEntityController
     
     #region Public Methods
     
-    
+    protected virtual void SetTrailVFX(bool active)
+    {
+        if(_trailVFX) _trailVFX.SetActive(active);
+    }
 
     #endregion
 
@@ -101,13 +103,13 @@ public abstract class MinionController : MonoBehaviour, IEntityController
         {
             moveDir = Vector3.zero;
             speedMultiplierForDistance = 1;
-            _trailVFX.SetActive(false);
+            SetTrailVFX(false);
         }
         else
         {
             speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
             moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
-            _trailVFX.SetActive(true);
+            SetTrailVFX(true);
         }
         _movementModule.MoveDirection(transform, moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
     }
