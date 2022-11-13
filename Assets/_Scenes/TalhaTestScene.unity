@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 1594283337, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: masterStandRadius
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_Name
       value: Minion

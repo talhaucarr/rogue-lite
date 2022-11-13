@@ -68,7 +68,7 @@ MonoBehaviour:
   _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
   _statSettings: {fileID: 11400000, guid: 9c3644b68fade0341a7b2ff4385a4e17, type: 2}
   _minionItem: {fileID: 11400000, guid: 81ff2bac1c42fc149a17e64ceecc8d4d, type: 2}
-  masterStandRadius: 1.5
+  masterStandRadius: 3
   _trailVFX: {fileID: 0}
 --- !u!114 &2964069267649487034
 MonoBehaviour:
@@ -1700,15 +1700,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2361259873805617658, guid: 509cc0139dddd3e4fbe729e27b8f0dc8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2361259873805617658, guid: 509cc0139dddd3e4fbe729e27b8f0dc8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2361259873805617658, guid: 509cc0139dddd3e4fbe729e27b8f0dc8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2361259873805617658, guid: 509cc0139dddd3e4fbe729e27b8f0dc8, type: 3}
       propertyPath: m_LocalPosition.x
