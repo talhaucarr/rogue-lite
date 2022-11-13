@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0415d615b1d1d8049b8217cb038645f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffVFX: {fileID: 0}
+  buffVFX: {fileID: 6890061219185036705, guid: 6ba4f7398bb39474cb94c5a39f5f88c2, type: 3}
 --- !u!1001 &993851367240017962
 PrefabInstance:
   m_ObjectHideFlags: 0

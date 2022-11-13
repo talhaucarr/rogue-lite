@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1199042055977772166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4296111410863104127}
+  m_Layer: 0
+  m_Name: VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4296111410863104127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199042055977772166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1799719447694279239}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799719447694279240
 GameObject:
   m_ObjectHideFlags: 0
@@ -18,6 +49,7 @@ GameObject:
   - component: {fileID: 1910738181}
   - component: {fileID: 737976734162174752}
   - component: {fileID: 7442648380208434438}
+  - component: {fileID: 614282733528449923}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -39,7 +71,7 @@ Transform:
   m_Children:
   - {fileID: 1799719447821625207}
   - {fileID: 2719082369017066773}
-  - {fileID: 5546447576796543828}
+  - {fileID: 4296111410863104127}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72,6 +104,7 @@ MonoBehaviour:
   playerController: {fileID: 1799719447694279238}
   inventoryController: {fileID: 4160437119467853301}
   playerBuffController: {fileID: 7442648380208434438}
+  playerVFXController: {fileID: 614282733528449923}
 --- !u!114 &1799719447694279238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,66 +260,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4187ec651daff24595f6668e3824a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6354263065118684214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5546447576796543828}
-  - component: {fileID: 4576712249350461491}
-  m_Layer: 0
-  m_Name: EventListeners
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5546447576796543828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354263065118684214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1799719447694279239}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4576712249350461491
+--- !u!114 &614282733528449923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354263065118684214}
+  m_GameObject: {fileID: 1799719447694279240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44fca72ec19a40e41ab8a6b69ca43159, type: 3}
+  m_Script: {fileID: 11500000, guid: fb96ef6cd71ab0f4e93a779544695eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a31bf539c69a82a4b90f77c58055d98f, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4160437119467853301}
-        m_TargetAssemblyTypeName: _Scripts.InventorySystem.InventoryController, InventorySystem
-        m_MethodName: AddCurrency
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _VFXParent: {fileID: 4296111410863104127}
+  _VFXList: []
 --- !u!1001 &974247398569982826
 PrefabInstance:
   m_ObjectHideFlags: 0

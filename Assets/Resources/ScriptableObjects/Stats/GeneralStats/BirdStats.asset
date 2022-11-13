@@ -17,4 +17,5 @@ MonoBehaviour:
   attackRange: 5
   attackSpeed: 7
   movementSpeed: 0.5
-  extraStats: []
+  extraStats:
+  - {fileID: 11400000, guid: 30aaa5b64b776f245928c3a32a44ec70, type: 2}

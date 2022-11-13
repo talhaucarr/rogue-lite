@@ -859,22 +859,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4737743980940835044, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
-      propertyPath: _minionItem
+    - target: {fileID: 2964069267649487034, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
+      propertyPath: buffVFX
       value: 
-      objectReference: {fileID: 11400000, guid: 81ff2bac1c42fc149a17e64ceecc8d4d, type: 2}
+      objectReference: {fileID: 6890061219185036705, guid: 6ba4f7398bb39474cb94c5a39f5f88c2, type: 3}
     - target: {fileID: 4737743980940835044, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
-    - target: {fileID: 4737743980940835044, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
-      propertyPath: _statSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: 9c3644b68fade0341a7b2ff4385a4e17, type: 2}
-    - target: {fileID: 4737743980940835044, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
-      propertyPath: masterStandRadius
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
 --- !u!1001 &1799719447400173837

@@ -29,7 +29,8 @@ namespace _Scripts.GameCore.AttackSystem.Buff
         
         private void CreateBuffVFX()
         {
-         
+            if(buffVFX)
+                PlayerManager.Instance.PlayerVFXController.CreateVFX(buffVFX);
         }
     }
     
