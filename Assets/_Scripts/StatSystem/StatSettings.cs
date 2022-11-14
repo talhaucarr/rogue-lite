@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,47 +7,53 @@ namespace _Scripts.StatSystem
     [CreateAssetMenu(fileName = "New Stat", menuName = "ScriptableObjects/StatSystem/Stat")]
     public class StatSettings : ScriptableObject
     {
-        #region Serialized Fields
-
-        [Header("General Stats")]
-        [SerializeField] private float damage;
-        [SerializeField] private float health;
-        [SerializeField] private float attackRange;
-        [SerializeField] private float attackSpeed;
-        [SerializeField] private float movementSpeed;
-        
         [Header("Stat Definitions")]
-        [SerializeField] private List<Stat> extraStats;
+        [SerializeField] private StatToFloatDictionary stats;
 
-        #endregion
+        [NonSerialized]
+        private StatToFloatDictionary _runtimeStats = new StatToFloatDictionary();
 
-        #region Properties
-
-        public float Damage => damage;
-        public float Health => health;
-        public float AttackRange => attackRange;
-        public float AttackSpeed => attackSpeed;
-        public float MovementSpeed => movementSpeed;
-        public List<Stat> ExtraStats => extraStats;
-
-        #endregion
-
-        #region Private Methods
-
-        public Stat GetStat(StatKey key)
+        [SerializeField] private StatToFloatDictionary StatMonitor; 
+        
+        private StatToFloatDictionary StatsDictionary
         {
-            foreach (var stat in extraStats)
+            get
             {
-                if (stat.StatKey == key)
+                if (_runtimeStats.Count == 0)
                 {
-                    return stat;
+                    _runtimeStats.CopyFrom(stats);
+                    StatMonitor = _runtimeStats;
                 }
+                return _runtimeStats;
             }
-            Debug.LogError("Cant find stat!");
-            return null;
         }
 
-        #endregion
-        
+        public float GetStat(StatKey key)
+        {
+            if (StatsDictionary.TryGetValue(key, out var value))
+                return value;
+            Debug.LogWarning(name + $" cant find stat: '{key}'");
+            return -1;
+        }
+
+        public bool TryAddStat(StatKey statKey, float value)
+        {
+            return StatsDictionary.TryAdd(statKey, value);
+        }
+
+        public bool HasStat(StatKey statKey)
+        {
+            return StatsDictionary.ContainsKey(statKey);
+        }
+
+        public void MultiplyStat(StatKey statKey, float multiplier)
+        {
+            #if UNITY_EDITOR
+            if(!StatsDictionary.ContainsKey(statKey))
+                Debug.LogWarning(name + $" tried Multipling stat '{statKey}' that doesnt exist !");
+            #endif
+            
+            StatsDictionary[statKey] *= multiplier;
+        }
     }
 }

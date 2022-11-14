@@ -47,7 +47,7 @@ namespace _Scripts.GameCore.Enemies
             _animationController = GetComponent<AnimationController>();
             _healthController = GetComponent<HealthController>();
         
-            _healthController.Setup(_statSettings.Health);
+            _healthController.Setup(_statSettings.GetStat(StatKey.Health));
             _healthController.onDeath.AddListener(OnDeath);
             _movementModule.Setup(_animationController);
             _attack.Setup(_statSettings);
@@ -85,7 +85,7 @@ namespace _Scripts.GameCore.Enemies
         {
             Vector3 distanceDif = PlayerManager.Instance.transform.position - transform.position;
             Vector3 moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;
-            _movementModule.MoveDirection(transform, moveDir, _statSettings.MovementSpeed);
+            _movementModule.MoveDirection(transform, moveDir, _statSettings.GetStat(StatKey.MoveSpeed));
         }
 
         #endregion

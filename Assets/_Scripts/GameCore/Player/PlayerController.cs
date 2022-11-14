@@ -48,7 +48,7 @@ namespace _Scripts.GameCore.Player
             _animationController = GetComponent<AnimationController>();
             
             _movementModule.Setup(_animationController);
-            _healthController.Setup(_statSettings.Health);
+            _healthController.Setup(_statSettings.GetStat(StatKey.Health));
             _playerAttackController.Setup(_statSettings);
 
             _camera = CameraManager.Instance.Camera;
@@ -105,7 +105,7 @@ namespace _Scripts.GameCore.Player
 
             var movement = forwardMovement + rightMovement;
             movement.Normalize();
-            _movementModule.MoveDirection(transform, new Vector2(movement.x, movement.z), _statSettings.MovementSpeed);
+            _movementModule.MoveDirection(transform, new Vector2(movement.x, movement.z), _statSettings.GetStat(StatKey.MoveSpeed));
         }
 
         #endregion

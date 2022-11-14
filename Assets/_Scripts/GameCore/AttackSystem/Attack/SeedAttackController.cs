@@ -20,7 +20,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
         public void Setup(StatSettings statSettings)
         {
             _statSettings = statSettings;
-            _attackSpeed = statSettings.AttackSpeed;
+            _attackSpeed = statSettings.GetStat(StatKey.AttackSpeed);
         }
 
         private void FixedUpdate()
@@ -37,9 +37,9 @@ namespace _Scripts.GameCore.AttackSystem.Attack
 
         public bool Attack()
         {
-            if(!EnemyManager.Instance.GetClosestEnemyInRange(transform.position, _statSettings.AttackRange, out var enemy)) return false;
+            if(!EnemyManager.Instance.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
             if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
-            damagable.DealDamage(_statSettings.Damage);
+            damagable.DealDamage(_statSettings.GetStat(StatKey.Damage));
             return true;
         }
     }

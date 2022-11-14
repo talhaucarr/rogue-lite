@@ -111,7 +111,7 @@ public abstract class MinionController : MonoBehaviour, IEntityController
             moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
             SetTrailVFX(true);
         }
-        _movementModule.MoveDirection(transform, moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
+        _movementModule.MoveDirection(transform, moveDir, _statSettings.GetStat(StatKey.MoveSpeed) * speedMultiplierForDistance);
     }
 
     #endregion

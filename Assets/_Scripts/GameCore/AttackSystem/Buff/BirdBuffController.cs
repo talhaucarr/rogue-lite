@@ -22,7 +22,7 @@ namespace _Scripts.GameCore.AttackSystem.Buff
 
         public void AddBuff()
         {
-            BirdBuff buff = new BirdBuff(_statSettings.GetStat(StatKey.BirdLightningDamage).StatValue);
+            BirdBuff buff = new BirdBuff(_statSettings.GetStat(StatKey.Damage));
             PlayerManager.Instance.PlayerBuffController.AddBuff(buff);
             CreateBuffVFX();
         }
@@ -44,12 +44,13 @@ namespace _Scripts.GameCore.AttackSystem.Buff
 
         public override void ApplyBuff()
         {
+            PlayerManager.Instance.PlayerController.StatSettings.MultiplyStat(StatKey.MoveSpeed, 2);
             Debug.Log($"Apply buff VFX");
         }
 
         public override void RemoveBuff()
         {
-            throw new System.NotImplementedException();
+            PlayerManager.Instance.PlayerController.StatSettings.MultiplyStat(StatKey.MoveSpeed, .5f);
         }
     }
 }

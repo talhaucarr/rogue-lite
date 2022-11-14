@@ -48,7 +48,7 @@ namespace _Scripts.GameCore.AttackSystem
         public void Setup(StatSettings statSettings)
         {
             _statSettings = statSettings;
-            _attackSpeed = statSettings.AttackSpeed;
+            _attackSpeed = statSettings.GetStat(StatKey.AttackSpeed);
         }
 
         public bool Attack()

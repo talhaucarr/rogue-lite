@@ -2,32 +2,28 @@ using UnityEngine;
 
 namespace _Scripts.StatSystem
 {
-    [CreateAssetMenu(fileName = "Stat Definition", menuName = "ScriptableObjects/StatSystem/StatDefinition")]
-    public class Stat : ScriptableObject
+    public static class StatHelper
     {
-        [Header("General")]
-        [SerializeField] private StatKey statKey;
-        [SerializeField] private float statValue;
+        public static string GetStatDisplayName(StatKey statKey)
+        {
+            return statKey.ToString();
+        }
         
-        [Header("Display")]
-        [SerializeField] private string displayName;
-        [SerializeField] private string description;
-
-        public StatKey StatKey => statKey;
-        public float StatValue => statValue;
-        public string DisplayName => displayName;
-        public string Description => description;
+        public static string GetStatDescription(StatKey statKey)
+        {
+            return statKey + " is a strong stat !";
+        }
     }
 
     public enum StatKey
     {
-        // player stat keys 1-100
-        PlayerDashDistance = 1,
-        PlayerDashSpeed = 2,
-
-        // seedling minion 101-200
-        SeedlingRootDuration = 101,
-        BirdLightningDamage = 102,
+        Health = 1,
+        Damage = 2,
+        MoveSpeed = 3,
+        AttackSpeed = 4,
+        AttackRange = 5,
         
+        BuffDuration = 101,
+        EffectDuration = 102,
     }
 }
