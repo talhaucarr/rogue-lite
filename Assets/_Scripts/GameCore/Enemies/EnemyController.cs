@@ -1,5 +1,5 @@
 using _Scripts.AnimationSystem;
-using _Scripts.AttackSystem.Interfaceses;
+using _Scripts.GameCore.AttackSystem.Interfaceses;
 using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
@@ -29,7 +29,7 @@ namespace _Scripts.GameCore.Enemies
 
         #region Private Fields
     
-        private IAttackController _attackController;
+        private IAttack _attack;
         private HealthController _healthController;
         private AnimationController _animationController;
 
@@ -43,14 +43,14 @@ namespace _Scripts.GameCore.Enemies
         private void Start()
         {
             EnemyManager.Instance.RegisterEnemy(this);
-            _attackController = GetComponent<IAttackController>();
+            _attack = GetComponent<IAttack>();
             _animationController = GetComponent<AnimationController>();
             _healthController = GetComponent<HealthController>();
         
             _healthController.Setup(_statSettings.Health);
             _healthController.onDeath.AddListener(OnDeath);
             _movementModule.Setup(_animationController);
-            _attackController.Setup(_statSettings);
+            _attack.Setup(_statSettings);
 
             _camera = CameraManager.Instance.Camera;
         }

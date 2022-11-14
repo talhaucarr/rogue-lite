@@ -27,6 +27,7 @@ namespace _Scripts.StatSystem
 
         // seedling minion 101-200
         SeedlingRootDuration = 101,
+        BirdLightningDamage = 102,
         
     }
 }

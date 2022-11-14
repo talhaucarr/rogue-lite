@@ -9,7 +9,11 @@ namespace _Scripts.GameCore.Player
         [BHeader("Controllers")]
         [SerializeField] private PlayerController playerController;
         [SerializeField] private InventoryController inventoryController;
-        
+        [SerializeField] private PlayerBuffController playerBuffController;
+        [SerializeField] private PlayerVFXController playerVFXController;
+            
+        public PlayerVFXController PlayerVFXController => playerVFXController;
+        public PlayerBuffController PlayerBuffController => playerBuffController;
         public PlayerController PlayerController => playerController;
         public InventoryController InventoryController => inventoryController;
     }

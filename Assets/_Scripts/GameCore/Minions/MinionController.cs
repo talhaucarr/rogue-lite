@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.AnimationSystem;
-using _Scripts.AttackSystem;
-using _Scripts.AttackSystem.Interfaceses;
+using _Scripts.GameCore.AttackSystem.Enums;
 using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
@@ -12,21 +12,22 @@ using _Scripts.MovementSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
 
-public class MinionController : MonoBehaviour, IEntityController
+public abstract class MinionController : MonoBehaviour, IEntityController
 {
 
     #region Serialized Fields
     
     [BHeader("Master")]
     [SerializeField] private PlayerController minionMaster;
+    [SerializeField] private MinionType minionType;
     
     [BHeader("Modules")]
     [SerializeField] private MinionMovementModule _movementModule;
     
     [BHeader("General")]
-    [SerializeField] private StatSettings _statSettings;
-    [SerializeField] private MinionItem _minionItem;
-    [SerializeField] private float masterStandRadius;
+    [SerializeField] protected StatSettings _statSettings;
+    [SerializeField] protected MinionItem _minionItem;
+    [SerializeField] protected float masterStandRadius;
 
     [BHeader("VFX")]
     [SerializeField] private GameObject _trailVFX;
@@ -42,8 +43,7 @@ public class MinionController : MonoBehaviour, IEntityController
     #endregion
 
     #region Private Fields
-    
-    private IAttackController _attackController;
+
     private AnimationController _animationController;
 
     #endregion
@@ -55,15 +55,12 @@ public class MinionController : MonoBehaviour, IEntityController
 
     private void Start()
     {
-        _attackController = GetComponent<IAttackController>();
+        CreateAttackByType();
         _animationController = GetComponent<AnimationController>();
         
         _movementModule.Setup(_animationController);
-        _attackController.Setup(_statSettings);
 
         _camera = CameraManager.Instance.Camera;
-        
-        //PlayerManager.Instance.GetComponent<InventoryController>().AddMinionToInventory(_minionItem);
     }
 
     private void Update()
@@ -73,10 +70,19 @@ public class MinionController : MonoBehaviour, IEntityController
     }
     
     #endregion
+
+    #region Abstract Methods
+
+    protected abstract void CreateAttackByType();
+
+    #endregion
     
     #region Public Methods
     
-    
+    protected virtual void SetTrailVFX(bool active)
+    {
+        if(_trailVFX) _trailVFX.SetActive(active);
+    }
 
     #endregion
 
@@ -97,13 +103,13 @@ public class MinionController : MonoBehaviour, IEntityController
         {
             moveDir = Vector3.zero;
             speedMultiplierForDistance = 1;
-            _trailVFX.SetActive(false);
+            SetTrailVFX(false);
         }
         else
         {
             speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
             moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;   
-            _trailVFX.SetActive(true);
+            SetTrailVFX(true);
         }
         _movementModule.MoveDirection(transform, moveDir, _statSettings.MovementSpeed * speedMultiplierForDistance);
     }

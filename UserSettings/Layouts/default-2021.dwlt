@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 138
+  controlID: 60
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 130
+  controlID: 29
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -358,7 +358,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -31930
+  m_LastSelectedObjectID: -43182
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -549,36 +549,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scripts/AttackSystem/Attack
+    - Assets/Plugins/Monsters Ultimate Pack 01 Cute Series/Bird Cute Series/FBX
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scripts/AttackSystem/Attack
+  - Assets/Plugins/Monsters Ultimate Pack 01 Cute Series/Bird Cute Series/FBX
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\talla\Documents\GitHub\rogue-lite
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 244}
-    m_SelectedIDs: 70c80000
-    m_LastClickedID: 51312
-    m_ExpandedIDs: 00000000b2770000b6770000b8770000ba770000bc770000be770000c2770000c4770000c6770000c8770000ca770000cc770000ce770000d0770000d2770000d4770000d8770000ac790000b8790000f4930000f89300001c940000209400002694000012a900003ac8000000ca9a3b
+    scrollPos: {x: 0, y: 660}
+    m_SelectedIDs: 4e7b0000
+    m_LastClickedID: 31566
+    m_ExpandedIDs: 00000000ca780000cc780000ce780000d0780000d2780000d4780000d6780000d8780000da780000dc780000de780000e0780000e2780000e4780000e6780000e8780000ea780000ec780000ee780000f0780000f2780000f4780000f6780000f8780000fa780000fc780000fe78000000790000027900000479000006790000087900000a7900000c790000347b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: AnimationSystem
-      m_OriginalName: AnimationSystem
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 51256
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 7}
     m_SearchString: 
@@ -592,7 +592,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b2770000b4770000b6770000b8770000ba770000bc770000be770000c0770000c2770000c4770000c6770000c8770000ca770000cc770000ce770000d0770000d2770000d4770000d6770000d8770000
+    m_ExpandedIDs: 00000000ca780000cc780000ce780000d0780000d2780000d4780000d6780000d8780000da780000dc780000de780000e0780000e2780000e4780000e6780000e8780000ea780000ec780000ee780000f0780000f2780000f4780000f6780000f8780000fa780000fc780000fe78000000790000027900000479000006790000087900000a7900000c790000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000aa3f00002ecb00008e9500000c9500006c950000ec940000ba7a0000f8aa0000c0af000024ab000016ab000006ab0000eaaa0000daab000004d50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -722,21 +722,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9c84ffff02a1ffffaea7ffff44afffff42b3ffff56c0ffffc8daffff36dfffff14e1ffff2cf4ffffe8faffff
+      m_ExpandedIDs: e8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: LiquidMissileAcid(Clone)
-        m_OriginalName: LiquidMissileAcid(Clone)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -55110
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -971,9 +971,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.336583, y: 13.462082, z: -15.325141}
+    m_Target: {x: -2.8272836, y: 2.5869567, z: -1.447802}
     speed: 2
-    m_Value: {x: 2.336583, y: 13.462082, z: -15.325141}
+    m_Value: {x: -2.8272836, y: 2.5869567, z: -1.447802}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1020,9 +1020,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.17902912, y: -0.057524122, z: 0.010487009, w: 0.9821131}
+    m_Target: {x: 0.16386251, y: 0.5256521, z: -0.10398725, w: 0.8282782}
     speed: 2
-    m_Value: {x: 0.17902763, y: -0.05752364, z: 0.010486921, w: 0.98210496}
+    m_Value: {x: 0.16386251, y: 0.52565217, z: -0.10398725, w: 0.82827824}
   m_Size:
     m_Target: 0.000016797938
     speed: 2
