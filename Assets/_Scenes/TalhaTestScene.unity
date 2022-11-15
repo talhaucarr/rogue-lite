@@ -396,14 +396,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2964069267649487034, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
-      propertyPath: buffVFX
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737743980940835044, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
-      propertyPath: _trailVFX
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4737743980940835044, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
       propertyPath: minionMaster
       value: 
@@ -884,6 +876,10 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 1620284322, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: attackPrefab
+      value: 
+      objectReference: {fileID: 4504205137836699972, guid: 66dfbfab7b1d41f8b94e1b37c826d0ec, type: 3}
     - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_Name
       value: SeedMinion

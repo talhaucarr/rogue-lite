@@ -30,7 +30,7 @@ namespace _Scripts.GameCore.AttackSystem.Buff
         private void CreateBuffVFX()
         {
             if(buffVFX)
-                PlayerManager.Instance.PlayerVFXController.CreateVFX(buffVFX);
+                PlayerManager.Instance.PlayerVFXController.CreateVFX(buffVFX, new Vector3(0.7f, 0.7f, 0.7f),isAura:true);
         }
     }
     

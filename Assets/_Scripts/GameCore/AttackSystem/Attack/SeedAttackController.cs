@@ -10,6 +10,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
     {
         [BHeader("Attack Type")]
         [SerializeField] private string attackName;
+        [SerializeField] private GameObject attackPrefab;
 
         [Space(20)][BHeader("References")]
         [SerializeField] private AnimationController _animationController;
@@ -40,6 +41,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
             if(!EnemyManager.Instance.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
             if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
             damagable.DealDamage(_statSettings.GetStat(StatKey.Damage));
+            if(attackPrefab) Instantiate(attackPrefab, enemy.Transform.position, Quaternion.identity);
             return true;
         }
     }

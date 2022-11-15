@@ -18,10 +18,11 @@ namespace _Scripts.GameCore.Player
             _VFXList.Remove(vfx);
         }
         
-        public void CreateVFX(GameObject vfx, bool isAura = false)
+        public void CreateVFX(GameObject vfx, Vector3 scale ,bool isAura = false)
         {
             var playerTransform = PlayerManager.Instance.transform;
             var vfxInstance = Instantiate(vfx, playerTransform.position, playerTransform.rotation);
+            vfxInstance.transform.localScale = scale;
             if (isAura)
             {
                 vfxInstance.transform.SetParent(_VFXParent);

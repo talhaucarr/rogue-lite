@@ -68,7 +68,6 @@ MonoBehaviour:
   _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
   _statSettings: {fileID: 11400000, guid: 9c3644b68fade0341a7b2ff4385a4e17, type: 2}
   _minionItem: {fileID: 11400000, guid: 81ff2bac1c42fc149a17e64ceecc8d4d, type: 2}
-  masterStandRadius: 3
   _trailVFX: {fileID: 0}
 --- !u!114 &2964069267649487034
 MonoBehaviour:
@@ -82,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0415d615b1d1d8049b8217cb038645f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffVFX: {fileID: 6890061219185036705, guid: 6ba4f7398bb39474cb94c5a39f5f88c2, type: 3}
+  buffVFX: {fileID: 1146985597798048, guid: 31ccb42e93d278e4fa39ae0773fae1b5, type: 3}
 --- !u!1001 &993851367240017962
 PrefabInstance:
   m_ObjectHideFlags: 0
