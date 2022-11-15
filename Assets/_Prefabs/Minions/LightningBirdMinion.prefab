@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4737743980940835044}
   - component: {fileID: 2964069267649487034}
   m_Layer: 0
-  m_Name: BirdMinion
+  m_Name: LightningBirdMinion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

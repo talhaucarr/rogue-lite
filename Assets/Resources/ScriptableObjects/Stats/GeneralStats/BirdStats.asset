@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee147f2447756449b49ca001bb229ed, type: 3}
   m_Name: BirdStats
   m_EditorClassIdentifier: 
-  damage: 20
-  health: 100
-  attackRange: 5
-  attackSpeed: 7
-  movementSpeed: 0.5
-  extraStats:
-  - {fileID: 11400000, guid: 30aaa5b64b776f245928c3a32a44ec70, type: 2}
+  stats:
+    m_keys: 010000000300000006000000
+    m_values:
+    - 100
+    - 0.2
+    - 2
+  StatMonitor:
+    m_keys: 010000000300000006000000
+    m_values:
+    - 100
+    - 1
+    - 2

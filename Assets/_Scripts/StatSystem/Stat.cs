@@ -22,6 +22,7 @@ namespace _Scripts.StatSystem
         MoveSpeed = 3,
         AttackSpeed = 4,
         AttackRange = 5,
+        LightningBirdBuffMultiplier = 6,
         
         BuffDuration = 101,
         EffectDuration = 102,

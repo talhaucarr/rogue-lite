@@ -32,7 +32,7 @@ namespace _Scripts.StatSystem
         {
             if (StatsDictionary.TryGetValue(key, out var value))
                 return value;
-            Debug.LogWarning(name + $" cant find stat: '{key}'");
+            Debug.LogError(name + $" cant find stat: '{key}'");
             return -1;
         }
 
@@ -50,10 +50,40 @@ namespace _Scripts.StatSystem
         {
             #if UNITY_EDITOR
             if(!StatsDictionary.ContainsKey(statKey))
-                Debug.LogWarning(name + $" tried Multipling stat '{statKey}' that doesnt exist !");
+                Debug.LogError(name + $" tried Multipling stat '{statKey}' that doesnt exist !");
             #endif
             
             StatsDictionary[statKey] *= multiplier;
+        }
+        
+        public void DivideStat(StatKey statKey, float divisor)
+        {
+            #if UNITY_EDITOR
+            if(!StatsDictionary.ContainsKey(statKey))
+                Debug.LogError(name + $" tried Dividing stat '{statKey}' that doesnt exist !");
+            #endif
+            
+            StatsDictionary[statKey] /= divisor;
+        }
+        
+        public void PercentStat(StatKey statKey, float percent)
+        {
+            #if UNITY_EDITOR
+            if(!StatsDictionary.ContainsKey(statKey))
+                Debug.LogError(name + $" tried Percenting stat '{statKey}' that doesnt exist !");
+            #endif
+            
+            StatsDictionary[statKey] *= percent / 100;
+        }
+        
+        public void RemovePercentStat(StatKey statKey, float percent)
+        {
+            #if UNITY_EDITOR
+            if(!StatsDictionary.ContainsKey(statKey))
+                Debug.LogError(name + $" tried Removing Percent stat '{statKey}' that doesnt exist !");
+            #endif
+            
+            StatsDictionary[statKey] /= percent / 100;
         }
     }
 }

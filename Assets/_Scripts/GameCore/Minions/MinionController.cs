@@ -27,7 +27,6 @@ public abstract class MinionController : MonoBehaviour, IEntityController
     [BHeader("General")]
     [SerializeField] protected StatSettings _statSettings;
     [SerializeField] protected MinionItem _minionItem;
-    [SerializeField] protected float masterStandRadius;
 
     [BHeader("VFX")]
     [SerializeField] private GameObject _trailVFX;
@@ -45,6 +44,7 @@ public abstract class MinionController : MonoBehaviour, IEntityController
     #region Private Fields
 
     private AnimationController _animationController;
+    private float masterStandRadius = 1.2f;
 
     #endregion
 

@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee147f2447756449b49ca001bb229ed, type: 3}
   m_Name: EnemyStats
   m_EditorClassIdentifier: 
-  damage: 10
-  health: 100
-  attackRange: 1
-  attackSpeed: 10
-  movementSpeed: 6
-  extraStats:
-  - {fileID: 11400000, guid: c06c3a66e31cf52418c6dbd8dba85d17, type: 2}
+  stats:
+    m_keys: 0100000002000000030000000500000004000000
+    m_values:
+    - 100
+    - 50
+    - 5
+    - 20
+    - 15
+  StatMonitor:
+    m_keys: 0100000002000000030000000500000004000000
+    m_values:
+    - 100
+    - 50
+    - 0.1
+    - 20
+    - 15
