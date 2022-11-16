@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shadow
+  m_Controller: {fileID: 9100000, guid: 45fd028980475dd41ae8855b75273271, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 08a9f8b0015dc1d4d8cd533c53fb6194, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5b8e73ff16c689c48aa79eba70a4d4d8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 633bb898f790fb84d95d9e5e44aef238, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: c7acdde342a54e54391529c76fefc303, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dce3fdd98de297f4f9849c15912e999e, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 5de580a5af84c704090c949dce0ed767, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b7addf4f2e200a749b619e31d3f0bec2, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a70641a0977459540a05b043ef6ddd2f, type: 2}

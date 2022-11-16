@@ -1458,7 +1458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6832040344724344136
 Transform:
   m_ObjectHideFlags: 0
@@ -1505,6 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackName: Root Attack
+  attackPrefab: {fileID: 4504205137836699972, guid: 66dfbfab7b1d41f8b94e1b37c826d0ec, type: 3}
   _animationController: {fileID: 3258682581922158978}
 --- !u!114 &1594283337
 MonoBehaviour:
@@ -1523,7 +1524,6 @@ MonoBehaviour:
   _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
   _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
-  masterStandRadius: 2
   _trailVFX: {fileID: 5243512661824881033}
 --- !u!1001 &5243512661824983781
 PrefabInstance:

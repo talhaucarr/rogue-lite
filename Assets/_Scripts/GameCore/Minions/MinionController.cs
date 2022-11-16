@@ -20,8 +20,9 @@ public abstract class MinionController : MonoBehaviour, IEntityController
     [BHeader("Master")]
     [SerializeField] private PlayerController minionMaster;
     [SerializeField] private MinionType minionType;
-    
-    [BHeader("Modules")]
+
+    [BHeader("Modules")] 
+    [SerializeField] private AnimationController _animationController;
     [SerializeField] private MinionMovementModule _movementModule;
     
     [BHeader("General")]
@@ -42,8 +43,7 @@ public abstract class MinionController : MonoBehaviour, IEntityController
     #endregion
 
     #region Private Fields
-
-    private AnimationController _animationController;
+    
     private float masterStandRadius = 1.2f;
 
     #endregion
@@ -56,8 +56,7 @@ public abstract class MinionController : MonoBehaviour, IEntityController
     private void Start()
     {
         CreateAttackByType();
-        _animationController = GetComponent<AnimationController>();
-        
+
         _movementModule.Setup(_animationController);
 
         _camera = CameraManager.Instance.Camera;
