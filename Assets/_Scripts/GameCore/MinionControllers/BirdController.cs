@@ -1,4 +1,5 @@
 using _Scripts.GameCore.AttackSystem.Interfaceses;
+using _Scripts.GameCore.Minions;
 using UnityEngine;
 
 namespace _Scripts.GameCore.MinionControllers

@@ -1,14 +1,15 @@
 using _Scripts.AnimationSystem;
 using _Scripts.MovementSystem;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace _Scripts.GameCore.Minions
 {
-    [CreateAssetMenu(fileName = "MinionMovementModule", menuName = "ScriptableObjects/Modules/Minion Movement")]
-    public class MinionMovementModule : ScriptableObject, IMovementModule
+    public class MinionMovementModule : MonoBehaviour
     {
         #region Private Variables
-    
+        [SerializeField] private NavMeshAgent _navMeshAgent;
+        
         private AnimationController _animationController;
 
         #endregion
@@ -28,23 +29,18 @@ namespace _Scripts.GameCore.Minions
             _animationController = animationController;
         }
 
-        public void MoveDirection(Transform transform, Vector3 direction, float movementSpeed)
+        public void MoveDirection(Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
                 _animationController.SetWalking(false, 1);
                 return;
             }
-
+            Debug.Log($"aga");
             _animationController.SetWalking(true, movementSpeed);
-            var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
-            
-            transform.position += (moveDirection * Time.deltaTime);
-        }
+            var moveDirection = new Vector3(direction.x, 0, direction.y);
 
-        public void MovePosition(Transform transform, Vector3 position, float movementSpeed)
-        {
-            //
+            _navMeshAgent.SetDestination(moveDirection);
         }
 
         #endregion
