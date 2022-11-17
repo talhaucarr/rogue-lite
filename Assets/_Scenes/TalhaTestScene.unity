@@ -128,6 +128,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5925831047140543840, guid: 388fafee16e03164392a908e664ef866, type: 3}
   m_PrefabInstance: {fileID: 1205219982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &364356082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3749795058522606016, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
+  m_PrefabInstance: {fileID: 7633402400310723680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &364356088
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364356082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.72
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!1 &400746824
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146531517033841972, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 359313605875912855, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
       propertyPath: m_RootOrder
@@ -1867,6 +1886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShadowMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 6298744959045131905, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6298744959045131906, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
       propertyPath: minionMaster
       value: 
@@ -1991,7 +2014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3749795058522606016, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6052440245005651457, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2705,5 +2728,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.09347039
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7834638993253435125, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7795069816858804873, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}

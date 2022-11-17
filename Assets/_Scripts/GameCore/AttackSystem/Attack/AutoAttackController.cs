@@ -6,17 +6,18 @@ using UnityEngine;
 
 namespace _Scripts.GameCore.AttackSystem.Attack
 {
-    public class AutoAttackController : MonoBehaviour, IAttack
+    public abstract class AutoAttackController : MonoBehaviour, IAttack
     {
         [BHeader("Attack Type")]
-        [SerializeField] private string attackName;
-        [SerializeField] private GameObject attackPrefab;
+        [SerializeField] protected string attackName;
+        [SerializeField] protected GameObject attackPrefab;
 
         [Space(20)][BHeader("References")]
         [SerializeField] private AnimationController _animationController;
-        private StatSettings _statSettings;
-        private float _attackTimer = 0;
-        private float _attackSpeed; // duration = 20 / 3 + attackSpeed
+        
+        protected StatSettings _statSettings;
+        protected float _attackTimer = 0;
+        protected float _attackSpeed; // duration = 20 / 3 + attackSpeed
 
         public void Setup(StatSettings statSettings)
         {
@@ -36,13 +37,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
             }
         }
 
-        public bool Attack()
-        {
-            if(!EnemyManager.Instance.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
-            if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
-            damagable.DealDamage(_statSettings.GetStat(StatKey.Damage));
-            if(attackPrefab) Instantiate(attackPrefab, enemy.Transform.position, Quaternion.identity);
-            return true;
-        }
+        public abstract bool Attack();
+
     }
 }

@@ -44,7 +44,7 @@ public abstract class MinionController : MonoBehaviour, IEntityController
 
     #region Private Fields
     
-    private float masterStandRadius = 1.2f;
+    private float masterStandRadius = 1.7f;
 
     #endregion
 

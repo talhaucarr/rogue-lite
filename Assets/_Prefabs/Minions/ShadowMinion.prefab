@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5881067082936453922}
   - component: {fileID: 2482853041095319528}
-  - component: {fileID: 1102809221060531656}
   - component: {fileID: 6298744959045131906}
+  - component: {fileID: 6566523167375272600}
   m_Layer: 0
   m_Name: ShadowMinion
   m_TagString: Untagged
@@ -52,21 +52,6 @@ MonoBehaviour:
   forwardMovementSpeedMultiplier: 0.2
   backwardMovementSpeedMultiplier: 0
   idleSpeedMultiplier: 1
---- !u!114 &1102809221060531656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298744959045131905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6121edc4e56f5b41936cd5e04884ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackName: Meteor Attack
-  attackPrefab: {fileID: 2842540418666017718, guid: 40eeb2fa0cb8416bbf3c301b58939ae1, type: 3}
-  _animationController: {fileID: 2482853041095319528}
 --- !u!114 &6298744959045131906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,10 +66,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionMaster: {fileID: 0}
   minionType: 1
+  _animationController: {fileID: 0}
   _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
   _statSettings: {fileID: 11400000, guid: 94fd543f2d564474dbf3693b07d746e3, type: 2}
   _minionItem: {fileID: 11400000, guid: c0ee85110e3d3ee4d987673e9c053a2e, type: 2}
   _trailVFX: {fileID: 0}
+--- !u!114 &6566523167375272600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298744959045131905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0467210c02edd67419066b43c4f93247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: ShadowAttack
+  attackPrefab: {fileID: 2842540418666017718, guid: 40eeb2fa0cb8416bbf3c301b58939ae1, type: 3}
+  _animationController: {fileID: 2482853041095319528}
 --- !u!1001 &2511126006941785719
 PrefabInstance:
   m_ObjectHideFlags: 0

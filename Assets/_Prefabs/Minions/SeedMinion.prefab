@@ -1450,8 +1450,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6832040344724344136}
   - component: {fileID: 3258682581922158978}
-  - component: {fileID: 1620284322}
   - component: {fileID: 1594283337}
+  - component: {fileID: 5962857700652950901}
   m_Layer: 0
   m_Name: SeedMinion
   m_TagString: Untagged
@@ -1492,21 +1492,6 @@ MonoBehaviour:
   forwardMovementSpeedMultiplier: 0.2
   backwardMovementSpeedMultiplier: 0
   idleSpeedMultiplier: 1
---- !u!114 &1620284322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351293800625723627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6121edc4e56f5b41936cd5e04884ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackName: Root Attack
-  attackPrefab: {fileID: 4504205137836699972, guid: 66dfbfab7b1d41f8b94e1b37c826d0ec, type: 3}
-  _animationController: {fileID: 3258682581922158978}
 --- !u!114 &1594283337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,10 +1506,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionMaster: {fileID: 0}
   minionType: 1
+  _animationController: {fileID: 0}
   _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
   _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
   _trailVFX: {fileID: 5243512661824881033}
+--- !u!114 &5962857700652950901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a344c229e22f6e145a0dc1f8f2d2a929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: SeedAttack
+  attackPrefab: {fileID: 5404265594570593906, guid: 3ac6e0acd5583364fa7b2a4e517197db, type: 3}
+  _animationController: {fileID: 3258682581922158978}
 --- !u!1001 &5243512661824983781
 PrefabInstance:
   m_ObjectHideFlags: 0

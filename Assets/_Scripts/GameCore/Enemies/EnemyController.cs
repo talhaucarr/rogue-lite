@@ -50,15 +50,14 @@ namespace _Scripts.GameCore.Enemies
             _healthController.Setup(_statSettings.GetStat(StatKey.Health));
             _healthController.onDeath.AddListener(OnDeath);
             _movementModule.Setup(_animationController);
-            _attack.Setup(_statSettings);
 
             _camera = CameraManager.Instance.Camera;
         }
 
         private void Update()
         {
-            MoveToPlayer();
-            LookAtPlayer();
+            /*MoveToPlayer();
+            LookAtPlayer();*/
         }
     
         #endregion
