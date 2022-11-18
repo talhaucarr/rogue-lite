@@ -13,6 +13,7 @@ using UnityEditor;
 [CustomPropertyDrawer(typeof(Vector2IntToIntDictionary))]
 [CustomPropertyDrawer(typeof(Vector2IntToGameObject))]
 [CustomPropertyDrawer(typeof(IntSpriteDictionary))]
+[CustomPropertyDrawer(typeof(StatToFloatDictionary))]
 public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
 
 [CustomPropertyDrawer(typeof(ColorArrayStorage))]

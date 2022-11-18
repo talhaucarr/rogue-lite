@@ -9,17 +9,5 @@ using UnityEditor;
 #endif
 
 
-[Serializable]
-public class StatToFloatDictionary : SerializableDictionary<StatKey, float> { }
 
 
-#if UNITY_EDITOR
-
-[CustomPropertyDrawer(typeof(StatToFloatDictionary))]
-public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
-
-
-
-public class AnySerializableDictionaryStoragePropertyDrawer: SerializableDictionaryStoragePropertyDrawer {}
-
-#endif 

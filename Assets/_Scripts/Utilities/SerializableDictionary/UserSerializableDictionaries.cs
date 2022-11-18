@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using _Scripts.StatSystem;
 using UnityEngine;
 
 [Serializable]
@@ -32,17 +33,10 @@ public class StringColorArrayDictionary : SerializableDictionary<string, Color[]
 public class StringAnimationClipArrayDictionary : SerializableDictionary<string, AnimationClip[], AnimationClipStorage> {}
 
 [Serializable]
-public class MyClass
-{
-    public int i;
-    public string str;
-}
-
-[Serializable]
-public class QuaternionMyClassDictionary : SerializableDictionary<Quaternion, MyClass> {}
-
-[Serializable]
 public class Vector2IntToIntDictionary : SerializableDictionary<Vector2Int, int> { }
 
 [Serializable]
 public class Vector2IntToGameObject : SerializableDictionary<Vector2Int, GameObject> { }
+
+[Serializable]
+public class StatToFloatDictionary : SerializableDictionary<StatKey, float> { }
