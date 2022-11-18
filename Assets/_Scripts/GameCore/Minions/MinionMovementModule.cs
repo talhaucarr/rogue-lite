@@ -1,14 +1,15 @@
 using _Scripts.AnimationSystem;
 using _Scripts.MovementSystem;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace _Scripts.GameCore.Minions
 {
-    [CreateAssetMenu(fileName = "MinionMovementModule", menuName = "ScriptableObjects/Modules/Minion Movement")]
-    public class MinionMovementModule : ScriptableObject, IMovementModule
+    public class MinionMovementModule : MonoBehaviour
     {
         #region Private Variables
-    
+        [SerializeField] private NavMeshAgent _navMeshAgent;
+        
         private AnimationController _animationController;
 
         #endregion
@@ -28,23 +29,26 @@ namespace _Scripts.GameCore.Minions
             _animationController = animationController;
         }
 
-        public void MoveDirection(Transform transform, Vector3 direction, float movementSpeed)
+        public void MoveDirection(Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
                 _animationController.SetWalking(false, 1);
                 return;
             }
-
-            _animationController.SetWalking(true, movementSpeed);
-            var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
             
-            transform.position += (moveDirection * Time.deltaTime);
-        }
+            _animationController.SetWalking(true, movementSpeed);
+            var moveDirection = new Vector3(direction.x, 0, direction.y);
+            Vector3 newPosition = transform.position + moveDirection * (movementSpeed * Time.deltaTime);
+            bool isValid = NavMesh.SamplePosition(newPosition, out var hitPosition, 1f, NavMesh.AllAreas);
+            if (isValid)
+            {
+                //transform.position = hitPosition.position;
+                _navMeshAgent.Warp(newPosition);
+                _navMeshAgent.SetDestination(hitPosition.position);
+            }
 
-        public void MovePosition(Transform transform, Vector3 position, float movementSpeed)
-        {
-            //
+            //_navMeshAgent.Move(moveDirection);
         }
 
         #endregion

@@ -84,7 +84,7 @@ namespace _Scripts.GameCore.Enemies
         {
             Vector3 distanceDif = PlayerManager.Instance.transform.position - transform.position;
             Vector3 moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;
-            _movementModule.MoveDirection(transform, moveDir, _statSettings.GetStat(StatKey.MoveSpeed));
+            _movementModule.MoveDirection(moveDir, _statSettings.GetStat(StatKey.MoveSpeed));
         }
 
         #endregion

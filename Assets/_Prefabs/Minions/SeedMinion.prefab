@@ -1452,13 +1452,15 @@ GameObject:
   - component: {fileID: 3258682581922158978}
   - component: {fileID: 1594283337}
   - component: {fileID: 5962857700652950901}
+  - component: {fileID: 2819516269892436978}
+  - component: {fileID: 2138182677}
   m_Layer: 0
   m_Name: SeedMinion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6832040344724344136
 Transform:
   m_ObjectHideFlags: 0
@@ -1506,8 +1508,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionMaster: {fileID: 0}
   minionType: 1
-  _animationController: {fileID: 0}
-  _movementModule: {fileID: 11400000, guid: 76660def1714dcb4bb0d892c38222a01, type: 2}
+  _animationController: {fileID: 3258682581922158978}
+  _movementModule: {fileID: 2138182677}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
   _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
   _trailVFX: {fileID: 5243512661824881033}
@@ -1526,6 +1528,41 @@ MonoBehaviour:
   attackName: SeedAttack
   attackPrefab: {fileID: 5404265594570593906, guid: 3ac6e0acd5583364fa7b2a4e517197db, type: 3}
   _animationController: {fileID: 3258682581922158978}
+--- !u!195 &2819516269892436978
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0.42
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &2138182677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _navMeshAgent: {fileID: 2819516269892436978}
 --- !u!1001 &5243512661824983781
 PrefabInstance:
   m_ObjectHideFlags: 0
