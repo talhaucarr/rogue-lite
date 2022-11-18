@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Utilities;
 
@@ -7,7 +8,17 @@ namespace _Scripts.GameCore.Enemies
 {
     public class EnemyManager : AutoSingleton<EnemyManager>
     {
+        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private EnemySpawner _enemySpawner;
+        
         private List<IEntityController> _allEnemies = new List<IEntityController>();
+
+        #region Unity Methods
+
+        private void Start()
+        {
+            StartTimer();
+        }
 
         private void Update()
         {
@@ -16,6 +27,10 @@ namespace _Scripts.GameCore.Enemies
                 _allEnemies[i].EnemyUpdate();
             }
         }
+
+        #endregion
+
+        #region Public Methods
 
         public void RegisterEnemy(IEntityController enemy)
         {
@@ -41,5 +56,20 @@ namespace _Scripts.GameCore.Enemies
             }
             return chosenEnemy != null;
         }
+
+        #endregion
+
+        #region Private Methods
+
+        private void StartTimer()
+        {
+            DOVirtual.DelayedCall(1f, () =>
+            {
+                _enemySpawner.SpawnEnemy(enemyPrefab);
+            }).SetLoops(-1);
+        }
+        
+        #endregion
+        
     }
 }
