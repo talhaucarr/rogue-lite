@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _Scripts.GameCore.Minions
 {
-    public abstract class MinionController : MonoBehaviour, IEntityController
+    public abstract class MinionController : MonoBehaviour
     {
 
         #region Serialized Fields
@@ -30,8 +30,7 @@ namespace _Scripts.GameCore.Minions
         #endregion
 
         #region Properties
-
-        public Transform Transform => transform;
+        
         public StatSettings StatSettings => _statSettings;
         public MinionItem MinionItem => _minionItem;
 

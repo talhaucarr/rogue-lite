@@ -1,5 +1,6 @@
 using _Scripts.GameCore.AttackSystem.Interfaceses;
 using _Scripts.GameCore.AttackSystem.Projectiles;
+using _Scripts.GameCore.Enemies;
 using _Scripts.HealthSystem;
 using _Scripts.StatSystem;
 using UnityEngine;

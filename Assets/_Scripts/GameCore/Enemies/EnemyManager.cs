@@ -1,34 +1,45 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
-public class EnemyManager : AutoSingleton<EnemyManager>
+namespace _Scripts.GameCore.Enemies
 {
-    private List<IEntityController> _allEnemies = new List<IEntityController>();
-
-    public void RegisterEnemy(IEntityController enemy)
+    public class EnemyManager : AutoSingleton<EnemyManager>
     {
-        _allEnemies.Add(enemy);
-    }
+        private List<IEntityController> _allEnemies = new List<IEntityController>();
 
-    public void UnRegisterEnemy(IEntityController enemy)
-    {
-        _allEnemies.Remove(enemy);
-    }
-
-    public bool GetClosestEnemyInRange(Vector3 myPosition, float range, out IEntityController chosenEnemy)
-    {
-        float closestEnemyDistance = Mathf.Infinity;
-        chosenEnemy = null;
-        foreach (var enemy in _allEnemies)
+        private void Update()
         {
-            float distance = Vector3.Distance(myPosition, enemy.Transform.position); 
-            if(distance > closestEnemyDistance) continue;
-            if(distance > range) continue;
-            closestEnemyDistance = distance;
-            chosenEnemy = enemy;
+            for(int i = 0; i < _allEnemies.Count; i++)
+            {
+                _allEnemies[i].EnemyUpdate();
+            }
         }
-        return chosenEnemy != null;
+
+        public void RegisterEnemy(IEntityController enemy)
+        {
+            _allEnemies.Add(enemy);
+        }
+
+        public void UnRegisterEnemy(IEntityController enemy)
+        {
+            _allEnemies.Remove(enemy);
+        }
+
+        public bool GetClosestEnemyInRange(Vector3 myPosition, float range, out IEntityController chosenEnemy)
+        {
+            float closestEnemyDistance = Mathf.Infinity;
+            chosenEnemy = null;
+            foreach (var enemy in _allEnemies)
+            {
+                float distance = Vector3.Distance(myPosition, enemy.Transform.position); 
+                if(distance > closestEnemyDistance) continue;
+                if(distance > range) continue;
+                closestEnemyDistance = distance;
+                chosenEnemy = enemy;
+            }
+            return chosenEnemy != null;
+        }
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace _Scripts.GameCore.Player
 {
-    public class PlayerController : MonoBehaviour, IEntityController
+    public class PlayerController : MonoBehaviour
     {
         #region Serialized Fields
         
@@ -21,7 +21,6 @@ namespace _Scripts.GameCore.Player
         #endregion
 
         #region Properties
-        public Transform Transform => transform;
         public StatSettings StatSettings => _statSettings;
 
         #endregion
