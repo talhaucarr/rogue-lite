@@ -1350,6 +1350,22 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 2819516269892436978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_Height
+      value: 1.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819516269892436978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819516269892436978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819516269892436978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_Name
       value: SeedMinion

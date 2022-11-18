@@ -36,11 +36,19 @@ namespace _Scripts.GameCore.Minions
                 _animationController.SetWalking(false, 1);
                 return;
             }
-            Debug.Log($"aga");
+            
             _animationController.SetWalking(true, movementSpeed);
             var moveDirection = new Vector3(direction.x, 0, direction.y);
+            Vector3 newPosition = transform.position + moveDirection * (movementSpeed * Time.deltaTime);
+            bool isValid = NavMesh.SamplePosition(newPosition, out var hitPosition, 1f, NavMesh.AllAreas);
+            if (isValid)
+            {
+                //transform.position = hitPosition.position;
+                _navMeshAgent.Warp(newPosition);
+                _navMeshAgent.SetDestination(hitPosition.position);
+            }
 
-            _navMeshAgent.SetDestination(moveDirection);
+            //_navMeshAgent.Move(moveDirection);
         }
 
         #endregion
