@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class WorldSpaceUI : MonoBehaviour
 {
-    private Camera mainCam;
+    private CameraService _cameraService;
+    
     void Start()
     {
-        mainCam = CameraManager.Instance.Camera;
-        GetComponent<Canvas>().worldCamera = mainCam;
+        _cameraService = ServiceLocator.Instance.Get<CameraService>();
+        GetComponent<Canvas>().worldCamera = _cameraService.Camera;
     }
 
     private void LateUpdate()
     {
-        transform.LookAt(mainCam.transform);
+        transform.LookAt(_cameraService.Camera.transform);
     }
 }

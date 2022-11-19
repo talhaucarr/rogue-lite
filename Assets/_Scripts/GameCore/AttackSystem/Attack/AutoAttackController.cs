@@ -23,7 +23,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
 
         public void Setup(StatSettings statSettings)
         {
-            _enemyService = ServiceProvider.Instance.Get<EnemyService>(gameObject.scene.name);
+            _enemyService = ServiceLocator.Instance.Get<EnemyService>();
             _statSettings = statSettings;
             _attackSpeed = statSettings.GetStat(StatKey.AttackSpeed);
         }

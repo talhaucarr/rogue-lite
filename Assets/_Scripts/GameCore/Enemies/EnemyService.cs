@@ -9,9 +9,10 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts.GameCore.Enemies
 {
-    public class EnemyService : SceneService<EnemyService>
+    public class EnemyService : Service<EnemyService>
     {
         private EnemySpawnerService _enemySpawnerService;
+        private RealmService _realmService;
         
         private List<IEntityController> _allEnemies = new List<IEntityController>();
 
@@ -25,7 +26,12 @@ namespace _Scripts.GameCore.Enemies
 
         internal override void Init()
         {
-            _enemySpawnerService = ServiceProvider.Instance.Get<EnemySpawnerService>(gameObject.scene.name);
+            _enemySpawnerService = ServiceLocator.Instance.Get<EnemySpawnerService>();
+            _realmService = ServiceLocator.Instance.Get<RealmService>();
+            _dependencies = new List<Service>()
+            {
+                _realmService,
+            };
         }
 
         internal override void Begin()
@@ -97,7 +103,7 @@ namespace _Scripts.GameCore.Enemies
 
         private RealmData GetCurrentRealm()
         {
-           return GameManager.Instance.GetRealmData("ForestRuins");
+           return _realmService.GetRealmData("ForestRuins");
         }
         
         #endregion

@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using EasyButtons;
 
 [DefaultExecutionOrder(-100_000)]
-public class ServiceProvider : MonoBehaviour
+public class ServiceLocator : MonoBehaviour
 {
     private Dictionary<string, Service> _services = new Dictionary<string, Service>();
     
     private List<Service> _dependencyWaitingServices = new List<Service>();
     private Dictionary<string, Service> _newServices = new Dictionary<string, Service>();
 
-    public static ServiceProvider Instance;
+    public static ServiceLocator Instance;
 
     private bool _dependencyDirty;
     private bool _checkingDependencies;
@@ -24,18 +25,9 @@ public class ServiceProvider : MonoBehaviour
             Instance = this;
     }
 
-    [RuntimeInitializeOnLoadMethod]
-    private static void Startup()
+    private void Start()
     {
-        var sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName != SceneLoadService.InitializingScene)
-        {
-            Debug.LogWarning("ServiceProvider self start. This feature unity editor only and should't be used in runtime.");
-            SceneManager.LoadSceneAsync(SceneLoadService.InitializingScene, LoadSceneMode.Additive).completed += handle =>
-            {
-                Instance.Get<LoadingService>().ShowLoading();
-            };
-        }
+        Resolve();
     }
 
     [Button]

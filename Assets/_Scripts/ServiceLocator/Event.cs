@@ -5,9 +5,17 @@ public class Event<TEventType, TBaseType> : Service<TBaseType>
 {
     private ConcreteEvent<TEventType> _event = new ConcreteEvent<TEventType>();
 
+    internal override void Init()
+    {
+    }
+
     internal override void Begin()
     {
         SetReady();
+    }
+
+    internal override void Dispose()
+    {
     }
 
     public virtual void Fire(TEventType v1)
@@ -26,6 +34,14 @@ public class Event<TEventType, TBaseType> : Service<TBaseType>
     public void UnSubscribe(UnityAction<TEventType> listener)
     {
         _event.RemoveListener(listener);
+    }
+}
+
+public class SceneEvent<TEventType, TBaseType> : Event<TEventType, TBaseType>
+{
+    public override string GetContextName()
+    {
+        return gameObject.scene.name;
     }
 }
 

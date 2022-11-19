@@ -17,15 +17,7 @@ public class SceneSwitchLeftButton
 	static void OnToolbarLeftGUI()
 	{
 		GUILayout.FlexibleSpace();
-
-		if (GUILayout.Button(new GUIContent("Init", "Switch to init scene.")))
-		{
-			bool saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-			if (!saved)
-				return;
-			EditorSceneManager.OpenScene("Assets/_Scenes/InitializingScene.unity");
-		}
-		GUILayout.Space(10);
+		
 		if (GUILayout.Button(new GUIContent("Game Scene", "Switch to GameScene.")))
         {
         	bool saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
@@ -37,15 +29,9 @@ public class SceneSwitchLeftButton
 
 	static void OnToolbarRightGUI()
     {
-		if (GUILayout.Button(new GUIContent("Start", "Switch to init. Then start.")))
-		{
-			bool saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-			if (!saved)
-				return;
-			EditorSceneManager.OpenScene("Assets/_Scenes/InitializingScene.unity");
-			EditorApplication.EnterPlaymode();
-		}
-		GUILayout.FlexibleSpace();
+	    //
+	    
+	    GUILayout.FlexibleSpace();
 	}
 }
 #endif

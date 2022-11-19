@@ -45,15 +45,12 @@ namespace _Scripts.GameCore.Minions
         #region Unity Methods
     
         private Vector3 lookPos;
-        private Camera _camera;
 
         private void Start()
         {
             CreateAttackByType();
 
             _movementModule.Setup(_animationController);
-
-            _camera = CameraManager.Instance.Camera;
         }
 
         private void Update()

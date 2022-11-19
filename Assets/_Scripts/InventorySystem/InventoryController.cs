@@ -9,16 +9,13 @@ namespace _Scripts.InventorySystem
     public class InventoryController : MonoBehaviour
     {
         #region Serialized Fields
+        
         [BHeader("Inventory Settings")]
         [SerializeField] private InventorySettings inventorySettings;
 
         [BHeader("Inventory Slots")] 
         [SerializeField] private int Currency;
         [SerializeField] private List<ItemSlot> itemSlots;
-        
-        [BHeader("Game Events")]
-        [SerializeField] private UnityEvent onAddItem;
-        [SerializeField] private UnityEvent onRemoveItem;
         
         #endregion
 
@@ -28,7 +25,8 @@ namespace _Scripts.InventorySystem
         #endregion
 
         #region Public Fields
-        
+        public UnityEvent onAddItem { get; } = new();
+        public UnityEvent onRemoveItem { get; } = new();
         
         #endregion
 

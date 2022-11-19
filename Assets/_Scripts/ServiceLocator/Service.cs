@@ -8,31 +8,22 @@ public class Service : MonoBehaviour
 {
     protected bool _isReady;
     protected List<Service> _dependencies;
-    protected ServiceProvider _serviceProvider;
+    private ServiceLocator _serviceLocator;
 
     protected void Awake()
     {
-        _serviceProvider = ServiceProvider.Instance;
-        _serviceProvider.Register(this);
+        _serviceLocator = ServiceLocator.Instance;
+        _serviceLocator.Register(this);
     }
-
-    /// <summary>
-    /// Called in start of ServiceProvider. Use for get references and dependency declaration.
-    /// </summary>
+    
     internal virtual void Init()
     {
     }
-
-    /// <summary>
-    /// Called after all dependencies ready. Use for game logic.
-    /// </summary>
+    
     internal virtual void Begin()
     {
     }
-
-    /// <summary>
-    /// Called before OnDestroy. Use for cleanup. If application quiting this not gonna be called.
-    /// </summary>
+    
     internal virtual void Dispose()
     {
     }
@@ -45,7 +36,7 @@ public class Service : MonoBehaviour
     public virtual void SetReady()
     {
         _isReady = true;
-        _serviceProvider.SetDependencyDirty();
+        _serviceLocator.SetDependencyDirty();
     }
 
     public virtual bool IsDependenciesReady()
@@ -80,58 +71,33 @@ public class Service : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (_serviceProvider != null && !_serviceProvider.IsQuiting())
+        if (_serviceLocator != null && !_serviceLocator.IsQuiting())
         {
             Dispose();
-            _serviceProvider.UnRegister(this);
+            _serviceLocator.UnRegister(this);
         }
     }
 }
 
-public class Service<T> : Service
+public abstract class Service<T> : Service
 {
-    
+    /// <summary>
+    /// Called in start of ServiceLocator. Use for get references and dependency declaration.
+    /// </summary>
+    internal abstract override void Init();
+
+    /// <summary>
+    /// Called after all dependencies ready. Use for game logic.
+    /// </summary>
+    internal abstract override void Begin();
+
+    /// <summary>
+    /// Called before OnDestroy. Use for cleanup. If application quiting this not gonna be called.
+    /// </summary>
+    internal abstract override void Dispose();
 }
 
-public class SceneService<T> : Service<T>
-{
-    public override string GetContextName()
-    {
-        return gameObject.scene.name;
-    }
-}
-
-public class GameObjectService<T> : Service<T>
-{
-    private new void Awake()
-    {
-        base.Awake();
-        ServiceProvider.Instance.Resolve();
-    }
-    
-    public override string GetContextName()
-    {
-        var goName = gameObject.name.Replace("(Clone)", "");//in case its instantiated in the same frame
-        return "GameObject_" + goName;
-    }
-}
-
-public class GameObjectEvent<TEventType, TBaseType> : Event<TEventType, TBaseType>
-{
-    private new void Awake()
-    {
-        base.Awake();
-        ServiceProvider.Instance.Resolve();
-    }
-
-    public override string GetContextName()
-    {
-        var goName = gameObject.name.Replace("(Clone)", "");//incase its instantiated in the same frame
-        return "GameObject_" + goName;
-    }
-}
-
-public class SceneEvent<TEventType, TBaseType> : Event<TEventType, TBaseType>
+public abstract class SceneService<T> : Service<T>
 {
     public override string GetContextName()
     {

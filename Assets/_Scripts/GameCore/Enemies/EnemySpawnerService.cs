@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace _Scripts.GameCore.Enemies
 {
-    public class EnemySpawnerService : SceneService<EnemySpawnerService>
+    public class EnemySpawnerService : Service<EnemySpawnerService>
     {
         [SerializeField] private Vector3[] spawnPoints;
     
@@ -16,7 +16,7 @@ namespace _Scripts.GameCore.Enemies
 
         internal override void Init()
         {
-            _enemyService = ServiceProvider.Instance.Get<EnemyService>();
+            _enemyService = ServiceLocator.Instance.Get<EnemyService>();
             
             _dependencies = new List<Service>()
             {

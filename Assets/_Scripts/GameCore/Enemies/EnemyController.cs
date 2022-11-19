@@ -43,7 +43,7 @@ namespace _Scripts.GameCore.Enemies
 
         private void Start()
         {
-            _enemyService = ServiceProvider.Instance.Get<EnemyService>(gameObject.scene.name);
+            _enemyService = ServiceLocator.Instance.Get<EnemyService>();
 
             _enemyService.RegisterEnemy(this);
             SetHealthController();

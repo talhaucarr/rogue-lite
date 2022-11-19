@@ -37,7 +37,7 @@ namespace _Scripts.GameCore.Player
         #region Unity Methods
         
         private Vector3 lookPos;
-        private Camera _camera;
+        private CameraService _cameraService;
 
         private void Start()
         {
@@ -50,7 +50,7 @@ namespace _Scripts.GameCore.Player
             _healthController.Setup(_statSettings.GetStat(StatKey.Health));
             _playerAttackController.Setup(_statSettings);
 
-            _camera = CameraManager.Instance.Camera;
+            _cameraService = ServiceLocator.Instance.Get<CameraService>();
         }
 
         private void Update()
@@ -76,7 +76,7 @@ namespace _Scripts.GameCore.Player
         
         private void LookMousePosition()
         {
-            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            var ray = _cameraService.Camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out var hit, 100))
             {

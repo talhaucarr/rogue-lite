@@ -5,9 +5,22 @@ using Utilities;
 
 namespace _Scripts.GameCore.Managers
 {
-    public class GameManager : AutoSingleton<GameManager>
+    public class RealmService : Service<RealmService>
     {
         [SerializeField] private List<RealmData> realms = new List<RealmData>();
+        
+        internal override void Init()
+        {
+        }
+
+        internal override void Begin()
+        {
+            SetReady();
+        }
+
+        internal override void Dispose()
+        {
+        }
         
         public RealmData GetRealmData(string realmName)
         {

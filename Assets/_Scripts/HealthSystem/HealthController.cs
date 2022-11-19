@@ -14,12 +14,10 @@ namespace _Scripts.HealthSystem
         
         #endregion
 
-        #region Game Events
+        #region Properties
         
-        [Space(10)]
-        [BHeader("Game Events")]
-        public UnityEvent onDeath = new();
-        public UnityEvent onHit = new();
+        public UnityEvent onDeath { get; } = new();
+        public UnityEvent onHit { get; } = new();
 
         #endregion
 
