@@ -4,11 +4,13 @@ namespace _Scripts.HealthSystem
 {
     public class EnemyHealthController : HealthController
     {
+        private EnemyDiedEvent _enemyDiedEvent;
+        
         #region Overrides of HealthController
         
         protected override void Die()
         {
-            onDeath?.Invoke();
+            _enemyDiedEvent.Fire(gameObject);
             Destroy(gameObject);//TODO Replace with object pool
         }
 

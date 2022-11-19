@@ -1,5 +1,6 @@
 using _Scripts.AnimationSystem;
 using _Scripts.GameCore.AttackSystem.Interfaceses;
+using _Scripts.GameCore.Enemies;
 using _Scripts.HealthSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
@@ -18,9 +19,11 @@ namespace _Scripts.GameCore.AttackSystem.Attack
         protected StatSettings _statSettings;
         protected float _attackTimer = 0;
         protected float _attackSpeed; // duration = 20 / 3 + attackSpeed
+        protected EnemyService _enemyService;
 
         public void Setup(StatSettings statSettings)
         {
+            _enemyService = ServiceProvider.Instance.Get<EnemyService>(gameObject.scene.name);
             _statSettings = statSettings;
             _attackSpeed = statSettings.GetStat(StatKey.AttackSpeed);
         }

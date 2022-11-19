@@ -11,7 +11,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
     {
         public override bool Attack()
         {
-            if(!EnemyManager.Instance.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
+            if(!_enemyService.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
             if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
             var projectile = Instantiate(attackPrefab, transform.position, Quaternion.identity);//TODO replace with pool
             projectile.GetComponent<IProjectile>().Setup(enemy.Transform, 20, _statSettings.GetStat(StatKey.Damage));

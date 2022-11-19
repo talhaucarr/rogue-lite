@@ -33,7 +33,8 @@ namespace _Scripts.GameCore.Enemies
         private HealthController _healthController;
         private Vector3 _targetPosition = Vector3.zero;
         private float _attackRange = 1.2f; //if attack range not set in scriptable object, set it to 1.2f
-
+        private EnemyService _enemyService;
+        
         #endregion
 
         #region Unity Methods
@@ -42,10 +43,10 @@ namespace _Scripts.GameCore.Enemies
 
         private void Start()
         {
-            EnemyManager.Instance.RegisterEnemy(this);
+            _enemyService = ServiceProvider.Instance.Get<EnemyService>(gameObject.scene.name);
 
+            _enemyService.RegisterEnemy(this);
             SetHealthController();
-            
             _attackRange = _statSettings.GetStat(StatKey.AttackRange);
         }
         
@@ -97,7 +98,7 @@ namespace _Scripts.GameCore.Enemies
 
         private void OnDeath()
         {
-            EnemyManager.Instance.UnRegisterEnemy(this);
+            _enemyService.UnRegisterEnemy(this);
         }
 
         #endregion
