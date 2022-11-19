@@ -11,8 +11,6 @@ namespace _Scripts.GameCore.Enemies
 {
     public class EnemyService : SceneService<EnemyService>
     {
-        [SerializeField] private GameObject enemyPrefab;
-        
         private EnemySpawnerService _enemySpawnerService;
         
         private List<IEntityController> _allEnemies = new List<IEntityController>();
@@ -87,13 +85,14 @@ namespace _Scripts.GameCore.Enemies
         {
             DOVirtual.DelayedCall(Random.Range(1f, 3f), () =>
             {
-                _enemySpawnerService.SpawnEnemy(enemyPrefab);
+                _enemySpawnerService.SpawnEnemy(GetRandomEnemyPrefab());
             }).SetLoops(-1);
         }
         
-        private void GetRandomEnemyPrefab()
+        private GameObject GetRandomEnemyPrefab()
         {
-            
+            var realmData = GetCurrentRealm();
+            return realmData.realmEnemies[Random.Range(0, realmData.realmEnemies.Count)].enemyPrefab;
         }
 
         private RealmData GetCurrentRealm()

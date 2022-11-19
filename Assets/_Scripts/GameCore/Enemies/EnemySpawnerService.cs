@@ -12,7 +12,7 @@ namespace _Scripts.GameCore.Enemies
         public Vector3[] SpawnPoints => spawnPoints;
         private EnemyService _enemyService;
 
-        private const float tolerance = 20f;
+        private const float tolerance = 10f;
 
         internal override void Init()
         {
@@ -37,11 +37,13 @@ namespace _Scripts.GameCore.Enemies
         public bool SpawnEnemy(GameObject enemyPrefab)
         {
             var points = GetFarhestSpawnPoints();
+
             if (points.Count == 0) return false;
+
             var spawnPoint = points[Random.Range(0, points.Count)];
             
-            bool isValid = NavMesh.SamplePosition(spawnPoint, out var hit, 1f, NavMesh.AllAreas);
-            if (!isValid) return false;
+           /* bool isValid = NavMesh.SamplePosition(spawnPoint, out var hit, 1f, NavMesh.AllAreas);
+            if (!isValid) return false;*/
             
             Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);//TODO will change to object pool
             return true;
@@ -54,7 +56,7 @@ namespace _Scripts.GameCore.Enemies
 
             foreach (var spawnPoint in spawnPoints)
             {
-                if(Vector3.Distance(_playerPosition, spawnPoint)< tolerance)
+                if(Vector3.Distance(_playerPosition, spawnPoint) > tolerance)
                     farhestSpawnPoints.Add(spawnPoint);
             }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131239b9f8ddb6439d6a3a4bfece346, type: 3}
   m_Name: ForestRuins
   m_EditorClassIdentifier: 
-  realmName: Forest Ruins
+  realmName: ForestRuins
   realmDescription: Lorem ipsum
   realmIcon: {fileID: 0}
   realmBackground: {fileID: 0}
