@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using _Scripts.GameCore.Managers;
+using _Scripts.RealmSystem;
 using DG.Tweening;
 using UnityEngine;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace _Scripts.GameCore.Enemies
 {
@@ -13,6 +16,12 @@ namespace _Scripts.GameCore.Enemies
         private EnemySpawnerService _enemySpawnerService;
         
         private List<IEntityController> _allEnemies = new List<IEntityController>();
+
+        #region Properties
+
+        public EnemySpawnerService EnemySpawner => _enemySpawnerService;
+
+        #endregion
 
         #region Unity Methods
 
@@ -76,10 +85,20 @@ namespace _Scripts.GameCore.Enemies
 
         private void StartTimer()
         {
-            DOVirtual.DelayedCall(1f, () =>
+            DOVirtual.DelayedCall(Random.Range(1f, 3f), () =>
             {
                 _enemySpawnerService.SpawnEnemy(enemyPrefab);
             }).SetLoops(-1);
+        }
+        
+        private void GetRandomEnemyPrefab()
+        {
+            
+        }
+
+        private RealmData GetCurrentRealm()
+        {
+           return GameManager.Instance.GetRealmData("ForestRuins");
         }
         
         #endregion
