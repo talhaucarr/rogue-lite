@@ -16,7 +16,7 @@ namespace _Scripts.GameCore.Enemies
 
         internal override void Init()
         {
-            _enemyService = ServiceProvider.Instance.Get<EnemyService>(gameObject.scene.name);
+            _enemyService = ServiceProvider.Instance.Get<EnemyService>();
             
             _dependencies = new List<Service>()
             {
