@@ -12,7 +12,7 @@ namespace _Scripts.GameCore.Enemies
         public Vector3[] SpawnPoints => spawnPoints;
         private EnemyService _enemyService;
 
-        private const float tolerance = 10f;
+        private const float tolerance = 50f;
 
         internal override void Init()
         {
@@ -42,8 +42,8 @@ namespace _Scripts.GameCore.Enemies
 
             var spawnPoint = points[Random.Range(0, points.Count)];
             
-           /* bool isValid = NavMesh.SamplePosition(spawnPoint, out var hit, 1f, NavMesh.AllAreas);
-            if (!isValid) return false;*/
+            bool isValid = NavMesh.SamplePosition(spawnPoint, out var hit, 1f, NavMesh.AllAreas);
+            if (!isValid) return false;
             
             Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);//TODO will change to object pool
             return true;

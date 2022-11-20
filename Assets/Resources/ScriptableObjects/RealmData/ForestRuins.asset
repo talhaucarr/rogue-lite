@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realmName: ForestRuins
   realmDescription: Lorem ipsum
-  realmIcon: {fileID: 0}
-  realmBackground: {fileID: 0}
+  harderBetterFasterStronger: 0
   realmEnemies:
   - enemyName: GhostEnemy
-    priority: 1
+    spawnWeight: 1
     enemyPrefab: {fileID: 3749795058522606016, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}

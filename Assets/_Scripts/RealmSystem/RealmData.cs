@@ -7,10 +7,12 @@ namespace _Scripts.RealmSystem
     [CreateAssetMenu(fileName = "New Realm Data", menuName = "ScriptableObjects/RealmSystem/RealmData")]
     public class RealmData : ScriptableObject
     {
+        [BHeader("General")]
         public string realmName;
         public string realmDescription;
-        public Sprite realmIcon;
-        public Sprite realmBackground;
+        public bool harderBetterFasterStronger;
+        
+        [BHeader("Realm Enemies")]
         public List<RealmEnemyData> realmEnemies = new List<RealmEnemyData>();
     }
     
@@ -18,7 +20,7 @@ namespace _Scripts.RealmSystem
     public class RealmEnemyData
     {
         public string enemyName;
-        public int priority;
+        public int spawnWeight;
         public GameObject enemyPrefab;
     }
 }
