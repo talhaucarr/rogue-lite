@@ -5,8 +5,8 @@ using Utilities;
 
 public class CameraService : Service<CameraService>
 {
-    [SerializeField] private Camera camera;
-    public Camera Camera => camera;
+    [SerializeField] private Camera mainCamera;
+    public Camera Camera => mainCamera;
 
     internal override void Init()
     {
