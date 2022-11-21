@@ -1,4 +1,5 @@
 using _Scripts.AnimationSystem;
+using _Scripts.CameraSystem;
 using _Scripts.GameCore.AttackSystem;
 using _Scripts.HealthSystem;
 using _Scripts.InputSystem;

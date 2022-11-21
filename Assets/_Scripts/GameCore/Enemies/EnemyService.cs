@@ -18,10 +18,9 @@ namespace _Scripts.GameCore.Enemies
 
         #region Properties
 
-        public EnemySpawnerService EnemySpawner => _enemySpawnerService;
-        
         private float _timeSpentInRealm = 1f;
-        private float _minDelayBetweenSpawns = 0.8f;
+        private float _spawnDelay = 5f;
+        private float _spawnDelayMinCap = 0.5f;
 
         #endregion
 
@@ -55,7 +54,7 @@ namespace _Scripts.GameCore.Enemies
             {
                 _allEnemies[i].EnemyUpdate();
             }
-            _timeSpentInRealm += Time.deltaTime;
+            _timeSpentInRealm += Time.deltaTime % 60;
         }
 
         #endregion
@@ -95,7 +94,9 @@ namespace _Scripts.GameCore.Enemies
         {
             DOVirtual.DelayedCall(GetRandomDelay(), () =>
             {
-                _enemySpawnerService.SpawnEnemy(GetRandomEnemyPrefabByPriority());
+                var enemy = GetRandomEnemyPrefabByPriority();
+                var spawnAmount = GetRandomSpawnAmount(enemy);
+                _enemySpawnerService.SpawnEnemy(enemy, spawnAmount);
                 StartTimer();
             });
         }
@@ -112,15 +113,34 @@ namespace _Scripts.GameCore.Enemies
 
             if (realmData.harderBetterFasterStronger)
             {
-                //var delay = _minDelayBetweenSpawns * (5f / (_timeSpentInRealm / 10f));
-                var delay = 50000f / (Time.time + 300) / 30;
-                if(delay <= _minDelayBetweenSpawns)
-                    delay = _minDelayBetweenSpawns;
-                Debug.Log($"Delay is {delay}");
-                return delay;
+                IncreaseDifficultyByTime();
+                return _spawnDelay;
             }
                 
             return Random.Range(3, 6);
+        }
+        
+        private int GetRandomSpawnAmount(GameObject enemy)
+        {
+            var realmData = GetCurrentRealm();
+            foreach (var realmEnemyData in realmData.realmEnemies)
+            {
+                if(realmEnemyData.enemyPrefab != enemy) continue;
+                return Random.Range(1, realmEnemyData.spawnAmount);
+            }
+            Debug.LogError("Enemy not found in realm data");
+            return -1;
+        }
+
+        private void IncreaseDifficultyByTime()
+        {
+            if (!(_timeSpentInRealm > 10)) return;//if time is less than 10 seconds, do nothing
+            
+            //_spawnDelay = Mathf.Clamp(_spawnDelay - _timeSpentInRealm * 0.01f, _spawnDelayMinCap, 5f);
+            _timeSpentInRealm = 0;
+            _spawnDelay -= 0.5f;//decrease spawn delay by 0.5 seconds
+            if(_spawnDelay < _spawnDelayMinCap)
+                _spawnDelay = _spawnDelayMinCap;
         }
 
         

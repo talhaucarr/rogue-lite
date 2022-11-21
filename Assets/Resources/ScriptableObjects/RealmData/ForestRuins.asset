@@ -17,5 +17,10 @@ MonoBehaviour:
   harderBetterFasterStronger: 0
   realmEnemies:
   - enemyName: GhostEnemy
-    spawnWeight: 1
+    spawnWeight: 5
+    spawnAmount: 3
     enemyPrefab: {fileID: 3749795058522606016, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
+  - enemyName: SpiderEnemy
+    spawnWeight: 8
+    spawnAmount: 6
+    enemyPrefab: {fileID: 5884280122210990425, guid: 85d967c04005a8548b739f6bdc2aa73c, type: 3}

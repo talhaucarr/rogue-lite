@@ -18,9 +18,12 @@ namespace _Scripts.GameCore.Enemies.Editor
             for (int i = 0; i < spawner.SpawnPoints.Length; i++)
             {
                 EditorGUI.BeginChangeCheck();
+                
+                float size = HandleUtility.GetHandleSize(spawner.SpawnPoints[i]) * 0.2f;
+                Vector3 snap = Vector3.one * 0.5f;
 
                 Vector3 currentWaypoint = spawner.SpawnPoints[i];
-                Vector3 newWaypointPoint = Handles.FreeMoveHandle(currentWaypoint, Quaternion.identity, HandleSize, Vector3.zero, Handles.CircleHandleCap);
+                Vector3 newWaypointPoint = Handles.FreeMoveHandle(currentWaypoint, Quaternion.identity, size, snap, Handles.RectangleHandleCap);
                 newWaypointPoint.y = 0f;
                 GUIStyle textStyle = new GUIStyle();
                 textStyle.fontStyle = FontStyle.Bold;

@@ -1,3 +1,4 @@
+using _Scripts.Events;
 using UnityEngine;
 
 namespace _Scripts.HealthSystem

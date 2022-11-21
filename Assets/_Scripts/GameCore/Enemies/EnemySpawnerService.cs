@@ -34,19 +34,36 @@ namespace _Scripts.GameCore.Enemies
         }
 
 
-        public bool SpawnEnemy(GameObject enemyPrefab)
+        public bool SpawnEnemy(GameObject enemyPrefab, int amount = 1)
         {
-            var points = GetFarhestSpawnPoints();
+            if (amount <= 0)
+            {
+                return false;
+            }
 
-            if (points.Count == 0) return false;
+            for (int i = 0; i < amount; i++)
+            {
+                var points = GetFarhestSpawnPoints();
 
-            var spawnPoint = points[Random.Range(0, points.Count)];
+                if (points.Count == 0) return false;
+
+                var randomSpawnPoint = points[Random.Range(0, points.Count)];
+                var spawnPoint = GetRandomPointInsideCircle(randomSpawnPoint);
+
+                bool isValid = NavMesh.SamplePosition(spawnPoint, out var hit, 1f, NavMesh.AllAreas);
+                if (!isValid) return false;
+                
+                Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);//TODO will change to object pool
+            }
             
-            bool isValid = NavMesh.SamplePosition(spawnPoint, out var hit, 1f, NavMesh.AllAreas);
-            if (!isValid) return false;
-            
-            Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);//TODO will change to object pool
             return true;
+        }
+
+        private Vector3 GetRandomPointInsideCircle(Vector3 origin)
+        {
+            var randomPoint = origin + (Random.insideUnitSphere * 5f);
+            randomPoint.y = 0f;
+            return randomPoint;
         }
         
         private List<Vector3> GetFarhestSpawnPoints()

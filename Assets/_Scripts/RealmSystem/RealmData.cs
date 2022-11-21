@@ -21,6 +21,7 @@ namespace _Scripts.RealmSystem
     {
         public string enemyName;
         public int spawnWeight;
+        public int spawnAmount;
         public GameObject enemyPrefab;
     }
 }
