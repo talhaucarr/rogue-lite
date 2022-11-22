@@ -117,7 +117,7 @@ namespace _Scripts.GameCore.Enemies
                 return _spawnDelay;
             }
                 
-            return Random.Range(3, 6);
+            return Random.Range(3, 10);
         }
         
         private int GetRandomSpawnAmount(GameObject enemy)
