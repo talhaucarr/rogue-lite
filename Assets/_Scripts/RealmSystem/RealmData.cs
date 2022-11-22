@@ -11,6 +11,7 @@ namespace _Scripts.RealmSystem
         public string realmName;
         public string realmDescription;
         public bool harderBetterFasterStronger;
+        public int maxEnemies = 30;
         
         [BHeader("Realm Enemies")]
         public List<RealmEnemyData> realmEnemies = new List<RealmEnemyData>();

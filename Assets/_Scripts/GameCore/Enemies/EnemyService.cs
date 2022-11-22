@@ -21,6 +21,7 @@ namespace _Scripts.GameCore.Enemies
         private float _timeSpentInRealm = 1f;
         private float _spawnDelay = 5f;
         private float _spawnDelayMinCap = 0.5f;
+        private RealmData _currentRealmData;
 
         #endregion
 
@@ -40,6 +41,7 @@ namespace _Scripts.GameCore.Enemies
         {
             StartTimer();
             SetReady();
+            GetCurrentRealm();
         }
 
         internal override void Dispose()
@@ -94,6 +96,9 @@ namespace _Scripts.GameCore.Enemies
         {
             DOVirtual.DelayedCall(GetRandomDelay(), () =>
             {
+                if(_allEnemies.Count >= _currentRealmData.maxEnemies)
+                    return;
+                
                 var enemy = GetRandomEnemyPrefabByPriority();
                 var spawnAmount = GetRandomSpawnAmount(enemy);
                 _enemySpawnerService.SpawnEnemy(enemy, spawnAmount);
@@ -103,15 +108,12 @@ namespace _Scripts.GameCore.Enemies
         
         private GameObject GetRandomEnemyPrefab()
         {
-            var realmData = GetCurrentRealm();
-            return realmData.realmEnemies[Random.Range(0, realmData.realmEnemies.Count)].enemyPrefab;
+            return _currentRealmData.realmEnemies[Random.Range(0, _currentRealmData.realmEnemies.Count)].enemyPrefab;
         }
         
         private float GetRandomDelay()
         {
-            var realmData = GetCurrentRealm();
-
-            if (realmData.harderBetterFasterStronger)
+            if (_currentRealmData.harderBetterFasterStronger)
             {
                 IncreaseDifficultyByTime();
                 return _spawnDelay;
@@ -122,8 +124,7 @@ namespace _Scripts.GameCore.Enemies
         
         private int GetRandomSpawnAmount(GameObject enemy)
         {
-            var realmData = GetCurrentRealm();
-            foreach (var realmEnemyData in realmData.realmEnemies)
+            foreach (var realmEnemyData in _currentRealmData.realmEnemies)
             {
                 if(realmEnemyData.enemyPrefab != enemy) continue;
                 return Random.Range(1, realmEnemyData.spawnAmount);
@@ -136,18 +137,15 @@ namespace _Scripts.GameCore.Enemies
         {
             if (!(_timeSpentInRealm > 10)) return;//if time is less than 10 seconds, do nothing
             
-            //_spawnDelay = Mathf.Clamp(_spawnDelay - _timeSpentInRealm * 0.01f, _spawnDelayMinCap, 5f);
             _timeSpentInRealm = 0;
             _spawnDelay -= 0.5f;//decrease spawn delay by 0.5 seconds
             if(_spawnDelay < _spawnDelayMinCap)
                 _spawnDelay = _spawnDelayMinCap;
         }
 
-        
         private GameObject GetRandomEnemyPrefabByPriority()
         {
-            var realmData = GetCurrentRealm();
-            var enemies = realmData.realmEnemies;
+            var enemies = _currentRealmData.realmEnemies;
             var totalWeight = 0;
             foreach (var enemy in enemies)
             {
@@ -165,9 +163,9 @@ namespace _Scripts.GameCore.Enemies
             return null;
         }
 
-        private RealmData GetCurrentRealm()
+        private void GetCurrentRealm()
         {
-           return _realmService.GetRealmData("ForestRuins");//TODO will be changed
+           _currentRealmData = _realmService.GetRealmData("ForestRuins");//TODO will be changed
         }
         
         #endregion
