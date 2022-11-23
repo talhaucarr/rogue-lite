@@ -39,9 +39,9 @@ namespace _Scripts.GameCore.Enemies
 
         internal override void Begin()
         {
+            GetCurrentRealm();
             StartTimer();
             SetReady();
-            GetCurrentRealm();
         }
 
         internal override void Dispose()
