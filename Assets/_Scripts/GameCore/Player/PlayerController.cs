@@ -73,7 +73,12 @@ namespace _Scripts.GameCore.Player
         #endregion
 
         #region Private Methods
-        
+
+        private void Move()
+        {
+            var movementDirection = _inputModule.MovementValue.normalized;
+            _movementModule.MoveDirection(transform, movementDirection, _statSettings.GetStat(StatKey.MoveSpeed));
+        }
         
         private void LookMousePosition()
         {
@@ -92,7 +97,7 @@ namespace _Scripts.GameCore.Player
             transform.LookAt(playerTransform + lookDir, Vector3.up);
         }
 
-        private void Move()
+        /*private void Move()
         {
             var transform1 = transform;
             
@@ -106,7 +111,7 @@ namespace _Scripts.GameCore.Player
             var movement = forwardMovement + rightMovement;
             movement.Normalize();
             _movementModule.MoveDirection(transform, new Vector2(movement.x, movement.z), _statSettings.GetStat(StatKey.MoveSpeed));
-        }
+        }*/
 
         #endregion
         
