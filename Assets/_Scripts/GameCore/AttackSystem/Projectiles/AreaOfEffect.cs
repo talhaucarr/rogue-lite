@@ -38,7 +38,7 @@ namespace _Scripts.GameCore.AttackSystem.Projectiles
                 if (!enemy.IsAlive) yield return null;
                 
                 counter++;
-                enemy?.DealDamage(_damage);
+                enemy?.DealDamage(_damage);//TODO Add damage type, because it can be player 
             }
 
             yield return null;
