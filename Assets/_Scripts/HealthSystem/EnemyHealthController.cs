@@ -1,4 +1,5 @@
 using _Scripts.Events;
+using _Scripts.GameCore.Enemies;
 using UnityEngine;
 
 namespace _Scripts.HealthSystem
@@ -11,7 +12,8 @@ namespace _Scripts.HealthSystem
         
         protected override void Die()
         {
-            _enemyDiedEvent.Fire(gameObject);
+            IsAlive = false;
+            onDeath?.Invoke();
             Destroy(gameObject);//TODO Replace with object pool
         }
 

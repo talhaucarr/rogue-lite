@@ -12,8 +12,8 @@ namespace _Scripts.GameCore.AttackSystem.Attack
         {
             if(!_enemyService.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
             if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
-            damagable.DealDamage(_statSettings.GetStat(StatKey.Damage));
-            if(attackPrefab) Instantiate(attackPrefab, enemy.Transform.position, Quaternion.identity);//TODO replace with pool
+            var aoe = Instantiate(attackPrefab, enemy.Transform.position, Quaternion.identity);//TODO replace with pool
+            aoe.GetComponent<IAreaOfEffect>().Setup(5, 50);
             return true;
         }
     }

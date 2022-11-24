@@ -11,7 +11,6 @@ namespace _Scripts.HealthSystem
         protected override void Die()
         {
             ResetHealth();
-            _playerDeathEvent.Fire(gameObject);
             Destroy(gameObject);//TODO Replace with object pool
         }
 

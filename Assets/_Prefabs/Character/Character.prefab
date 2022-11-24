@@ -454,6 +454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Female Archer 03
       objectReference: {fileID: 0}
+    - target: {fileID: 6884771301250383313, guid: 32e2925a094b0994cb4097c9e892456f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e2925a094b0994cb4097c9e892456f, type: 3}
 --- !u!4 &495747503650005216 stripped

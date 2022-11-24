@@ -17,10 +17,10 @@ MonoBehaviour:
     m_values:
     - 100
     - 0.2
-    - 2
+    - 1.2
   StatMonitor:
     m_keys: 010000000300000006000000
     m_values:
     - 100
-    - 1
-    - 2
+    - 0.2
+    - 1.2

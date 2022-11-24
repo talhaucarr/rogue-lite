@@ -1460,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6832040344724344136
 Transform:
   m_ObjectHideFlags: 0
@@ -1526,6 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackName: SeedAttack
+  attackType: 0
   attackPrefab: {fileID: 5404265594570593906, guid: 3ac6e0acd5583364fa7b2a4e517197db, type: 3}
   _animationController: {fileID: 3258682581922158978}
 --- !u!195 &2819516269892436978
@@ -1537,17 +1538,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 6351293800625723627}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0.42
+  m_Height: 1.03
+  m_BaseOffset: 0.44
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2138182677

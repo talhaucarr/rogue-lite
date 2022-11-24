@@ -1,4 +1,5 @@
 using _Scripts.AnimationSystem;
+using _Scripts.GameCore.AttackSystem.Enums;
 using _Scripts.GameCore.AttackSystem.Interfaceses;
 using _Scripts.GameCore.Enemies;
 using _Scripts.HealthSystem;
@@ -11,6 +12,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
     {
         [BHeader("Attack Type")]
         [SerializeField] protected string attackName;
+        [SerializeField] protected AttackType attackType;
         [SerializeField] protected GameObject attackPrefab;
 
         [Space(20)][BHeader("References")]

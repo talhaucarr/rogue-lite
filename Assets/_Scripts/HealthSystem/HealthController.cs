@@ -24,6 +24,7 @@ namespace _Scripts.HealthSystem
         #region Public Variables
 
         public float CurrentHealth { get; private set; }
+        public bool IsAlive { get; set; } = true;
 
         #endregion
 
