@@ -6,6 +6,16 @@ using UnityEngine;
 
 public static class TweenHelper
 {
+    
+    public static Tween BouncyFall(Transform target, Vector2 endPosition, float jumpAmount, float duration, Action onComplete = null)
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.Join(target.DOMoveY(target.position.y + jumpAmount, duration/2).SetEase(Ease.InCubic));
+        sequence.Append(target.DOMoveY( endPosition.y, duration/2).SetEase(Ease.OutBounce));
+        sequence.Insert(0,target.DOMoveX( endPosition.x, duration).SetEase(Ease.InOutCubic));
+        if(onComplete != null) sequence.onComplete += () => onComplete();
+        return sequence;
+    }
     public static Tween BouncyMoveTo(Transform transform, Vector2 targetPos, Action onComplete = null, float duration = .4f)
     {
         Tween tween = transform.DOMove(targetPos, duration).SetEase(Ease.OutBounce);

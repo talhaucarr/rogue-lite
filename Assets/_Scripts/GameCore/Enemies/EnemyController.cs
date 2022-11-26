@@ -5,6 +5,7 @@ using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
 using _Scripts.MovementSystem;
 using _Scripts.StatSystem;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _Scripts.GameCore.Enemies
@@ -18,6 +19,9 @@ namespace _Scripts.GameCore.Enemies
     
         [BHeader("Modules")]
         [SerializeField] private EnemyMovementModule _movementModule;
+        
+        [BHeader("VFX")]
+        [SerializeField] private GameObject _deathVFX;
         #endregion
 
         #region Properties
@@ -98,7 +102,17 @@ namespace _Scripts.GameCore.Enemies
 
         private void OnDeath()
         {
+            SpawnDeathVFX();
             _enemyService.UnRegisterEnemy(this);
+        }
+        
+        private void SpawnDeathVFX()
+        {
+            if (_deathVFX == null) return;
+            var pos = transform.position;
+            var orb = Instantiate(_deathVFX, pos, Quaternion.identity);
+            Vector3 targetFallPosition = (Random.insideUnitSphere) * 1;
+            TweenHelper.BouncyFall(orb.transform, pos + targetFallPosition, 0.3f, 0.5f);
         }
 
         #endregion

@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7834638993253435125, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
+      propertyPath: _deathVFX
+      value: 
+      objectReference: {fileID: 7121389006173685046, guid: b38ffbb33b59ee14aac69ba06a9e55a3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6eaadeeffab9344a57b863c44af31c, type: 3}
 --- !u!1 &400746824
@@ -602,6 +606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeedMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6832040344724344136, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -759,6 +767,10 @@ PrefabInstance:
     - target: {fileID: 6298744959045131905, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
       propertyPath: m_Name
       value: ShadowMinion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298744959045131905, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6298744959045131906, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
       propertyPath: minionMaster
