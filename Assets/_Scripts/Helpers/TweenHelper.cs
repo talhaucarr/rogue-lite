@@ -153,7 +153,7 @@ public static class TweenHelper
         return sequence;
     }
     
-    public static Tween MoveUpMoveDownSequence(Transform target, float moveUpDuration, float moveDownDuration, float moveUpDistance, float moveDownDistance, Action onComplete = null)
+   /* public static Tween MoveUpMoveDownSequence(Transform target, float moveUpDuration, float moveDownDuration, float moveUpDistance, float moveDownDistance, Action onComplete = null)
     {
         var yAxis = target.position.y;
         Sequence sequence = DOTween.Sequence();
@@ -162,7 +162,12 @@ public static class TweenHelper
         sequence.SetLoops(-1);
         if(onComplete != null) sequence.OnComplete(() => onComplete());
         return sequence;
+    }*/
+    
+    public static Tween RotateAround(Transform target, float duration, Action onComplete = null)
+    {
+        var tween = target.DORotate(new Vector3(0, 0, 360), duration, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+        if(onComplete != null) tween.OnComplete(() => onComplete());
+        return tween;
     }
-    
-    
 }

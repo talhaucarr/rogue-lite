@@ -13,7 +13,8 @@ namespace _Scripts.InventorySystem
         
         private void IdleAnimation()
         {
-            TweenHelper.MoveUpMoveDownSequence(transform, 1f, 1f, 0.5f, 0.2f);
+            //TweenHelper.MoveUpMoveDownSequence(transform, 1f, 1f, 0.5f, 0.2f);
+            TweenHelper.RotateAround(transform, 1f);
         }
     }
 }
