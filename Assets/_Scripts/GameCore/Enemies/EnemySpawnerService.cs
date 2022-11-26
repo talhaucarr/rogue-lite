@@ -36,6 +36,7 @@ namespace _Scripts.GameCore.Enemies
 
         public bool SpawnEnemy(GameObject enemyPrefab, int amount = 1)
         {
+            return false;
             if (amount <= 0)
             {
                 return false;

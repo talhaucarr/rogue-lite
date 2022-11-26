@@ -3,6 +3,7 @@ using _Scripts.GameCore.AttackSystem.Interfaceses;
 using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
+using _Scripts.InventorySystem;
 using _Scripts.MovementSystem;
 using _Scripts.StatSystem;
 using DG.Tweening;
@@ -111,8 +112,7 @@ namespace _Scripts.GameCore.Enemies
             if (_deathVFX == null) return;
             var pos = transform.position;
             var orb = Instantiate(_deathVFX, pos, Quaternion.identity);
-            Vector3 targetFallPosition = (Random.insideUnitSphere) * 1;
-            TweenHelper.BouncyFall(orb.transform, pos + targetFallPosition, 0.3f, 0.5f);
+            orb.GetComponent<Orb>().StartAnimation();
         }
 
         #endregion

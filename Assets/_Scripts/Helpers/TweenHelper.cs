@@ -153,5 +153,16 @@ public static class TweenHelper
         return sequence;
     }
     
+    public static Tween MoveUpMoveDownSequence(Transform target, float moveUpDuration, float moveDownDuration, float moveUpDistance, float moveDownDistance, Action onComplete = null)
+    {
+        var yAxis = target.position.y;
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(target.DOMoveY(yAxis + moveUpDistance, moveUpDuration).SetEase(Ease.InQuad));
+        sequence.Append(target.DOMoveY(yAxis - moveDownDistance, moveDownDuration).SetEase(Ease.InQuad));
+        sequence.SetLoops(-1);
+        if(onComplete != null) sequence.OnComplete(() => onComplete());
+        return sequence;
+    }
+    
     
 }

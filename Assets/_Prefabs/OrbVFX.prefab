@@ -9673,6 +9673,7 @@ GameObject:
   - component: {fileID: 7121389006173883156}
   - component: {fileID: 7121389006192242596}
   - component: {fileID: 7121389006191548658}
+  - component: {fileID: 4081834487125037758}
   m_Layer: 0
   m_Name: OrbVFX
   m_TagString: Untagged
@@ -14444,6 +14445,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4081834487125037758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7121389006173685046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82ea31478f6e046936934211a0a439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7121389006173690374
 GameObject:
   m_ObjectHideFlags: 0
