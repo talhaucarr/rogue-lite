@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using _Scripts.GameCore.Player;
 using UnityEngine;
 
 namespace _Scripts.InventorySystem
@@ -6,6 +8,7 @@ namespace _Scripts.InventorySystem
     public class OrbService : Service<OrbService>
     {
         private List<Orb> _orbs = new List<Orb>();
+        private float _radius = 15f;
 
         internal override void Init()
         {
@@ -21,7 +24,12 @@ namespace _Scripts.InventorySystem
         {
             
         }
-        
+
+        private void Update()
+        {
+            CheckCollecteableOrbs();
+        }
+
         public void RegisterOrb(Orb orb)
         {
             _orbs.Add(orb);
@@ -32,15 +40,14 @@ namespace _Scripts.InventorySystem
             _orbs.Remove(orb);
         }
         
-        public void CollectOrbsInRadius(Vector3 position, float radius)
+        private void CheckCollecteableOrbs()
         {
             if(_orbs.Count == 0) return;
-            var orbClone = new List<Orb>(_orbs);
-            
-            foreach (var orb in orbClone)
+
+            foreach (var orb in _orbs)
             {
                 if(!orb.IsCollecteable) continue;
-                if (Vector3.Distance(orb.transform.position, position) < radius)
+                if (Vector3.Distance(orb.transform.position, PlayerManager.Instance.transform.position) < _radius)
                 {
                     orb.Collect();
                 }

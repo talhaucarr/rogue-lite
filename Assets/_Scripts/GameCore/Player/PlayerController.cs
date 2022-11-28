@@ -69,11 +69,6 @@ namespace _Scripts.GameCore.Player
             }
         }
 
-        private void LateUpdate()
-        {
-            CollectOrb();
-        }
-
         #endregion
         
         #region Public Methods
@@ -83,11 +78,6 @@ namespace _Scripts.GameCore.Player
         #endregion
 
         #region Private Methods
-        
-        private void CollectOrb()
-        {
-            _orbService.CollectOrbsInRadius(transform.position, _statSettings.GetStat(StatKey.PlayerOrbCollectRange));
-        }
 
         private void Move()
         {

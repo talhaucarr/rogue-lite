@@ -24,15 +24,15 @@ namespace _Scripts.InventorySystem
         public void Collect()
         {
             if(!IsCollecteable) return;
-            OnCollected();
+            Vector2 pos = PlayerManager.Instance.transform.position;
+            TweenHelper.LinearMoveTo(transform, pos, OnCollected).OnUpdate((() => {pos = PlayerManager.Instance.transform.position;}));
         }
         
         private void OnCollected()
         {
             _jumpTween.Kill();
             _rotateTween.Kill();
-            _orbService.UnregisterOrb(this);
-            Destroy(gameObject);
+            gameObject.SetActive(false);//TODO Pooling
         }
 
         #region OrbAnimation
