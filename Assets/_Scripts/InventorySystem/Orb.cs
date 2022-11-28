@@ -10,7 +10,7 @@ namespace _Scripts.InventorySystem
     {
         private OrbService _orbService;
 
-        private Tween _moveTween;
+        private Tweener _moveTween;
         private Tween _jumpTween;
         private Tween _rotateTween;
 
@@ -25,13 +25,17 @@ namespace _Scripts.InventorySystem
         {
             if(!IsCollecteable) return;
             Vector2 pos = PlayerManager.Instance.transform.position;
-            TweenHelper.LinearMoveTo(transform, pos, OnCollected).OnUpdate((() => {pos = PlayerManager.Instance.transform.position;}));
+            _moveTween = TweenHelper.LinearMoveTo(transform, pos, OnCollected).OnUpdate((() =>
+            {
+                _moveTween.ChangeEndValue(PlayerManager.Instance.transform.position); 
+            }));
         }
         
         private void OnCollected()
         {
             _jumpTween.Kill();
             _rotateTween.Kill();
+            _orbService.UnregisterOrb(this);
             gameObject.SetActive(false);//TODO Pooling
         }
 

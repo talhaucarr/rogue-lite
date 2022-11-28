@@ -23,9 +23,9 @@ public static class TweenHelper
         return tween;
     }
 
-    public static Tween LinearMoveTo(Transform transform, Vector2 targetPos, Action onComplete = null, float duration = .1f)
+    public static Tweener LinearMoveTo(Transform transform, Vector2 targetPos, Action onComplete = null, float duration = .1f)
     {
-        Tween tween = transform.DOMove(targetPos, duration).SetEase(Ease.Linear);
+        Tweener tween = transform.DOMove(targetPos, duration).SetEase(Ease.Linear);
         if (onComplete != null) tween.onComplete += () => onComplete();
         return tween;
     }
