@@ -1,8 +1,10 @@
+using System;
 using _Scripts.AnimationSystem;
 using _Scripts.CameraSystem;
 using _Scripts.GameCore.AttackSystem;
 using _Scripts.HealthSystem;
 using _Scripts.InputSystem;
+using _Scripts.InventorySystem;
 using _Scripts.MovementSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
@@ -39,6 +41,7 @@ namespace _Scripts.GameCore.Player
         
         private Vector3 lookPos;
         private CameraService _cameraService;
+        private OrbService _orbService;
 
         private void Start()
         {
@@ -52,6 +55,8 @@ namespace _Scripts.GameCore.Player
             _playerAttackController.Setup(_statSettings);
 
             _cameraService = ServiceLocator.Instance.Get<CameraService>();
+            
+            _orbService = ServiceLocator.Instance.Get<OrbService>();
         }
 
         private void Update()
@@ -63,7 +68,12 @@ namespace _Scripts.GameCore.Player
                 _playerAttackController.Attack();
             }
         }
-        
+
+        private void LateUpdate()
+        {
+            CollectOrb();
+        }
+
         #endregion
         
         #region Public Methods
@@ -73,6 +83,11 @@ namespace _Scripts.GameCore.Player
         #endregion
 
         #region Private Methods
+        
+        private void CollectOrb()
+        {
+            _orbService.CollectOrbsInRadius(transform.position, _statSettings.GetStat(StatKey.PlayerOrbCollectRange));
+        }
 
         private void Move()
         {
