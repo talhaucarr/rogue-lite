@@ -7,6 +7,10 @@ namespace _Scripts.InventorySystem
 {
     public class OrbService : Service<OrbService>
     {
+       /*
+        *This service needs to be changed to a Stack 
+        */
+
         private List<Orb> _orbs = new List<Orb>();
         private float _radius = 15f;
 
@@ -47,6 +51,7 @@ namespace _Scripts.InventorySystem
             foreach (var orb in _orbs)
             {
                 if(!orb.IsCollecteable) continue;
+                
                 if (Vector3.Distance(orb.transform.position, PlayerManager.Instance.transform.position) < _radius)
                 {
                     orb.Collect();

@@ -25,9 +25,9 @@ namespace _Scripts.InventorySystem
         {
             if(!IsCollecteable) return;
             Vector2 pos = PlayerManager.Instance.transform.position;
-            _moveTween = TweenHelper.LinearMoveTo(transform, pos, OnCollected).OnUpdate((() =>
+            _moveTween = TweenHelper.LinearMoveTo(transform, pos, OnCollected, 0.5f).OnUpdate((() =>
             {
-                _moveTween.ChangeEndValue(PlayerManager.Instance.transform.position); 
+                _moveTween.ChangeEndValue(PlayerManager.Instance.transform.position);
             }));
         }
         
