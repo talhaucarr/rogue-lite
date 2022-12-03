@@ -14,27 +14,34 @@ namespace _Scripts.InventorySystem
         private Tween _jumpTween;
         private Tween _rotateTween;
 
-        public bool IsCollecteable = false;
         private void Start()
         {
             _orbService = ServiceLocator.Instance.Get<OrbService>();
             _orbService.RegisterOrb(this);
         }
 
-        public void Collect()
+        private void Update()
         {
-            if(!IsCollecteable) return;
-            Vector2 pos = PlayerManager.Instance.transform.position;
-            _moveTween = TweenHelper.LinearMoveTo(transform, pos, OnCollected, 0.5f).OnUpdate((() =>
+            if(Vector3.Distance(transform.position, PlayerManager.Instance.transform.position) < 1)
             {
-                _moveTween.ChangeEndValue(PlayerManager.Instance.transform.position);
+                _moveTween?.Kill();
+                OnCollected();
+            }
+        }
+
+        private void Collect()
+        {   
+            Vector3 pos = PlayerManager.Instance.transform.position;
+            transform.DOMove(pos, 0.1f).OnUpdate((() =>
+            {
+                pos = PlayerManager.Instance.transform.position;
+                transform.DOMove(pos, 0.1f);
             }));
         }
-        
+
         private void OnCollected()
         {
-            _jumpTween.Kill();
-            _rotateTween.Kill();
+            _jumpTween?.Kill();
             _orbService.UnregisterOrb(this);
             gameObject.SetActive(false);//TODO Pooling
         }
@@ -46,14 +53,12 @@ namespace _Scripts.InventorySystem
             Vector3 targetFallPosition = (Random.insideUnitSphere) * 3;
             targetFallPosition.y = 0;
             var transform1 = transform;
-            _jumpTween = TweenHelper.BouncyFall(transform1, transform1.position + targetFallPosition, 1.5f, 1f, IdleAnimation);
+            _jumpTween = TweenHelper.BouncyFall(transform1, transform1.position + targetFallPosition, 1.5f, 1f, Collect);
         }
         
         private void IdleAnimation()
         {
-            //TweenHelper.MoveUpMoveDownSequence(transform, 1f, 1f, 0.5f, 0.2f);
             _rotateTween = TweenHelper.RotateAround(transform, 1f);
-            IsCollecteable = true;
         }
 
         #endregion

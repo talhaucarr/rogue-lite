@@ -10,8 +10,8 @@ namespace _Scripts.InventorySystem
        /*
         *This service needs to be changed to a Stack 
         */
+        private LinkedList<Orb> _orbs = new LinkedList<Orb>();
 
-        private List<Orb> _orbs = new List<Orb>();
         private float _radius = 15f;
 
         internal override void Init()
@@ -31,12 +31,12 @@ namespace _Scripts.InventorySystem
 
         private void Update()
         {
-            CheckCollecteableOrbs();
+            //CheckCollecteableOrbs();
         }
 
         public void RegisterOrb(Orb orb)
         {
-            _orbs.Add(orb);
+            _orbs.AddLast(orb);
         }
         
         public void UnregisterOrb(Orb orb)
@@ -44,19 +44,5 @@ namespace _Scripts.InventorySystem
             _orbs.Remove(orb);
         }
         
-        private void CheckCollecteableOrbs()
-        {
-            if(_orbs.Count == 0) return;
-
-            foreach (var orb in _orbs)
-            {
-                if(!orb.IsCollecteable) continue;
-                
-                if (Vector3.Distance(orb.transform.position, PlayerManager.Instance.transform.position) < _radius)
-                {
-                    orb.Collect();
-                }
-            }
-        }
     }
 }
