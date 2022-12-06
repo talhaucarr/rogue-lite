@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightningBirdMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 146531517033841972, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 359313605875912855, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -635,6 +639,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a9358a32eb9e341b87351e0993a90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1925018553 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 495747502374683324, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
+  m_PrefabInstance: {fileID: 1799719447400173837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2059385179
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6832040344724344136, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_RootOrder
@@ -785,6 +794,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 495747502374683324, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495747502374683324, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3bb24ae9e7a90cc4badcfb074957b299, type: 2}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -833,6 +850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 6065874415435617094, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1925018553}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
 --- !u!1001 &2511126006406511608
@@ -900,6 +921,67 @@ PrefabInstance:
       objectReference: {fileID: 1910738172}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+--- !u!1001 &4178675951684679143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 566273443225395962, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: minionMaster
+      value: 
+      objectReference: {fileID: 1910738172}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833675018314149597, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_Name
+      value: PhantomMinion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
 --- !u!1001 &5358887877349745444
 PrefabInstance:
   m_ObjectHideFlags: 0

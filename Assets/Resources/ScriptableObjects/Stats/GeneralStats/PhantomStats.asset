@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eee147f2447756449b49ca001bb229ed, type: 3}
-  m_Name: ShadowStats
+  m_Name: PhantomStats
   m_EditorClassIdentifier: 
   stats:
     m_keys: 0100000002000000030000000500000004000000
@@ -19,7 +19,7 @@ MonoBehaviour:
     - 5
     - 0.1
     - 20
-    - 3
+    - 10
   StatMonitor:
     m_keys: 0100000002000000030000000500000004000000
     m_values:
@@ -27,4 +27,4 @@ MonoBehaviour:
     - 5
     - 0.1
     - 20
-    - 1
+    - 10
