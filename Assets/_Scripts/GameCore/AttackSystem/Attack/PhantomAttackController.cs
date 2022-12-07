@@ -1,4 +1,5 @@
 using _Scripts.GameCore.AttackSystem.Interfaceses;
+using _Scripts.GameCore.AttackSystem.Projectiles;
 using _Scripts.HealthSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
             if(!_enemyService.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
             if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
             var aoe = Instantiate(attackPrefab, enemy.Transform.position, Quaternion.identity);//TODO replace with pool
-            aoe.GetComponent<IAreaOfEffect>().Setup(2, 50);
+            aoe.GetComponent<AreaDamage>().Setup(1, 100, damagable);
             return true;
         }
     }

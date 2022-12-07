@@ -9,7 +9,6 @@ namespace _Scripts.GameCore.AttackSystem.Projectiles
 {
     public class AreaOfEffect : MonoBehaviour, IAreaOfEffect
     {
-        [SerializeField] private bool isRoutine = true;
         private float _damage;
         private float _radius;
         private float _duration;
@@ -28,10 +27,7 @@ namespace _Scripts.GameCore.AttackSystem.Projectiles
         {
             if(collision.transform.TryGetComponent<IDamagable>(out var enemy))
             {
-                if(isRoutine)
-                    StartCoroutine(BurnDamageRoutine(enemy));
-                else
-                    enemy?.DealDamage(_damage);
+                StartCoroutine(BurnDamageRoutine(enemy));
             }
         }
         
