@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Scripts.GameCore.Managers;
+using _Scripts.HealthSystem;
 using _Scripts.RealmSystem;
 using DG.Tweening;
 using UnityEngine;
@@ -86,6 +87,18 @@ namespace _Scripts.GameCore.Enemies
                 chosenEnemy = enemy;
             }
             return chosenEnemy != null;
+        }
+        
+        public List<IDamagable> GetClosestEnemiesInRange(Vector3 myPosition, float range)
+        {
+            List<IDamagable> enemiesInRange = new List<IDamagable>();
+            foreach (var enemy in _allEnemies)
+            {
+                float distance = Vector3.Distance(myPosition, enemy.Transform.position); 
+                if(distance > range) continue;
+                enemiesInRange.Add(enemy.Damagable);
+            }
+            return enemiesInRange;
         }
 
         #endregion

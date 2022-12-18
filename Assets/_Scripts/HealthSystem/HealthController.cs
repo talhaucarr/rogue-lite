@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace _Scripts.HealthSystem
 {
-    public abstract class HealthController : MonoBehaviour, IDamagable
+    public abstract class HealthController : MonoBehaviour, IDamagable, IComparable
     {
         #region SerializeFields
 
@@ -25,6 +25,7 @@ namespace _Scripts.HealthSystem
 
         public float CurrentHealth { get; private set; }
         public bool IsAlive { get; set; } = true;
+        public Transform Transform => transform;
 
         #endregion
 
@@ -83,5 +84,16 @@ namespace _Scripts.HealthSystem
         
 
         #endregion
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            HealthController otherHealthController = obj as HealthController;
+            if (otherHealthController != null)
+                return this.CurrentHealth.CompareTo(otherHealthController.CurrentHealth);
+            else
+                throw new ArgumentException("Object is not a HealthController");
+        }
     }
 }

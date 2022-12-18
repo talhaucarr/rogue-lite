@@ -10,10 +10,18 @@ namespace _Scripts.GameCore.AttackSystem.Attack
     {
         public override bool Attack()
         {
-            if(!_enemyService.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy)) return false;
-            if (!enemy.Transform.TryGetComponent<IDamagable>(out var damagable)) return false;
-            var aoe = Instantiate(attackPrefab, enemy.Transform.position, Quaternion.identity);//TODO replace with pool
-            aoe.GetComponent<AreaDamage>().Setup(1, 100, damagable);
+            var enemies = _enemyService.GetClosestEnemiesInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange));
+            if(enemies.Count == 0) return false;
+            
+            enemies.Sort();//sort by distance
+            var spawnPoint = enemies[0];//get closest enemy
+            var aoe = Instantiate(attackPrefab, spawnPoint.Transform.position, Quaternion.identity);//TODO replace with pool
+            
+            foreach (var enemy in enemies)
+            {
+                aoe.GetComponent<AreaDamage>().Setup(1, 100, enemy);
+            }
+            
             return true;
         }
     }

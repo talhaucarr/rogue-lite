@@ -6,5 +6,6 @@ namespace _Scripts.HealthSystem
     {
         public void DealDamage(float damage);
         public bool IsAlive { get; set; }
+        public Transform Transform { get; }
     }
 }

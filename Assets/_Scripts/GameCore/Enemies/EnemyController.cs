@@ -28,6 +28,7 @@ namespace _Scripts.GameCore.Enemies
         #region Properties
 
         public Transform Transform => transform;
+        public IDamagable Damagable => _healthController;
         public StatSettings StatSettings => _statSettings;
 
         #endregion
