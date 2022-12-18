@@ -15,7 +15,7 @@ namespace _Scripts.GameCore.AttackSystem.Projectiles
             _duration = duration;
             _damage = damage;
             
-            DOVirtual.DelayedCall(_duration / 4, () => enemy?.DealDamage(_damage));
+            DOVirtual.DelayedCall(_duration, () => enemy?.DealDamage(_damage));
             
             Destroy(gameObject, _duration);//TODO replace with pool
         }

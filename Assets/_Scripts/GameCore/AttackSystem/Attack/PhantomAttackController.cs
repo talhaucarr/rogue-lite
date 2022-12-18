@@ -19,7 +19,7 @@ namespace _Scripts.GameCore.AttackSystem.Attack
             
             foreach (var enemy in enemies)
             {
-                aoe.GetComponent<AreaDamage>().Setup(1, 100, enemy);
+                aoe.GetComponent<AreaDamage>().Setup(0.25f, 100, enemy);
             }
             
             return true;
