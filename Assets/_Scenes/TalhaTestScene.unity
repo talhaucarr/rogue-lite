@@ -582,6 +582,10 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 5998935840036926360, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
+      propertyPath: m_Radius
+      value: 0.76
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
 --- !u!4 &847795018 stripped
@@ -733,6 +737,10 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 2819516269892436978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+      propertyPath: m_Radius
+      value: 0.76
+      objectReference: {fileID: 0}
     - target: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
       propertyPath: m_Name
       value: SeedMinion
@@ -919,6 +927,10 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 6932804147215802578, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+      propertyPath: m_Radius
+      value: 0.76
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
 --- !u!1001 &4178675951684679143
@@ -928,6 +940,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174537124205990030, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_Radius
+      value: 0.76
+      objectReference: {fileID: 0}
     - target: {fileID: 566273443225395962, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: minionMaster
       value: 
@@ -938,7 +954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.582
       objectReference: {fileID: 0}
     - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -946,7 +962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.112
+      value: -0.976
       objectReference: {fileID: 0}
     - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_LocalRotation.w
