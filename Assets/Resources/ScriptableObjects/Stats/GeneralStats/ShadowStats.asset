@@ -19,7 +19,7 @@ MonoBehaviour:
     - 5
     - 0.1
     - 20
-    - 3
+    - 10
   StatMonitor:
     m_keys: 0100000002000000030000000500000004000000
     m_values:
@@ -27,4 +27,4 @@ MonoBehaviour:
     - 5
     - 0.1
     - 20
-    - 1
+    - 10

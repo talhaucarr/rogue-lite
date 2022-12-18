@@ -14,7 +14,7 @@ namespace _Scripts.HealthSystem
         {
             IsAlive = false;
             onDeath?.Invoke();
-            Destroy(gameObject);//TODO Replace with object pool
+            if(gameObject.activeSelf) Destroy(gameObject);//TODO Replace with object pool
         }
 
         #endregion

@@ -921,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6298744959045131905, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6298744959045131906, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
       propertyPath: minionMaster
@@ -995,6 +995,10 @@ PrefabInstance:
     - target: {fileID: 3833675018314149597, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_Name
       value: PhantomMinion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833675018314149597, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}

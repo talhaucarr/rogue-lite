@@ -14,6 +14,8 @@ namespace _Scripts.GameCore.AttackSystem.Projectiles
         private float _duration;
         
         private const float _interval = 1.2f;
+        
+        private bool _isStarted;
 
         public void Setup(float duration, float damage)
         {
@@ -23,27 +25,21 @@ namespace _Scripts.GameCore.AttackSystem.Projectiles
             Destroy(gameObject, _duration);//TODO replace with pool
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionStay(Collision collision)
         {
+            if(_isStarted) return;
             if(collision.transform.TryGetComponent<IDamagable>(out var enemy))
             {
-                StartCoroutine(BurnDamageRoutine(enemy));
+                _isStarted = true;
+                enemy?.DealDamage(_damage);//TODO Add damage type, because it can be player 
+                StartCoroutine(BurnDamageRoutine());
             }
         }
         
-        private IEnumerator BurnDamageRoutine(IDamagable enemy)
+        private IEnumerator BurnDamageRoutine()
         {
-            var counter = 0;
-            while (counter <= 5)
-            {
-                yield return new WaitForSeconds(_interval);
-                if (!enemy.IsAlive) yield return null;
-                
-                counter++;
-                enemy?.DealDamage(_damage);//TODO Add damage type, because it can be player 
-            }
-
-            yield return null;
+            yield return new WaitForSeconds(_interval);
+            _isStarted = false;
         }
     }
 }
