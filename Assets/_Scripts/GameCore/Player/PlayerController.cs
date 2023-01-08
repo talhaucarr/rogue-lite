@@ -1,7 +1,5 @@
 using System;
-using _Scripts.AnimationSystem;
 using _Scripts.CameraSystem;
-using _Scripts.GameCore.AttackSystem;
 using _Scripts.HealthSystem;
 using _Scripts.InputSystem;
 using _Scripts.InventorySystem;
@@ -32,8 +30,6 @@ namespace _Scripts.GameCore.Player
         
         private InputModule _inputModule;
         private HealthController _healthController;
-        private PlayerAttackController _playerAttackController;
-        private AnimationController _animationController;
 
         #endregion
 
@@ -46,13 +42,9 @@ namespace _Scripts.GameCore.Player
         private void Start()
         {
             _inputModule = GetComponent<InputModule>();
-            _playerAttackController = GetComponent<PlayerAttackController>();
             _healthController = GetComponent<HealthController>();
-            _animationController = GetComponent<AnimationController>();
             
-            _movementModule.Setup(_animationController);
             _healthController.Setup(_statSettings.GetStat(StatKey.Health));
-            _playerAttackController.Setup(_statSettings);
 
             _cameraService = ServiceLocator.Instance.Get<CameraService>();
             
@@ -63,10 +55,6 @@ namespace _Scripts.GameCore.Player
         {
             Move();
             LookMousePosition();
-            if (_inputModule.IsAttacking)
-            {
-                _playerAttackController.Attack();
-            }
         }
 
         #endregion

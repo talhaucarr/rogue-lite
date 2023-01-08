@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5881067082936453922}
-  - component: {fileID: 2482853041095319528}
-  - component: {fileID: 6298744959045131906}
-  - component: {fileID: 6566523167375272600}
   - component: {fileID: 4683116360791228872}
   - component: {fileID: 6932804147215802578}
   m_Layer: 0
@@ -38,57 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2482853041095319528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298744959045131905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b951e17e5269e144a92fd988cc22d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4236550046432749503}
-  forwardMovementSpeedMultiplier: 0.2
-  backwardMovementSpeedMultiplier: 0
-  idleSpeedMultiplier: 1
---- !u!114 &6298744959045131906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298744959045131905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cd00b46d6d31464c99842cac81adc61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minionMaster: {fileID: 0}
-  minionType: 1
-  _animationController: {fileID: 2482853041095319528}
-  _movementModule: {fileID: 4683116360791228872}
-  _statSettings: {fileID: 11400000, guid: 94fd543f2d564474dbf3693b07d746e3, type: 2}
-  _minionItem: {fileID: 11400000, guid: c0ee85110e3d3ee4d987673e9c053a2e, type: 2}
-  _trailVFX: {fileID: 0}
---- !u!114 &6566523167375272600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298744959045131905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0467210c02edd67419066b43c4f93247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackName: ShadowAttack
-  attackType: 1
-  attackPrefab: {fileID: 8632717348514136560, guid: 6f0e40a9acd145a486148ad8f9edbb40, type: 3}
-  _animationController: {fileID: 2482853041095319528}
 --- !u!114 &4683116360791228872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +57,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6298744959045131905}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.76
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -976,11 +922,6 @@ PrefabInstance:
 --- !u!4 &4236550046425745503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1734572081990702632, guid: 7f3425f16f17470468f250a8fd950f73, type: 3}
-  m_PrefabInstance: {fileID: 2511126006941785719}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4236550046432749503 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1734572081997904328, guid: 7f3425f16f17470468f250a8fd950f73, type: 3}
   m_PrefabInstance: {fileID: 2511126006941785719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5000017610662776253

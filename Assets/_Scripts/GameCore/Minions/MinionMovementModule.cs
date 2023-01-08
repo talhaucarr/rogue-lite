@@ -1,5 +1,3 @@
-using _Scripts.AnimationSystem;
-using _Scripts.MovementSystem;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,8 +7,6 @@ namespace _Scripts.GameCore.Minions
     {
         #region Private Variables
         [SerializeField] private NavMeshAgent _navMeshAgent;
-        
-        private AnimationController _animationController;
 
         #endregion
 
@@ -24,20 +20,18 @@ namespace _Scripts.GameCore.Minions
         
         #region Public Methods
 
-        public void Setup(AnimationController animationController)
+        public void Setup()
         {
-            _animationController = animationController;
+
         }
 
         public void MoveDirection(Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
-                _animationController.SetWalking(false, 1);
                 return;
             }
             
-            _animationController.SetWalking(true, movementSpeed);
             var moveDirection = new Vector3(direction.x, 0, direction.y);
             Vector3 newPosition = transform.position + moveDirection * (movementSpeed * Time.deltaTime);
             bool isValid = NavMesh.SamplePosition(newPosition, out var hitPosition, 1f, NavMesh.AllAreas);
