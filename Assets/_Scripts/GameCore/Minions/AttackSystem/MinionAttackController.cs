@@ -1,4 +1,6 @@
 using System;
+using _Scripts.GameCore.Enemies;
+using _Scripts.GameCore.ProjectileSystem;
 using _Scripts.StatSystem;
 using UnityEngine;
 
@@ -13,7 +15,8 @@ namespace _Scripts.GameCore.Minions.AttackSystem
         #endregion
         
         #region Private Variables
-
+        
+        private EnemyService _enemyService;
         private StatSettings _statSettings;
         private float _attackTimer = 20;
         private float _attackSpeed;
@@ -25,6 +28,11 @@ namespace _Scripts.GameCore.Minions.AttackSystem
         #endregion
         
         #region Unity Methods
+
+        private void Start()
+        {
+            _enemyService = ServiceLocator.Instance.Get<EnemyService>();
+        }
 
         private void Update()
         {
@@ -52,7 +60,10 @@ namespace _Scripts.GameCore.Minions.AttackSystem
         
         private bool Attack()
         {
-            Debug.Log($"Attack");
+            _enemyService.GetClosestEnemyInRange(transform.position, _statSettings.GetStat(StatKey.AttackRange), out var enemy);
+            if (enemy == null) return false;
+            var projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
+            projectile.GetComponent<Projectile>().Setup(enemy.Transform, 30, _statSettings.GetStat(StatKey.Damage));
             return true;
         }
 
