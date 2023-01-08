@@ -1451,6 +1451,8 @@ GameObject:
   - component: {fileID: 6832040344724344136}
   - component: {fileID: 2819516269892436978}
   - component: {fileID: 2138182677}
+  - component: {fileID: 1495260302}
+  - component: {fileID: 1495260301}
   m_Layer: 0
   m_Name: SeedMinion
   m_TagString: Untagged
@@ -1510,6 +1512,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 2819516269892436978}
+  _navMeshObstacle: {fileID: 1495260302}
+--- !u!208 &1495260302
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &1495260301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionMaster: {fileID: 0}
+  masterStandRadius: 2.54
+  _movementModule: {fileID: 2138182677}
+  _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
+  _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
+  _trailVFX: {fileID: 5243512661824881033}
 --- !u!1001 &5243512661824983781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1578,5 +1615,10 @@ PrefabInstance:
 --- !u!4 &5243512661824589663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400826, guid: 3cb178e3f3f3da5449b0378f2f5772ef, type: 3}
+  m_PrefabInstance: {fileID: 5243512661824983781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5243512661824881033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 168812, guid: 3cb178e3f3f3da5449b0378f2f5772ef, type: 3}
   m_PrefabInstance: {fileID: 5243512661824983781}
   m_PrefabAsset: {fileID: 0}

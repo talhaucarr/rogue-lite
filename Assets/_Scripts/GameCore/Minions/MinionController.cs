@@ -15,8 +15,6 @@ namespace _Scripts.GameCore.Minions
         [Range(1,5)][SerializeField] private float masterStandRadius = 1.7f;
 
         [BHeader("Modules")]
-        [SerializeField] private NavMeshObstacle navMeshObstacle;
-        [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private MinionMovementModule _movementModule;
     
         [BHeader("General")]
@@ -72,9 +70,6 @@ namespace _Scripts.GameCore.Minions
     
         private void LookAtMaster()
         {
-            /*var lookPos = minionMaster.transform.position - transform.position;
-            var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);*/
             transform.LookAt(minionMaster.transform, Vector3.up);
         }
 
@@ -85,16 +80,12 @@ namespace _Scripts.GameCore.Minions
             float speedMultiplierForDistance;
             if (distanceDif.magnitude < masterStandRadius)
             {
-                navMeshObstacle.enabled = true;
-                navMeshAgent.enabled = false;
                 moveDir = Vector3.zero;
                 speedMultiplierForDistance = 1;
                 SetTrailVFX(false);
             }
             else
             {
-                navMeshObstacle.enabled = false;
-                navMeshAgent.enabled = true;
                 speedMultiplierForDistance = Mathf.Pow(distanceDif.magnitude, 2);
                 moveDir = new Vector3(distanceDif.x, distanceDif.z, 0).normalized;
                 SetTrailVFX(true);
