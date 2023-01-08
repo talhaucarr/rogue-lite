@@ -401,6 +401,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &536506519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2704627168530171308, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+  m_PrefabInstance: {fileID: 2511126006406511608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &558956244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -542,6 +547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightningBirdMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 146531517033841972, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 359313605875912855, guid: 77150bc2631092a42a2cb024702e0429, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -593,11 +602,182 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
   m_PrefabInstance: {fileID: 1799719447400173837}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1029192259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3833675018314149597, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+  m_PrefabInstance: {fileID: 4178675951684679143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1029192260 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 174537124205990030, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+  m_PrefabInstance: {fileID: 4178675951684679143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1029192261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2497129108031779220, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+  m_PrefabInstance: {fileID: 4178675951684679143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029192259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1029192266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029192259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionMaster: {fileID: 1910738172}
+  masterStandRadius: 2.54
+  navMeshObstacle: {fileID: 1029192267}
+  navMeshAgent: {fileID: 1029192260}
+  _movementModule: {fileID: 1029192261}
+  _statSettings: {fileID: 11400000, guid: d2667858bb87f6f48bb5e4ff120c8ac3, type: 2}
+  _minionItem: {fileID: 11400000, guid: ef1c070b3dea5a24da8eaed253302273, type: 2}
+  _trailVFX: {fileID: 0}
+--- !u!208 &1029192267
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029192259}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!1 &1268850432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6298744959045131905, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+  m_PrefabInstance: {fileID: 2511126006406511608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1268850433 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6932804147215802578, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+  m_PrefabInstance: {fileID: 2511126006406511608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1268850434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4683116360791228872, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+  m_PrefabInstance: {fileID: 2511126006406511608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268850432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1268850439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268850432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionMaster: {fileID: 1910738172}
+  masterStandRadius: 2.54
+  navMeshObstacle: {fileID: 1268850440}
+  navMeshAgent: {fileID: 1268850433}
+  _movementModule: {fileID: 1268850434}
+  _statSettings: {fileID: 11400000, guid: 94fd543f2d564474dbf3693b07d746e3, type: 2}
+  _minionItem: {fileID: 11400000, guid: c0ee85110e3d3ee4d987673e9c053a2e, type: 2}
+  _trailVFX: {fileID: 536506519}
+--- !u!208 &1268850440
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268850432}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &1395004558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5358887876596742058, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
   m_PrefabInstance: {fileID: 5358887877349745444}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1495260294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6351293800625723627, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+  m_PrefabInstance: {fileID: 2138182674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1495260295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2138182677, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+  m_PrefabInstance: {fileID: 2138182674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495260294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fbadbf649373541ac2779aab0766f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &1495260296 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 2819516269892436978, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+  m_PrefabInstance: {fileID: 2138182674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1495260301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495260294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionMaster: {fileID: 1910738172}
+  masterStandRadius: 2.54
+  navMeshObstacle: {fileID: 1495260302}
+  navMeshAgent: {fileID: 1495260296}
+  _movementModule: {fileID: 1495260295}
+  _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
+  _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
+  _trailVFX: {fileID: 1853490383}
+--- !u!208 &1495260302
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495260294}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1706742349
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +812,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1853490383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5243512661824881033, guid: 939ca13db3f60bd499573d244a0326c4, type: 3}
+  m_PrefabInstance: {fileID: 2138182674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1910738172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1799719447694279238, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
+  m_PrefabInstance: {fileID: 1799719447400173837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a9358a32eb9e341b87351e0993a90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059385179
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -792,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.21
       objectReference: {fileID: 0}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -887,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShadowMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 6298744959045131905, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aaa684ac2322b54eb6ad7c3143ab2b1, type: 3}
 --- !u!1001 &4178675951684679143
@@ -896,6 +1096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1337404555087976782, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -944,6 +1148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PhantomMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 3833675018314149597, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
 --- !u!1001 &5358887877349745444
@@ -953,6 +1161,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1706742350}
     m_Modifications:
+    - target: {fileID: 338803877872710254, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 338803877872710254, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.0982404
+      objectReference: {fileID: 0}
+    - target: {fileID: 338803877872710254, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.0982394
+      objectReference: {fileID: 0}
     - target: {fileID: 5070510497747319584, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 3
@@ -1033,5 +1253,17 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 847795018}
+    - target: {fileID: 5358887878373827186, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358887878373827186, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.0982404
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358887878373827186, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.0982394
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
