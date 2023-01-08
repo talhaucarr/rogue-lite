@@ -1451,6 +1451,7 @@ GameObject:
   - component: {fileID: 6832040344724344136}
   - component: {fileID: 1495260301}
   - component: {fileID: 2138182677}
+  - component: {fileID: 1495260304}
   - component: {fileID: 8107217303559926627}
   - component: {fileID: 2819516269892436978}
   - component: {fileID: 1495260302}
@@ -1493,6 +1494,7 @@ MonoBehaviour:
   minionMaster: {fileID: 0}
   masterStandRadius: 2.54
   _movementModule: {fileID: 2138182677}
+  _attackController: {fileID: 1495260304}
   _statSettings: {fileID: 11400000, guid: 44d233c8fa25f304cbf193f323dfabf3, type: 2}
   _minionItem: {fileID: 11400000, guid: 7ea770ef7e28b2b468ac6f064c1286ba, type: 2}
   _trailVFX: {fileID: 5243512661824881033}
@@ -1511,6 +1513,19 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 2819516269892436978}
   _navMeshObstacle: {fileID: 1495260302}
   _animationController: {fileID: 8107217303559926627}
+--- !u!114 &1495260304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351293800625723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb4d5dc3087759499fb47ce2a91bdad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 0}
 --- !u!114 &8107217303559926627
 MonoBehaviour:
   m_ObjectHideFlags: 0

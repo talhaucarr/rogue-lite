@@ -1,3 +1,5 @@
+using System;
+using _Scripts.GameCore.Minions.AttackSystem;
 using _Scripts.GameCore.Player;
 using _Scripts.ItemSystem;
 using _Scripts.StatSystem;
@@ -16,6 +18,7 @@ namespace _Scripts.GameCore.Minions
 
         [BHeader("Modules")]
         [SerializeField] private MinionMovementModule _movementModule;
+        [SerializeField] private MinionAttackController _attackController;
 
         [BHeader("General")]
         [SerializeField] protected StatSettings _statSettings;
@@ -41,6 +44,11 @@ namespace _Scripts.GameCore.Minions
         #region Unity Methods
     
         private Vector3 lookPos;
+
+        private void Start()
+        {
+            _attackController.Setup(_statSettings);
+        }
 
         private void Update()
         {
