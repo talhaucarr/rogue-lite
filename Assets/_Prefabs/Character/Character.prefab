@@ -42,8 +42,6 @@ GameObject:
   - component: {fileID: 1799719447694279239}
   - component: {fileID: 7190757304139185549}
   - component: {fileID: 1799719447694279238}
-  - component: {fileID: 1799719447694279261}
-  - component: {fileID: 6065874415435617094}
   - component: {fileID: 4160437119467853301}
   - component: {fileID: 1910738181}
   - component: {fileID: 737976734162174752}
@@ -105,35 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statSettings: {fileID: 11400000, guid: 32e74fa17f6c0154bbc3df19d5f4a7a9, type: 2}
   _movementModule: {fileID: 11400000, guid: 79f11721d08943840b3ada670d40078b, type: 2}
---- !u!114 &1799719447694279261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799719447694279240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b74a60bacfb2d21439035ee528fbf278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationController: {fileID: 6065874415435617094}
---- !u!114 &6065874415435617094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799719447694279240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b951e17e5269e144a92fd988cc22d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  forwardMovementSpeedMultiplier: 0.2
-  backwardMovementSpeedMultiplier: 5
-  idleSpeedMultiplier: 1
 --- !u!114 &4160437119467853301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6049064408318364267
 Transform:
   m_ObjectHideFlags: 0
@@ -468,12 +437,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6884771300110123949, guid: 32e2925a094b0994cb4097c9e892456f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6884771301250383313, guid: 32e2925a094b0994cb4097c9e892456f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6884771301250383313, guid: 32e2925a094b0994cb4097c9e892456f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3bb24ae9e7a90cc4badcfb074957b299, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e2925a094b0994cb4097c9e892456f, type: 3}
 --- !u!4 &495747503650005216 stripped

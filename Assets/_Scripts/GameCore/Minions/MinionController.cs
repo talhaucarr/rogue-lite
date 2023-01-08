@@ -1,5 +1,3 @@
-using _Scripts.AnimationSystem;
-using _Scripts.GameCore.AttackSystem.Enums;
 using _Scripts.GameCore.Player;
 using _Scripts.ItemSystem;
 using _Scripts.StatSystem;
@@ -14,10 +12,8 @@ namespace _Scripts.GameCore.Minions
     
         [BHeader("Master")]
         [SerializeField] private PlayerController minionMaster;
-        [SerializeField] private MinionType minionType;
 
-        [BHeader("Modules")] 
-        [SerializeField] private AnimationController _animationController;
+        [BHeader("Modules")]
         [SerializeField] private MinionMovementModule _movementModule;
     
         [BHeader("General")]
@@ -49,8 +45,6 @@ namespace _Scripts.GameCore.Minions
         private void Start()
         {
             CreateAttackByType();
-
-            _movementModule.Setup(_animationController);
         }
 
         private void Update()
@@ -81,7 +75,10 @@ namespace _Scripts.GameCore.Minions
     
         private void LookAtMaster()
         {
-            transform.LookAt(minionMaster.transform, Vector3.up);
+            var lookPos = minionMaster.transform.position - transform.position;
+            lookPos.x = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 0.5f);
         }
 
         private void MoveToMaster()

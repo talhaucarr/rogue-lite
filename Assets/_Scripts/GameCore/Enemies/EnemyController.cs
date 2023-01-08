@@ -1,5 +1,3 @@
-using _Scripts.AnimationSystem;
-using _Scripts.GameCore.AttackSystem.Interfaceses;
 using _Scripts.GameCore.Minions;
 using _Scripts.GameCore.Player;
 using _Scripts.HealthSystem;
@@ -34,8 +32,7 @@ namespace _Scripts.GameCore.Enemies
         #endregion
 
         #region Private Fields
-    
-        private IAttack _attack;
+        
         private HealthController _healthController;
         private Vector3 _targetPosition = Vector3.zero;
         private float _attackRange = 1.2f; //if attack range not set in scriptable object, set it to 1.2f

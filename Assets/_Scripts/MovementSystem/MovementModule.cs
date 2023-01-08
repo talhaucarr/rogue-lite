@@ -1,4 +1,3 @@
-using _Scripts.AnimationSystem;
 using UnityEngine;
 
 namespace _Scripts.MovementSystem
@@ -8,7 +7,6 @@ namespace _Scripts.MovementSystem
     {
         #region Private Variables
         
-        private AnimationController _animationController;
 
         #endregion
 
@@ -23,20 +21,18 @@ namespace _Scripts.MovementSystem
         
         #region Public Methods
 
-        public void Setup(AnimationController animationController)
+        public void Setup()
         {
-            _animationController = animationController;
+           
         }
 
         public void MoveDirection(Transform transform, Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
-                _animationController.SetWalking(false, 1);
                 return;
             }
-
-            _animationController.SetWalking(true, movementSpeed, direction);
+            
             var moveDirection = new Vector3(direction.x, 0, direction.y) * movementSpeed;
             
             transform.position += moveDirection * Time.deltaTime;
