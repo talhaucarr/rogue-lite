@@ -811,7 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.21
+      value: 2.66
       objectReference: {fileID: 0}
     - target: {fileID: 1799719447694279239, guid: d761d019584d16f468f0da86a103b7f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -923,6 +923,14 @@ PrefabInstance:
       propertyPath: minionMaster
       value: 
       objectReference: {fileID: 1910738172}
+    - target: {fileID: 1337404555087976782, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337404555087976782, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: f4dd7a447483fb642b700bb2a0723458, type: 2}
     - target: {fileID: 3731214077912300414, guid: 12636ba587177e04ca861c076d6a1dac, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -986,11 +994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338803877872710254, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.0982404
+      value: 1.8809046
       objectReference: {fileID: 0}
     - target: {fileID: 338803877872710254, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.0982394
+      value: 1.8809047
       objectReference: {fileID: 0}
     - target: {fileID: 5070510497747319584, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
       propertyPath: spawnPoints.Array.size
@@ -1078,11 +1086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358887878373827186, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.0982404
+      value: 1.8809046
       objectReference: {fileID: 0}
     - target: {fileID: 5358887878373827186, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.0982394
+      value: 1.8809047
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c63d733e81c4b4aa61ce71afc9f08b, type: 3}

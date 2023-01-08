@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5881067082936453922}
   - component: {fileID: 4683116360791228872}
+  - component: {fileID: 1268850439}
   - component: {fileID: 6932804147215802578}
   - component: {fileID: 1268850440}
-  - component: {fileID: 1268850439}
+  - component: {fileID: 1268850441}
   m_Layer: 0
   m_Name: ShadowMinion
   m_TagString: Untagged
@@ -51,6 +52,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 6932804147215802578}
   _navMeshObstacle: {fileID: 1268850440}
+  _animationController: {fileID: 1268850441}
+--- !u!114 &1268850439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298744959045131905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionMaster: {fileID: 0}
+  masterStandRadius: 2.54
+  _movementModule: {fileID: 4683116360791228872}
+  _statSettings: {fileID: 11400000, guid: 94fd543f2d564474dbf3693b07d746e3, type: 2}
+  _minionItem: {fileID: 11400000, guid: c0ee85110e3d3ee4d987673e9c053a2e, type: 2}
+  _trailVFX: {fileID: 2704627168530171308}
 --- !u!195 &6932804147215802578
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -89,7 +109,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &1268850439
+--- !u!114 &1268850441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,15 +118,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6298744959045131905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce128bd11e733b4a9bc97e640605892, type: 3}
+  m_Script: {fileID: 11500000, guid: 755cac37c9e671c42a0ddc7580328864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionMaster: {fileID: 0}
-  masterStandRadius: 2.54
-  _movementModule: {fileID: 4683116360791228872}
-  _statSettings: {fileID: 11400000, guid: 94fd543f2d564474dbf3693b07d746e3, type: 2}
-  _minionItem: {fileID: 11400000, guid: c0ee85110e3d3ee4d987673e9c053a2e, type: 2}
-  _trailVFX: {fileID: 2704627168530171308}
+  _animator: {fileID: 4236550046432749503}
 --- !u!1001 &2511126006941785719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -959,6 +974,11 @@ PrefabInstance:
 --- !u!4 &4236550046425745503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1734572081990702632, guid: 7f3425f16f17470468f250a8fd950f73, type: 3}
+  m_PrefabInstance: {fileID: 2511126006941785719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4236550046432749503 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1734572081997904328, guid: 7f3425f16f17470468f250a8fd950f73, type: 3}
   m_PrefabInstance: {fileID: 2511126006941785719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5000017610662776253

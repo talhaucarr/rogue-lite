@@ -16,7 +16,7 @@ namespace _Scripts.GameCore.Minions
 
         [BHeader("Modules")]
         [SerializeField] private MinionMovementModule _movementModule;
-    
+
         [BHeader("General")]
         [SerializeField] protected StatSettings _statSettings;
         [SerializeField] protected MinionItem _minionItem;
@@ -27,10 +27,9 @@ namespace _Scripts.GameCore.Minions
         #endregion
 
         #region Properties
-        
-        public StatSettings StatSettings => _statSettings;
-        public MinionItem MinionItem => _minionItem;
 
+        
+        
         #endregion
 
         #region Private Fields

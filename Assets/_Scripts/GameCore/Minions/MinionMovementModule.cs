@@ -8,28 +8,22 @@ namespace _Scripts.GameCore.Minions
         #region Private Variables
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private NavMeshObstacle _navMeshObstacle;
+        [SerializeField] private MinionAnimationController _animationController;
 
         #endregion
 
         #region Unity Methods
-
-        private void Start()
-        {
-        }
+        
 
         #endregion
         
         #region Public Methods
-
-        public void Setup()
-        {
-
-        }
-
+        
         public void MoveDirection(Vector3 direction, float movementSpeed)
         {
             if (direction == Vector3.zero)
             {
+                _animationController.SetWalkingAnimation(false);
                 SetComponents(true);
                 return;
             }
@@ -41,6 +35,7 @@ namespace _Scripts.GameCore.Minions
             bool isValid = NavMesh.SamplePosition(newPosition, out var hitPosition, 1f, NavMesh.AllAreas);
             if (isValid)
             {
+                _animationController.SetWalkingAnimation(true);
                 _navMeshAgent.Warp(newPosition);
                 _navMeshAgent.SetDestination(hitPosition.position);
             }
