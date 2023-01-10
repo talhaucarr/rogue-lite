@@ -20,6 +20,17 @@ MonoBehaviour:
     - 0.1
     - 100
     - 5
+  levelStats:
+  - m_keys: 010000000200000004000000
+    m_values:
+    - 200
+    - 175
+    - 3
+  - m_keys: 010000000200000004000000
+    m_values:
+    - 300
+    - 200
+    - 2
   StatMonitor:
     m_keys: 0100000002000000030000000500000004000000
     m_values:

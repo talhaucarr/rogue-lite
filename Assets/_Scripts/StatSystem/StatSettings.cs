@@ -9,10 +9,13 @@ namespace _Scripts.StatSystem
     {
         [Header("Stat Definitions")]
         [SerializeField] private StatToFloatDictionary stats;
+        
+        [Header("Level Definitions")]
+        [SerializeField] private List<StatToFloatDictionary> levelStats;
 
         [NonSerialized]
         private StatToFloatDictionary _runtimeStats = new StatToFloatDictionary();
-
+        [Space(25)]
         [SerializeField] private StatToFloatDictionary StatMonitor; 
         
         private StatToFloatDictionary StatsDictionary
@@ -34,6 +37,21 @@ namespace _Scripts.StatSystem
                 return value;
             Debug.LogError(name + $" cant find stat: '{key}'");
             return -1;
+        }
+        
+        //Levelup Related
+        public void ChangeBaseStat(int level)
+        {
+            if (level > levelStats.Count)
+            {
+                Debug.LogError(name + $" cant find level: '{level}'");
+                return;
+            }
+
+            foreach (var levelStat in levelStats[level - 1])
+            {
+                ChangeStatValue(levelStat.Key, levelStat.Value);
+            }
         }
 
         public bool TryAddStat(StatKey statKey, float value)
@@ -84,6 +102,16 @@ namespace _Scripts.StatSystem
             #endif
             
             StatsDictionary[statKey] /= percent / 100;
+        }
+        
+        public void ChangeStatValue(StatKey statKey, float value)
+        {
+            #if UNITY_EDITOR
+            if(!StatsDictionary.ContainsKey(statKey))
+                Debug.LogError(name + $" tried Changing stat '{statKey}' that doesnt exist !");
+            #endif
+            
+            StatsDictionary[statKey] = value;
         }
     }
 }

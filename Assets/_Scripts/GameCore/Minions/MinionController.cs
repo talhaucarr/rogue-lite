@@ -37,7 +37,7 @@ namespace _Scripts.GameCore.Minions
 
         #region Private Fields
     
-        
+        private PlayerMinionService _playerMinionService;
 
         #endregion
 
@@ -47,6 +47,9 @@ namespace _Scripts.GameCore.Minions
 
         private void Start()
         {
+            _playerMinionService = ServiceLocator.Instance.Get<PlayerMinionService>();
+            _playerMinionService.Subscribe(this);
+
             _attackController.Setup(_statSettings);
         }
 
@@ -68,6 +71,11 @@ namespace _Scripts.GameCore.Minions
         protected virtual void SetTrailVFX(bool active)
         {
             if(_trailVFX) _trailVFX.SetActive(active);
+        }
+
+        public virtual void LevelUp()
+        {
+            _statSettings.ChangeBaseStat(1);
         }
 
         #endregion
